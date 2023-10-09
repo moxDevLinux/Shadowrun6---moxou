@@ -1,0 +1,243 @@
+@import "color-light.css";
+@import "layout.css";
+@import "augmented.css";
+
+.sheet header.sheet-header {
+	align-items: normal;
+}
+.sheet header.sheet-header img {
+  flex: 0 0 120px;
+  height: 120px;
+}
+
+.shadowrun6 .sheet-header img {
+	height: 120px;
+}
+
+.shadowrun6 .header-fields h1 {
+	width: 80%;
+}
+
+
+.sheet-header .description {
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+.autoexpand {
+ box-sizing: content-box;
+}
+.shadowrun6 input.health-phys {
+        border: 1px solid var(--highlight-color);
+        background: white;
+}
+.shadowrun6 input.health-stun {
+        border: 1px solid var(--accent-color);
+        background: white;
+}
+.shadowrun6 input.health-overflow {
+        border: 1px solid #aaaaaa;
+        background: white;
+}
+.shadowrun6 input.box {
+        border: 1px solid var(--highlight-color);
+        background: white;
+        text-align: center;
+}
+
+.dice-tooltip .dice-rolls .die{
+  position: relative;
+  width: 24px;
+  line-height: 24px;
+  float: left;
+  margin-right: 1px;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dice-tooltip .dice-rolls .die_1{
+  background-image: url(../icons/D6_1.svg);
+}
+
+.dice-tooltip .dice-rolls .die_2{
+  background-image: url(../icons/D6_2.svg);
+}
+.dice-tooltip .dice-rolls .die_3{
+  background-image: url(../icons/D6_3.svg);
+}
+.dice-tooltip .dice-rolls .die_4{
+  background-image: url(../icons/D6_4.svg);
+}
+.dice-tooltip .dice-rolls .die_5{
+  background-image: url(../icons/D6_5.svg);
+}
+.dice-tooltip .dice-rolls .die_6{
+  background-image: url(../icons/D6_6.svg);
+}
+
+.dice-tooltip .dice-rolls .die_1_exploded{
+  background-image: url(../icons/D6_1_Plus.svg);
+}
+.dice-tooltip .dice-rolls .die_2_exploded{
+  background-image: url(../icons/D6_2_Plus.svg);
+}
+.dice-tooltip .dice-rolls .die_3_exploded{
+  background-image: url(../icons/D6_3_Plus.svg);
+}
+.dice-tooltip .dice-rolls .die_4_exploded{
+  background-image: url(../icons/D6_4_Plus.svg);
+}
+.dice-tooltip .dice-rolls .die_5_exploded{
+  background-image: url(../icons/D6_5_Plus.svg);
+}
+.dice-tooltip .dice-rolls .die_6_exploded{
+  background-image: url(../icons/D6_6_Plus.svg);
+}
+
+.dice-tooltip .dice-rolls .die_5_exploded_ignored{
+  background-image: url(../icons/D6_5_Plus_Minus.svg);
+}
+
+.dice-tooltip .dice-rolls .die_5_ignored{
+  background-image: url(../icons/D6_5_Minus.svg);
+}
+
+.dice-tooltip .dice-rolls .die_1_wild{
+  background-image: url(../icons/Wild_1.svg);
+}
+
+.dice-tooltip .dice-rolls .die_2_wild{
+  background-image: url(../icons/Wild_2.svg);
+}
+
+.dice-tooltip .dice-rolls .die_3_wild{
+  background-image: url(../icons/Wild_3.svg);
+}
+
+.dice-tooltip .dice-rolls .die_4_wild{
+  background-image: url(../icons/Wild_4.svg);
+}
+
+.dice-tooltip .dice-rolls .die_5_wild{
+  background-image: url(../icons/Wild_5.svg);
+}
+
+.dice-tooltip .dice-rolls .die_6_wild{
+  background-image: url(../icons/Wild_6.svg);
+}
+
+.edge-roll {
+      width: 48px;
+      height: 48px;
+      text-align: center;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-items: flex-start;
+      position: relative;
+}
+.edge-roll .edge-value {
+		z-index: 1;
+		position:relative;
+		width:48;
+		top: 10px;
+		text-align: center;
+		font-size: large;
+		color: white;
+		font-weight:bold;
+}
+.edge {
+      width: 96px;
+      height: 96px;
+      text-align: center;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-items: flex-start;
+      position: relative;
+}
+.edge input.edge-value {
+		z-index: 1;
+		position:relative;
+		text-align: center;
+		font-size: xx-large;
+		color: white;
+		font-weight:bold;
+}
+.edge input.edge-value:focus {
+	box-shadow: none;
+}
+.edge label.edge-max-label {
+		z-index: 2;
+      position: absolute;
+      bottom: 2em;
+      left: 0;
+		text-align: center;
+		font-size: .75rem;
+      background-color: rgba(239,239,239,0.8);
+}
+.edge input.edge-max {
+		z-index: 2;
+		font-size: .89rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 2em;
+      background-color: var(--section-background);
+}
+
+.app.window-app.shadowrun6.actor .attributes {
+    height: 5.25rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 1rem;
+}
+.app.window-app.shadowrun6.actor .attributes .attribute {
+      min-width: 5.25rem;
+      text-align: center;
+      padding: .25rem;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-items: flex-start;
+      --aug-border: 1px;
+      --aug-inset: 2px;
+      --aug-border-bg: rgb(82, 81, 78);
+      --aug-inset-bg: rgba(255, 255, 255, 0);
+      --aug-b-width: 33%;
+      --aug-b-height: 10px;
+      position: relative;
+      background-color: var(--section-background);
+}
+.app.window-app.shadowrun6.actor .attributes .attribute p {
+        text-align: center;
+        margin: 0; }
+.app.window-app.shadowrun6.actor .attributes .attribute span {
+        font-size: 1.125rem;
+        margin-top: .25rem;
+        color: var(--highlight-color);
+}
+.app.window-app.shadowrun6.actor .attributes .attribute .field {
+        display: flex;
+        flex-flow: column nowrap; }
+.app.window-app.shadowrun6.actor .attributes .attribute input::placeholder,
+.app.window-app.shadowrun6.actor .attributes .attribute label {
+        font-size: .75rem;
+}
+.app.window-app.shadowrun6.actor .attributes .attribute .field:nth-of-type(1) {
+        font-size: .89rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 2em;
+}
+.app.window-app.shadowrun6.actor .attributes .attribute .field:nth-of-type(2) {
+        font-size: .89rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 2em;
+}

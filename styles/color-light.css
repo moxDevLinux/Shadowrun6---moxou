@@ -1,0 +1,19 @@
+:root {
+	--highlight-color: #892378;
+	--accent-color: #00a8ff;
+	--section-background: #efefeb;
+	--tablehead-background: #e0e0d9;
+	--input-color: #202020;
+}
+
+.app.window-app.shadowrun6 .window-content  {
+	background-image: url("../images/borderRight.png"), url("../images/background.png");
+	background-position: right top, left top;
+	background-repeat: no-repeat, repeat;
+}
+
+.app.window-app.dialog .window-content  {
+	background-image: url("../images/background.png");
+	background-position: left top;
+	background-repeat: repeat;
+}
