@@ -1,6 +1,6 @@
 {
-	"Shadowrun6ActorSheetNPC": "Bla",
-	"shadowrun6-eden.Shadowrun6ActorSheetNPC": "Blubb",
+  "Shadowrun6ActorSheetNPC": "Bla",
+  "shadowrun6-eden.Shadowrun6ActorSheetNPC": "Blubb",
   "ACTOR": {
     "TypeCritter": "Critter",
     "TypeNpc": "Grunt/NPC",
@@ -12,16 +12,16 @@
     "TypeAdeptpower": "Adept Power",
     "TypeCritterpower": "Critter Power",
     "TypeComplexform": "Complex Form",
-    "TypeContact" : "Contact",
+    "TypeContact": "Contact",
     "TypeEcho": "Echo",
     "TypeGear": "Gear",
-    "TypeLifestyle" : "Lifestyle",
+    "TypeLifestyle": "Lifestyle",
     "TypeMartialartstyle": "Martial Art Style",
     "TypeMartialarttech": "Martial Art Technique",
     "TypeMetamagic": "Metamagic",
     "TypeQuality": "Quality",
     "TypeRitual": "Ritual",
-    "TypeSin" : "SIN",
+    "TypeSin": "SIN",
     "TypeSkill": "Language/Knowledge Skill",
     "TypeSpell": "Spell",
     "TypeWeapon": "Weapon"
@@ -30,32 +30,32 @@
     "ADVANTAGE": "Advantage",
     "DISADVANTAGE": "Disadvantage"
   },
-  "TYPES":{
-  		"Actor": {
-    		"Critter": "Critter",
-    		"NPC": "Grunt/NPC",
-    		"Player": "Player Character",
-    		"Spirit": "Spirit",
-    		"Vehicle": "Vehicle/Drone"
-  		},
-  		"Item": {
-    		"adeptpower": "Adept Power",
-    		"critterpower": "Critter Power",
-    		"complexform": "Complex Form",
-    		"contact" : "Contact",
-    		"echo": "Echo",
-    		"gear": "Gear",
-    		"lifestyle" : "Lifestyle",
-    		"martialartstyle": "Martial Art Style",
-    		"martialarttech": "Martial Art Technique",
-    		"metamagic": "Metamagic",
-    		"quality": "Quality",
-    		"ritual": "Ritual",
-    		"sin" : "SIN",
-    		"skill": "Language/Knowledge Skill",
-    		"spell": "Spell",
-    		"weapon": "Weapon"
-  	}
+  "TYPES": {
+    "Actor": {
+      "Critter": "Critter",
+      "NPC": "Grunt/NPC",
+      "Player": "Player Character",
+      "Spirit": "Spirit",
+      "Vehicle": "Vehicle/Drone"
+    },
+    "Item": {
+      "adeptpower": "Adept Power",
+      "critterpower": "Critter Power",
+      "complexform": "Complex Form",
+      "contact": "Contact",
+      "echo": "Echo",
+      "gear": "Gear",
+      "lifestyle": "Lifestyle",
+      "martialartstyle": "Martial Art Style",
+      "martialarttech": "Martial Art Technique",
+      "metamagic": "Metamagic",
+      "quality": "Quality",
+      "ritual": "Ritual",
+      "sin": "SIN",
+      "skill": "Language/Knowledge Skill",
+      "spell": "Spell",
+      "weapon": "Weapon"
+    }
   },
   "attrib": {
     "agi": "Agility",
@@ -128,14 +128,14 @@
       "pp": "PP",
       "perLevel": "per level"
     },
-	 "critterpower": {
-		"actiontitle": "Action",
-		"action": {
-			"auto": "Auto",
-			"major": "Major",
-			"minor": "Minor"
-	  }
-	 },
+    "critterpower": {
+      "actiontitle": "Action",
+      "action": {
+        "auto": "Auto",
+        "major": "Major",
+        "minor": "Minor"
+      }
+    },
     "attack_rating": {
       "astral": "Mana Att. Rtg",
       "matrix": "Matrix Att. Rtg.",
@@ -144,10 +144,10 @@
       "vehicle": "Vehicle Att. Rtg."
     },
     "combat": {
-		"togglePhysical": "Use physical initiative",
-		"toggleMatrix": "Use matrix initiative",
-		"toggleAstral": "Use astral initiative"
-	},
+      "togglePhysical": "Use physical initiative",
+      "toggleMatrix": "Use matrix initiative",
+      "toggleAstral": "Use astral initiative"
+    },
     "complexform": {
       "duration": "Duration",
       "fading": "Fade Value",
@@ -177,7 +177,7 @@
       "toxin": "Resist Toxin"
     },
     "defense_rating": {
-	   "label":  "Defense Rating",
+      "label": "Defense Rating",
       "astral": "Mana Def. Rtg",
       "matrix": "Matrix Def. Rtg.",
       "physical": "Physical Def. Rtg",
@@ -192,8 +192,8 @@
       "memory": "Memory",
       "matrix_perception": "Matrix Perception",
       "heal": {
-          "physical": "Physical Healing",
-          "stun": "Mental Healing"
+        "physical": "Physical Healing",
+        "stun": "Mental Healing"
       }
     },
     "edge_action": {
@@ -290,7 +290,7 @@
         "INDUSTRIAL_CHEMICALS": "Industrial Chemicals",
         "INSTRUMENT": "Instruments",
         "INSTRUMENT_ACCESSORY": "Instrument Accessories",
-		  "LARGE_DRONES": "Large Drones",
+        "LARGE_DRONES": "Large Drones",
         "LAUNCHERS": "Launchers",
         "LAV": "Low Altitude Vehicles (VectorThrust)",
         "LTAV": "Lighter Than Air Vehicles",
@@ -299,9 +299,9 @@
         "MACHINE_PISTOLS": "Machine Pistols",
         "MAGICAL_FORMULA": "Magical Formula",
         "MAGIC_SUPPLIES": "Magical Supplies",
-			"MICRODRONES": "Microdrones",
-			"MINIDRONES": "Minidrones",
-			"MEDIUM_DRONES": "Medium Drones",
+        "MICRODRONES": "Microdrones",
+        "MINIDRONES": "Minidrones",
+        "MEDIUM_DRONES": "Medium Drones",
         "PREPARATION": "Preparations",
         "PREPARATION_EXTENDED": "Preparations (extended potency)",
         "MISSILES": "Missiles",
@@ -351,7 +351,7 @@
         "SHOTGUNS": "Shotguns",
         "SKILLSOFT": "Skillsofts",
         "SLAP_PATCHES": "Slap-Patches",
-			"SMALL_DRONES": "Small Drones",
+        "SMALL_DRONES": "Small Drones",
         "SNIPER_RIFLES": "Sniper Rifles",
         "SOFTWARE": "Software",
         "SPACECRAFT": "Spacecrafts",
@@ -400,13 +400,17 @@
         "AMMO_DMSO": "DMSO-Gelpack",
         "AMMO_MACHINE_GUN": "Maschine Gun",
         "AMMO_INJECTION_BOLT": "Injection Bolt",
-        "AMMO_BOLT": "Bolt"
+        "AMMO_BOLT": "Bolt",
+        "TOP": "Top mount",
+        "UNDER": "Under mount",
+        "TOP_&_UNDER": "Top & Under mount",
+        "BARREL": "Barren mount"
       }
     },
     "initiative": {
-      "astral"  : "Astral",
+      "astral": "Astral",
       "physical": "Physical",
-      "matrix"  : "Matrix"
+      "matrix": "Matrix"
     },
     "item": {
       "accessories": "Accessories",
@@ -417,7 +421,8 @@
       "category": "Category",
       "damage": "Damage",
       "defencerating": "Defence rtg",
-      "description": "Description",
+      "description": "In short",
+      "indetail": "In detail",
       "essence": "Essence",
       "feature": "Features",
       "firemode": {
@@ -430,7 +435,7 @@
         "category": {
           "grappling": "Grappling",
           "mobility": "Mobility",
-          "ranged"  : "Ranged",
+          "ranged": "Ranged",
           "striking": "Striking",
           "weapon": "Weapon"
         }
@@ -450,13 +455,13 @@
       "stun_damage": "S",
       "subtype": "Subtype",
       "type": "Type",
-		"vehicle": {
-			"armor.long": "Armor",
-			"armor.short": "A",
-			"rigRating.long": "Control Rig",
-			"sensor.long": "Sensor",
-			"sensor.short": "S"
-		}
+      "vehicle": {
+        "armor.long": "Armor",
+        "armor.short": "A",
+        "rigRating.long": "Control Rig",
+        "sensor.long": "Sensor",
+        "sensor.short": "S"
+      }
     },
     "itemtype": {
       "ACCESSORY": "Accessory",
@@ -494,7 +499,7 @@
       "base": "Base",
       "column": {
         "action": "Action",
-        "count": "Cnt",
+        "count": "Nb",
         "name": "Name",
         "rating": "Rtg."
       },
@@ -514,13 +519,13 @@
       "edit": "Edit",
       "expertise": "Expertise",
       "extended_test": "Extended Test",
-	   "faster": "Accelerate",
+      "faster": "Accelerate",
       "features": "Features",
       "firemode_current": "Current Firemode",
       "firemodes": "Firemodes",
       "force": "Force",
       "gender": "Gender",
-       "legality.illegal.short": "I",
+      "legality.illegal.short": "I",
       "legality.legal.short": "L",
       "level": "Has levels",
       "mages": "Mages",
@@ -530,34 +535,34 @@
       "name": "Name",
       "none": "-",
       "not_present": "not present",
-	  "offroad": "Off-Road",
-	  "onroad": "On-Road",
+      "offroad": "Off-Road",
+      "onroad": "On-Road",
       "points": "Points",
       "pool": "Pool",
       "poolmod": "Pool modifier",
       "programs.short": "P",
       "progSlots": "Prog. slots",
-	  "rating1": "Rating 1",
-	  "rating2": "Rating 2",
-	  "rating3": "Rating 3",
+      "rating1": "Rating 1",
+      "rating2": "Rating 2",
+      "rating3": "Rating 3",
       "soaked": "Soaked {soaked} of {threshold} damage",
-	  "slower": "Decelerate",
+      "slower": "Decelerate",
       "specialization": "Specialization",
       "threshold": "Threshold",
       "value": "Value",
       "wilddie": "Wild Die"
     },
     "lifestyle": {
-      "cost" : "Cost",
+      "cost": "Cost",
       "paid": "Paid",
       "type": "Type",
       "sin": "Linked SIN",
-      "street" : "Street",
-      "squatter" : "Squatter",
-      "low" : "Low",
-      "middle" : "Middle",
-      "high" : "High",
-      "luxury" : "Luxury"
+      "street": "Street",
+      "squatter": "Squatter",
+      "low": "Low",
+      "middle": "Middle",
+      "high": "High",
+      "luxury": "Luxury"
     },
     "matrixaction": {
       "backdoor_entry": "Backdoor Entry",
@@ -593,13 +598,13 @@
       "tarpit": "Tarpit",
       "trace_icon": "Trace Icon"
     },
-      "matrixini": {
-			"ar": "AR",
-			"vrcold": "VR",
-			"vrhot": "VR Hot"
-	   },
+    "matrixini": {
+      "ar": "AR",
+      "vrcold": "VR",
+      "vrhot": "VR Hot"
+    },
     "monitor": {
-		"matrix": "Matrix",
+      "matrix": "Matrix",
       "physical": "Physical",
       "stun": "Stun",
       "overflow": "Overflow"
@@ -623,7 +628,7 @@
       "contact": "Who you gonna call? Ghostbusters!",
       "critterpower": "What's so special about it?",
       "cyberware": "Some cool cyber enhancement",
-	 	"drones": "My Flying Eye",
+      "drones": "My Flying Eye",
       "electronics": "Nerd toy",
       "focus": "Something to stay focussed",
       "lifestyle": "Card board box or suite?",
@@ -645,11 +650,11 @@
       "weaponclose": "Something heavy"
     },
     "npc": {
-    	"subtype": {
-      	"npc": "NPC",
-      	"critter": "Critter",
-      	"spirit": "Spirit",
-      	"sprite": "Sprite"
+      "subtype": {
+        "npc": "NPC",
+        "critter": "Critter",
+        "spirit": "Spirit",
+        "sprite": "Sprite"
       },
       "gruntrules": "Uses grunt rules",
       "mortype": "Magic/Resonance"
@@ -660,10 +665,10 @@
       "max": "Max",
       "mod": "adj"
     },
-	"programtype": {
-		"basic": "Basic programs",
-		"hacking": "Hacking programs"
-	},
+    "programtype": {
+      "basic": "Basic programs",
+      "hacking": "Hacking programs"
+    },
     "program": {
       "baby_monitor": {
         "name": "Baby Monitor",
@@ -776,14 +781,14 @@
           "spells_direct": "Defend direct combat spells",
           "spells_indirect": "Defend indirect combat spells"
         },
-		  "soak": {
-				"drain": "Resist {damage} Drain",
-				"fading":"Resist {damage} Fading",
-				"damage_physical":"Resist {damage} Physical Damage",
-				"damage_stun"    :"Resist {damage} Stun Damage"
-		  }
+        "soak": {
+          "drain": "Resist {damage} Drain",
+          "fading": "Resist {damage} Fading",
+          "damage_physical": "Resist {damage} Physical Damage",
+          "damage_stun": "Resist {damage} Stun Damage"
+        }
       },
-		"apply_damage": "Apply damage",
+      "apply_damage": "Apply damage",
       "ar_0": "Close",
       "ar_1": "Near",
       "ar_2": "Medium",
@@ -791,22 +796,22 @@
       "ar_4": "Extreme",
       "attack": "Attack",
       "attackRating": "Attack Rating",
-	   "bf_type": "Type",
-		"bf": {
-			"narrow_burst": "Narrow Burst",
-			"wide_burst": "Wide Burst"
-		},
-		"button": {
-			"defense": "Roll Defense",
-			"drain"  : "Resist Drain",
-			"soak"   : "Soak damage"
-		},
+      "bf_type": "Type",
+      "bf": {
+        "narrow_burst": "Narrow Burst",
+        "wide_burst": "Wide Burst"
+      },
+      "button": {
+        "defense": "Roll Defense",
+        "drain": "Resist Drain",
+        "soak": "Soak damage"
+      },
       "configure": "Configure your roll",
       "wound-modifier": "Use wound modifier",
       "criticalglitch": "Critical glitch",
       "heal_apply": "Heal",
       "damage": "Damage: ",
-	  "damage_apply": "Apply damage",
+      "damage_apply": "Apply damage",
       "defRating": "Defense: ",
       "edge": {
         "gain_player": "{name} gets {value} Edge",
@@ -821,11 +826,11 @@
       "edgegain_player": " (Player)",
       "exp": "Expertise",
       "explode": "Explode",
-	   "fa_area": "Area",
-		"firemode": "Firemode",
+      "fa_area": "Area",
+      "firemode": "Firemode",
       "failure": "Failure",
       "failedDefense": "You got hit and now it is going to hurt",
-      "failedSoak"   : "You got damage:",
+      "failedSoak": "You got damage:",
       "glitch": "Glitch",
       "hits_bought": "Hits bought",
       "hits": "hits",
@@ -835,7 +840,7 @@
       "nosuccess": "hits, threshold: ",
       "notarget": "No target selected",
       "pool": "Pool",
-		"range": "Distance",
+      "range": "Distance",
       "spec": "Specialization",
       "spell": {
         "ampUp": {
@@ -856,10 +861,10 @@
       "success": "Success",
       "successes": "hits",
       "successfulDefense": "You successfully avoided being hit",
-      "successfulSoak"   : "You managed to ignore the damage",
+      "successfulSoak": "You managed to ignore the damage",
       "target": "Target",
       "threshold": "Threshold",
-		"weapon":  "Define your attack",
+      "weapon": "Define your attack",
       "wilddie": "Use wild die",
       "with": "with"
     },
@@ -930,12 +935,12 @@
         "column.rating": "Lv",
         "title": "Foci"
       },
-      "lifestyles" : {
+      "lifestyles": {
         "add": "Add new lifestyle",
-        "title" : "Lifestyles"
+        "title": "Lifestyles"
       },
-      "gear" : {
-        "title" : "Gear"
+      "gear": {
+        "title": "Gear"
       },
       "matrix_base": {
         "overwatch": "Overwatch"
@@ -959,9 +964,9 @@
         "add": "Add new metamagic",
         "title": "Metamagics"
       },
-		"notes": {
-			"title": "Notes"
-		},
+      "notes": {
+        "title": "Notes"
+      },
       "persona": {
         "distribute": "Distribute",
         "title": "Persona"
@@ -995,33 +1000,33 @@
         "column.range": "Range",
         "title": "Spells"
       },
-		"survival": "Survival",
+      "survival": "Survival",
       "vehicles": {
         "add": "Add new vehicle",
-		   "column": {
-				"handling": "Han",
-				"acc": "Acc",
-				"spdi": "S.Int",
-				"tspd": "Speed",
-				"bod": "Bod",
-				"arm": "Arm",
-				"pil": "Pil",
-				"sen": "Sen",
-				"sea": "Sea",
-                "vtype": "Type"
-			},
+        "column": {
+          "handling": "Han",
+          "acc": "Acc",
+          "spdi": "S.Int",
+          "tspd": "Speed",
+          "bod": "Bod",
+          "arm": "Arm",
+          "pil": "Pil",
+          "sen": "Sen",
+          "sea": "Sea",
+          "vtype": "Type"
+        },
         "title": "Vehicles"
       },
       "vehicleskills": {
-		  		"brain": "Electronic Brain",
-				"operations": "Operations"
-	   },
+        "brain": "Electronic Brain",
+        "operations": "Operations"
+      },
       "weapon": {
         "add": "Add new weapon",
         "close": "Melee Weapons",
         "ranged": "Ranged Weapons",
         "special": "Special Weapons",
-		    "title" : "Weapons"
+        "title": "Weapons"
       }
     },
     "settings": {
@@ -1038,15 +1043,15 @@
         "name": "Default Threshold"
       }
     },
-    "sin" : {
-      "quality" : "Quality",
-      "real_sin" : "Real SIN",
-      "anyone" : "Anyone",
-      "rough_match" : "Rough match",
+    "sin": {
+      "quality": "Quality",
+      "real_sin": "Real SIN",
+      "anyone": "Anyone",
+      "rough_match": "Rough match",
       "good_match": "Good match",
       "superficially_plausible": "Superficially plausible",
-      "highly_plausible" : "High plausible",
-      "second_life" : "Second life"
+      "highly_plausible": "High plausible",
+      "second_life": "Second life"
     },
     "special": {
       "astral": {
@@ -1111,7 +1116,12 @@
         "lockpicking": "Lockpicking",
         "nautical_mechanic": "Nautical Mechanic"
       },
-      "exotic_weapons": {},
+      "exotic_weapons": {
+        "ares_Super_Squirt": "Ares Super Squirt",
+        "parashield_pistolet": "Parashield DART (pistolet)",
+        "parashield_fusil": "Parashield DART (fusil)",
+        "launcher": "Launchers"
+      },
       "firearms": {
         "assault_cannons": "Assault Cannons",
         "holdouts": "Holdouts",
@@ -1172,7 +1182,7 @@
       }
     },
     "spell": {
-		"area": "Area",
+      "area": "Area",
       "category": "Category",
       "category_combat": "Combat",
       "category_detection": "Detection",
@@ -1246,30 +1256,30 @@
       "attribute": "Tradition Attribute"
     },
     "vehicle": {
-	   "action_label": "Handling / Vehicle Attack or Defense",
-	   "mode_label": "Mode",
-		"mode": {
-			"manual": "Manual",
-			"riggedAR": "Jumped in (AR)",
-			"riggedVR": "Jumped in (VR)",
-			"rcc": "via RCC (To Do)",
-			"autonomous": "Autonomous (To Do)"
-		},
-		"skill": {
-			"piloting": "Piloting"
-		},
-		"type": {
-			"groundcraft": "Groundcraft",
-			"watercraft": "Watercraft",
-			"aircraft": "Aircraft"
-		}
+      "action_label": "Handling / Vehicle Attack or Defense",
+      "mode_label": "Mode",
+      "mode": {
+        "manual": "Manual",
+        "riggedAR": "Jumped in (AR)",
+        "riggedVR": "Jumped in (VR)",
+        "rcc": "via RCC (To Do)",
+        "autonomous": "Autonomous (To Do)"
+      },
+      "skill": {
+        "piloting": "Piloting"
+      },
+      "type": {
+        "groundcraft": "Groundcraft",
+        "watercraft": "Watercraft",
+        "aircraft": "Aircraft"
+      }
     },
-	"weapon": {
-		"damage": "DV",
-		"attackRating":"Attack Rtg.",
-		"firemodes": "Modes",
-		"ammo": "Ammunition"
-	}
+    "weapon": {
+      "damage": "DV",
+      "attackRating": "Attack Rtg.",
+      "firemodes": "Modes",
+      "ammo": "Ammunition"
+    }
   },
   "skill": {
     "astral": "Astral",
