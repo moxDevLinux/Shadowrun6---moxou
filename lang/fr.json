@@ -6,22 +6,22 @@
   },
   "ITEM": {
     "TypeAdeptpower": "Pouvoir d'adepte",
-    "TypeComplexform" : "Forme complexe",
-    "TypeContact" : "Contact",
+    "TypeComplexform": "Forme complexe",
+    "TypeContact": "Contact",
     "TypeEcho": "Écho",
     "TypeGear": "Équipement",
-    "TypeLifestyle" : "Style de vie",
+    "TypeLifestyle": "Style de vie",
     "TypeMartialartstyle": "Style d'arts martiaux",
     "TypeMartialarttech": "Technique d'arts martiaux",
     "TypeMetamagic": "Métamagie",
     "TypeQuality": "Trait",
     "TypeRitual": "Rituel",
-    "TypeSin" : "SIN",
+    "TypeSin": "SIN",
     "TypeSkill": "Langue/Connaissance",
     "TypeSpell": "Sort",
     "TypeWeapon": "Arme"
   },
-  "QUALITY_CATEGORIES":{
+  "QUALITY_CATEGORIES": {
     "ADVANTAGE": "Avantage",
     "DISADVANTAGE": "Désavantage"
   },
@@ -92,6 +92,7 @@
       "activation_minor": "Mineure",
       "activation_passive": "Passive",
       "cost": "Coût",
+      "level": "Niv",
       "haslevel": "Avec niveau"
     },
     "attack_rating": {
@@ -106,10 +107,10 @@
       "fading": "Technodrain",
       "none": "Aucun",
       "attribute": "Attribut",
-      "oppAttr1" : "Attr. opposé 1",
-      "oppAttr2" : "Attr. opposé 2",
+      "oppAttr1": "Attr. opposé 1",
+      "oppAttr2": "Attr. opposé 2",
       "skill": "Compétence",
-      "threshold" : "Seuil"
+      "threshold": "Seuil"
     },
     "contact": {
       "rating_short": "Rés",
@@ -227,7 +228,7 @@
         "GENOM_CHANGES": "Améliorations géniques",
         "EXOTIC_METAGENETICS": "Metagénetique exotique",
         "MICRO_ENVIRONADAPT": "Adaptation micro-environnementale",
-        "COMPLEMENTAL_GENETICS":"Génétique complémentaire",
+        "COMPLEMENTAL_GENETICS": "Génétique complémentaire",
         "GRAPPLE_GUN": "Pistolet grappin",
         "GRAV": "Véhicules à conduite grav.",
         "GRENADES": "Grenades",
@@ -349,7 +350,11 @@
         "AMMO_DMSO": "DMSO-Gelpack",
         "AMMO_MACHINE_GUN": "Mitrailleuses",
         "AMMO_INJECTION_BOLT": "Carreau à injection",
-        "AMMO_BOLT": "Carreau"
+        "AMMO_BOLT": "Carreau",
+        "TOP": "Dessus",
+        "UNDER": "Dessous",
+        "TOP_&_UNDER": "Dessus ou dessous",
+        "BARREL": "Canon"
       }
     },
     "initiative": {
@@ -369,7 +374,8 @@
       "category": "Catégorie",
       "damage": "Dégâts",
       "defencerating": "Score Déf",
-      "description": "Description",
+      "description": "En deux mots",
+      "indetail": "En détail",
       "essence": "Essence",
       "feature": "Fonctions",
       "firemode": {
@@ -382,7 +388,7 @@
         "category": {
           "grappling": "Lutte",
           "mobility": "Mobilité",
-          "ranged"  : "À distance",
+          "ranged": "À distance",
           "striking": "Frappe",
           "weapon": "Arme"
         }
@@ -393,7 +399,7 @@
       "mode_sa": "SA",
       "mode_ss": "CC",
       "natural": "Naturel",
-      "physical_damage" : "P",
+      "physical_damage": "P",
       "price": "Prix",
       "skill": "Compétence",
       "skillspec": "Spécialisation",
@@ -459,7 +465,7 @@
       "damage_short": "Dég",
       "defense_rating": "Score Défensif",
       "delete": "Effacer",
-      "devRating" : "Ind. d'app.",
+      "devRating": "Ind. d'app.",
       "dice": "Dé",
       "edit": "Éditer",
       "expertise": "Expertise",
@@ -483,7 +489,7 @@
       "pool": "Réserve",
       "poolmod": "Réserve de dés",
       "programs.short": "P",
-      "progSlots" : "Empl. prog.",
+      "progSlots": "Empl. prog.",
       "rating1": "Indice 1",
       "rating2": "Indice 2",
       "rating3": "Indice 3",
@@ -493,7 +499,7 @@
       "wilddie": "Dé Libre"
     },
     "lifestyle": {
-      "cost" : "Coût",
+      "cost": "Coût",
       "paid": "Payé",
       "type": "Type",
       "sin": "SIN lié",
@@ -558,7 +564,7 @@
       "biology": "Biohazard",
       "bodyware": "Une augmentation cool",
       "chemicals": "De la bonne",
-      "complexform" : "C'est complexe à quel point ?",
+      "complexform": "C'est complexe à quel point ?",
       "contact": "Il s'appelle Juste Leblanc.",
       "cyberware": "De l'amélioration cyber cool",
       "electronics": "Un jouet pour nerd",
@@ -674,8 +680,10 @@
     },
     "qualityedit": {
       "category": "Catégorie",
-      "description": "Description",
-      "explain": "Explication",
+      "description": "Effet en jeu",
+      "indetail": "En détail",
+      "explain": "Option",
+      "price": "Cout/Bonus en karma",
       "name": "Nom",
       "new": "Nouveau"
     },
@@ -760,6 +768,7 @@
       "adeptpowers": {
         "add": "Ajouter un pouvoir",
         "column.points": "PP",
+        "column.level": "Nvx",
         "title": "Pouvoirs d'adepte"
       },
       "ammo": "Munitions",
@@ -815,9 +824,9 @@
         "column.rating": "Puiss.",
         "title": "Focus"
       },
-      "lifestyles" : {
+      "lifestyles": {
         "add": "Ajouter un style de vie",
-        "title" : "Styles de vie"
+        "title": "Styles de vie"
       },
       "matrix_base": {
         "overwatch": "Score de Surveillance"
@@ -906,15 +915,15 @@
         "name": "Atout max par tour"
       }
     },
-    "sin" : {
-      "quality" : "Qualité",
-      "real_sin" : "Vrai SIN",
-      "anyone" : "Au hasard",
-      "rough_match" : "Léger raccord",
+    "sin": {
+      "quality": "Qualité",
+      "real_sin": "Vrai SIN",
+      "anyone": "Au hasard",
+      "rough_match": "Léger raccord",
       "good_match": "Bonne corrélation",
       "superficially_plausible": "Plutôt plausible",
-      "highly_plausible" : "Hautement plausible",
-      "second_life" : "Seconde vie"
+      "highly_plausible": "Hautement plausible",
+      "second_life": "Seconde vie"
     },
     "special": {
       "astral": {
@@ -978,7 +987,12 @@
         "lockpicking": "Crochetage",
         "nautical_mechanic": "Mécanique nautique"
       },
-      "exotic_weapons": {},
+      "exotic_weapons": {
+        "ares_Super_Squirt": "Ares Super Squirt",
+        "parashield_pistolet": "Parashield DART (pistolet)",
+        "parashield_fusil": "Parashield DART (fusil)",
+        "launcher": "Lanceurs"
+      },
       "firearms": {
         "assault_cannons": "Canons d'assaut",
         "holdouts": "Pistolets de poche",
@@ -999,11 +1013,11 @@
       },
       "outdoors": {
         "navigation": "Orientation",
-        "survival": "Survie",
-        "tracking_desert": "Environnement (déserts)",
-        "tracking_other": "Environnement (autres)",
-        "tracking_urban": "Environnement (urbains)",
-        "tracking_woods": "Environnement (forêts)"
+        "survival": "pistage",
+        "tracking_desert": "Survie déserts",
+        "tracking_other": "Survie autres",
+        "tracking_urban": "Survie urbains",
+        "tracking_woods": "Survie forêts"
       },
       "perception": {
         "aural": "Auditive",
@@ -1112,7 +1126,7 @@
         "groundcraft": "Aérien",
         "watercraft": "Aquatique",
         "aircraft": "Terrestre"
-      }      
+      }
     }
   },
   "skill": {
