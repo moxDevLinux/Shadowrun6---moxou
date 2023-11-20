@@ -1,40 +1,40 @@
 {
-  "id": "shadowrun6-eden",
+  "id": "shadowrun6-moxou",
   "title": "Shadowrun 6",
-  "description": "RPGFramework Eden implementation for Shadowrun 6",
+  "description": "RPGFramework moxou/eden implementation for Shadowrun 6",
   "version": "$VERSION",
-  "author": "Stefan (taranion#5388) & Anja Prelle",
+  "author": "Stefan (taranion#5388) & Anja Prelle & moxou",
   "authors": [
-	{
-    "name": "Stefan Prelle",
-    "email": "stefan@rpgframework.de",
-    "discord": "taranion#5388",
-    "patreon": "rpgframework",
-    "reddit": "u/taranion"
-   },
-	{
-    "name": "Anja Prelle",
-    "email": "anja@rpgframework.de"
-   }
+    {
+      "name": "Stefan Prelle",
+      "email": "stefan@rpgframework.de",
+      "discord": "taranion#5388",
+      "patreon": "rpgframework",
+      "reddit": "u/taranion"
+    },
+    {
+      "name": "Anja Prelle",
+      "email": "anja@rpgframework.de"
+    },
+    {
+      "name": "moxou",
+      "email": "moxdevlinux@gmail.com"
+    }
   ],
   "compatibility": {
-	  "minimum": 10,
-	  "verified": "11",
-	  "maximum": 11
+    "minimum": 10,
+    "verified": "11",
+    "maximum": 11
   },
-  "scripts": [
-  ],
+  "scripts": [],
   "esmodules": [
     "module/Shadowrun6.js"
   ],
   "styles": [
     "styles/shadowrun6.css"
   ],
-  "packs": [
-  ],
-  "relationships": [
-
-  ],
+  "packs": [],
+  "relationships": [],
   "languages": [
     {
       "lang": "de",
@@ -51,76 +51,76 @@
       "name": "Français",
       "path": "lang/fr.json"
     },
-  {
-    "lang": "ca",
-    "name": "Català",
-    "path": "lang/ca-magicl10n.json"
-  },
-  {
-    "lang": "ko",
-    "name": "한국어 (Korean)",
-    "path": "lang/ko-magicl10n.json"
-  },
-  {
-    "lang": "cn",
-    "name": "中文 (Chinese)",
-    "path": "lang/cn-magicl10n.json"
-  },
-  {
-    "lang": "zh-tw",
-    "name": "Chinese (Traditional)",
-    "path": "lang/zh-tw-magicl10n.json"
-  },
-  {
-    "lang": "fr",
-    "name": "Français",
-    "path": "lang/fr-magicl10n.json"
-  },
-  {
-    "lang": "ja",
-    "name": "日本語 (Japanese)",
-    "path": "lang/ja-magicl10n.json"
-  },
-  {
-    "lang": "pt-BR",
-    "name": "Português (Brasil)",
-    "path": "lang/pt-BR-magicl10n.json"
-  },
-  {
-    "lang": "ru",
-    "name": "русский (Russian)",
-    "path": "lang/ru-magicl10n.json"
-  },
-  {
-    "lang": "cs",
-    "name": "Čeština",
-    "path": "lang/cs-magicl10n.json"
-  },
-  {
-    "lang": "it",
-    "name": "Italian",
-    "path": "lang/it-magicl10n.json"
-  },
-  {
-    "lang": "ar",
-    "name": "Arabic",
-    "path": "lang/ar-magicl10n.json"
-  },
-  {
-    "lang": "es",
-    "name": "Español",
-    "path": "lang/es-magicl10n.json"
-  },
-  {
-    "lang": "sv",
-    "name": "Swedish",
-    "path": "lang/sv-magicl10n.json"
-  },
-  {
-    "lang": "pl",
-    "name": "Polski",
-    "path": "lang/pl-magicl10n.json"
-  }
+    {
+      "lang": "ca",
+      "name": "Català",
+      "path": "lang/ca-magicl10n.json"
+    },
+    {
+      "lang": "ko",
+      "name": "한국어 (Korean)",
+      "path": "lang/ko-magicl10n.json"
+    },
+    {
+      "lang": "cn",
+      "name": "中文 (Chinese)",
+      "path": "lang/cn-magicl10n.json"
+    },
+    {
+      "lang": "zh-tw",
+      "name": "Chinese (Traditional)",
+      "path": "lang/zh-tw-magicl10n.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr-magicl10n.json"
+    },
+    {
+      "lang": "ja",
+      "name": "日本語 (Japanese)",
+      "path": "lang/ja-magicl10n.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR-magicl10n.json"
+    },
+    {
+      "lang": "ru",
+      "name": "русский (Russian)",
+      "path": "lang/ru-magicl10n.json"
+    },
+    {
+      "lang": "cs",
+      "name": "Čeština",
+      "path": "lang/cs-magicl10n.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italian",
+      "path": "lang/it-magicl10n.json"
+    },
+    {
+      "lang": "ar",
+      "name": "Arabic",
+      "path": "lang/ar-magicl10n.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es-magicl10n.json"
+    },
+    {
+      "lang": "sv",
+      "name": "Swedish",
+      "path": "lang/sv-magicl10n.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl-magicl10n.json"
+    }
   ],
   "socket": false,
   "initiative": "1d6",
