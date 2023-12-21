@@ -3,8 +3,7 @@
   "title": "Shadowrun 6",
   "description": "RPGFramework moxou & Eden implementation for Shadowrun 6",
   "author": "Stefan u. Anja Prelle u moxou",
-  "authors": [
-    {
+  "authors": [{
       "name": "Stefan Prelle",
       "email": "stefan@rpgframework.de",
       "discord": "taranion#5388",
@@ -20,7 +19,7 @@
       "email": "moxdevlinux@gmail.com"
     }
   ],
-  "url": "https://bitbucket.org/rpgframework-cloud/shadowrun6-eden/",
+  "url": "https://bitbucket.org/rpgframework-cloud/shadowrun6-moxou/",
   "flags": {},
   "version": "0.0.1",
   "compatibility": {
@@ -35,8 +34,7 @@
   "styles": [
     "styles/shadowrun6.css"
   ],
-  "languages": [
-    {
+  "languages": [{
       "lang": "de",
       "name": "Deutsch",
       "path": "lang/de.json"
@@ -121,8 +119,8 @@
   "system": [],
   "relationships": [],
   "socket": false,
-  "manifest": "https://bitbucket.org/rpgframework-cloud/shadowrun6-eden/raw/master/system.json",
-  "download": "https://bitbucket.org/rpgframework-cloud/shadowrun6-eden/get/master.zip",
+  "manifest": "https://bitbucket.org/rpgframework-cloud/shadowrun6-moxou/raw/master/system.json",
+  "download": "https://bitbucket.org/rpgframework-cloud/shadowrun6-moxou/get/master.zip",
   "protected": false,
   "initiative": "1d6",
   "gridDistance": 1.5,

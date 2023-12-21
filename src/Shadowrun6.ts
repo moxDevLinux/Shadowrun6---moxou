@@ -26,19 +26,19 @@ import Importer from "./util/Importer.js";
 const diceIconSelector: string = "#chat-controls .chat-control-icon .fa-dice-d20";
 
 function getData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
-function getRoll(obj: ChatMessage): Roll|null {
-	if ( (game as any).release.generation >= 10) return (obj as any).rolls[0];
+function getRoll(obj: ChatMessage): Roll | null {
+	if ((game as any).release.generation >= 10) return (obj as any).rolls[0];
 	return obj.roll;
 }
 function getSystemData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 function getActorData(obj: any): Shadowrun6Actor {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 
@@ -58,18 +58,18 @@ Hooks.once("init", async function () {
 	CONFIG.ui.combat = Shadowrun6CombatTracker;
 	CONFIG.Actor.documentClass = Shadowrun6Actor;
 	CONFIG.Dice.rolls = [SR6Roll];
-//	(CONFIG as any).compatibility.mode = 0;
+	//	(CONFIG as any).compatibility.mode = 0;
 	getData(game).initiative = "@initiative.physical.pool + (@initiative.physical.dicePool)d6";
 
 	registerSystemSettings();
 
 	// Register sheet application classes
 	Actors.unregisterSheet("core", ActorSheet);
-	Actors.registerSheet("shadowrun6-eden", Shadowrun6ActorSheetPC, { types: ["Player"], makeDefault: true });
-	Actors.registerSheet("shadowrun6-eden", Shadowrun6ActorSheetNPC, { types: ["NPC","Critter","Spirit"], makeDefault: true });
-	Actors.registerSheet("shadowrun6-eden", Shadowrun6ActorSheetVehicle, { types: ["Vehicle"], makeDefault: true });
+	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetPC, { types: ["Player"], makeDefault: true });
+	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetNPC, { types: ["NPC", "Critter", "Spirit"], makeDefault: true });
+	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetVehicle, { types: ["Vehicle"], makeDefault: true });
 
-	Items.registerSheet("shadowrun6-eden", SR6ItemSheet, {
+	Items.registerSheet("shadowrun6-moxou", SR6ItemSheet, {
 		types: [
 			"gear",
 			"martialarttech",
@@ -96,37 +96,37 @@ Hooks.once("init", async function () {
 
 	// https://discord.com/channels/732325252788387980/915388333125955645/1001455991151394836
 	Hooks.once('initREMOVEME', () => {
-    if ( (game as any).release.generation >= 10) return;
+		if ((game as any).release.generation >= 10) return;
 
-    Object.defineProperties((game as Game).system, {
-        version   : { get: function () { return this.data.version; } },
-        initiative: { get: function () { return this.data.initiative; } }
-    });
+		Object.defineProperties((game as Game).system, {
+			version: { get: function () { return this.data.version; } },
+			initiative: { get: function () { return this.data.initiative; } }
+		});
 
-    Object.defineProperties(TokenDocument.prototype, {
-        hidden   : { get: function () { return this.data.hidden; } },
-        actorData: { get: function () { return this.data.actorData; } },
-        actorLink: { get: function () { return this.data.actorLink; } }
-    });
+		Object.defineProperties(TokenDocument.prototype, {
+			hidden: { get: function () { return this.data.hidden; } },
+			actorData: { get: function () { return this.data.actorData; } },
+			actorLink: { get: function () { return this.data.actorLink; } }
+		});
 
-    Object.defineProperties(Actor.prototype, {
-        system        : { get: function () { return this.data.data; } },
-        prototypeToken: { get: function () { return this.data.token; } },
-        ownership     : { get: function () { return this.data.permission; } },
-    });
+		Object.defineProperties(Actor.prototype, {
+			system: { get: function () { return this.data.data; } },
+			prototypeToken: { get: function () { return this.data.token; } },
+			ownership: { get: function () { return this.data.permission; } },
+		});
 
-    Object.defineProperties(Item.prototype, {
-        system: { get: function () { return this.data.data; } },
-    });
+		Object.defineProperties(Item.prototype, {
+			system: { get: function () { return this.data.data; } },
+		});
 
-    globalThis.isEmpty = isObjectEmpty;
-});
+		globalThis.isEmpty = isObjectEmpty;
+	});
 
 
 	Hooks.once("diceSoNiceReady", (dice3d) => {
-		dice3d.addSystem({ id: "SR6", name: "Shadowrun 6 - Eden" }, "default");
+		dice3d.addSystem({ id: "SR6", name: "Shadowrun 6 - moxou" }, "default");
 		dice3d.addDicePreset({
-			type  : "d6",
+			type: "d6",
 			labels: [
 				"",
 				"2",
@@ -134,40 +134,40 @@ Hooks.once("init", async function () {
 				"4",
 				"5",
 				"6"
-				//        "systems/shadowrun6-eden/icons/SR6_D6_5_o.png",
-				//        "systems/shadowrun6-eden/icons/SR6_D6_6_o.png"
+				//        "systems/shadowrun6-moxou/icons/SR6_D6_5_o.png",
+				//        "systems/shadowrun6-moxou/icons/SR6_D6_6_o.png"
 			],
 			bumpMaps: [
 				,
 				,
 				,
 				,
-				,//        "systems/shadowrun6-eden/icons/SR6_D6_5_o.png",
-				//        "systems/shadowrun6-eden/icons/SR6_D6_6_o.png"
+				,//        "systems/shadowrun6-moxou/icons/SR6_D6_5_o.png",
+				//        "systems/shadowrun6-moxou/icons/SR6_D6_6_o.png"
 			],
 			colorset: "SR6_dark",
-			system  : "SR6"
+			system: "SR6"
 		});
 		dice3d.addDicePreset({
-			type    : "dc",
-			labels  : ["systems/shadowrun6-eden/images/EdgeToken.png", "systems/shadowrun6-eden/images/EdgeToken.png"],
+			type: "dc",
+			labels: ["systems/shadowrun6-moxou/images/EdgeToken.png", "systems/shadowrun6-moxou/images/EdgeToken.png"],
 			bumpMaps: [,],
 			colorset: "SR6_dark",
-			system  : "SR6"
+			system: "SR6"
 		});
 		dice3d.addColorset(
 			{
-				name       : "SR6_light",
+				name: "SR6_light",
 				description: "SR 6 Pink",
-				category   : "SR6",
-				foreground : "#470146",
-				background : "#f7c8f6",
-				outline    : "#2e2b2e",
-				texture    : "none",
-				edge       : "#9F8003",
-				material   : "glass",
-				font       : "Arial Black",
-				fontScale  : {
+				category: "SR6",
+				foreground: "#470146",
+				background: "#f7c8f6",
+				outline: "#2e2b2e",
+				texture: "none",
+				edge: "#9F8003",
+				material: "glass",
+				font: "Arial Black",
+				fontScale: {
 					d6: 1.1,
 					df: 2.5
 				},
@@ -178,17 +178,17 @@ Hooks.once("init", async function () {
 
 		dice3d.addColorset(
 			{
-				name       : "SR6_dark",
+				name: "SR6_dark",
 				description: "SR 6 Pink Dark",
-				category   : "SR6",
-				foreground : "#470146",
-				background : "#000000",
-				outline    : "#2e2b2e",
-				texture    : "none",
-				edge       : "#470146",
-				material   : "metal",
-				font       : "Arial Black",
-				fontScale  : {
+				category: "SR6",
+				foreground: "#470146",
+				background: "#000000",
+				outline: "#2e2b2e",
+				texture: "none",
+				edge: "#470146",
+				material: "metal",
+				font: "Arial Black",
+				fontScale: {
 					d6: 1.1,
 					df: 2.5
 				},
@@ -202,22 +202,22 @@ Hooks.once("init", async function () {
 	 * Change default icon
 	 */
 	function onCreateItem(item, options, userId) {
-		console.log("onCreateItem  " + item.data.type);
-		let actor  : Shadowrun6Actor = getActorData(item);
+		let actor: Shadowrun6Actor = getActorData(item);
+		let system: GenesisData = getSystemData(item) as GenesisData;
+		console.log("onCreateItem  " + item.system.type + " with ", options);
 		if (actor.img == "icons/svg/item-bag.svg" && CONFIG.SR6.icons[actor.type]) {
 			(actor as any).img = CONFIG.SR6.icons[actor.type].default;
 			item.updateSource({ ["img"]: actor.img });
 		}
 
 		// If it is a compendium item, copy over text description
-		let system : GenesisData = getSystemData(item) as GenesisData;
-			let key: string = actor.type + "." + system.genesisID;
-			console.log("Item with genesisID - check for " + key);
-			if (!(game as Game).i18n.localize(key + "name").startsWith(key)) {
-				system.description = (game as Game).i18n.localize(key + ".desc");
-				(actor as any).name = (game as Game).i18n.localize(key + ".name");
-				item.updateSource({ ["description"]: system.description });
-			}
+		let key: string = actor.type + "." + system.genesisID;
+		console.log("Item with genesisID - check for " + key);
+		if (!(game as Game).i18n.localize(key + "name").startsWith(key)) {
+			system.description = (game as Game).i18n.localize(key + ".desc");
+			(actor as any).name = (game as Game).i18n.localize(key + ".name");
+			item.updateSource({ ["description"]: system.description });
+		}
 
 		console.log("onCreateItem: " + actor.img);
 	}
@@ -262,39 +262,39 @@ Hooks.once("init", async function () {
 	Hooks.on("hotbarDrop", async (bar, data, slot) => {
 		console.log("DROP to Hotbar");
 		let macroData = {
-			name   : "",
-			type   : "script",
-			img    : "icons/svg/dice-target.svg",
+			name: "",
+			type: "script",
+			img: "icons/svg/dice-target.svg",
 			command: ""
 		};
 
 		/*    // For items, memorize the skill check
-    if (data.type === "Item") {
-      console.log("Item dropped " + data);
-      if (data.id) {
-        data.data = game.items.get(data.id).data;
-      }
-      if (data.data) {
-        macroData.name = data.data.name;
-        macroData.img = data.data.img;
+	if (data.type === "Item") {
+	  console.log("Item dropped " + data);
+	  if (data.id) {
+		data.data = game.items.get(data.id).data;
+	  }
+	  if (data.data) {
+		macroData.name = data.data.name;
+		macroData.img = data.data.img;
 
-        let actorId = data.actorId || "";
+		let actorId = data.actorId || "";
 
-        if (actorId && game.user.isGM) {
-          const actorName = game.actors.get(actorId)?.data.name;
-          macroData.name += ` (${actorName})`;
-        }
+		if (actorId && game.user.isGM) {
+		  const actorName = game.actors.get(actorId)?.data.name;
+		  macroData.name += ` (${actorName})`;
+		}
 
-        macroData.command = `game.shadowrun6.itemCheck("${data.data.type}","${data.data.name}","${actorId}","${data.data.id}")`;
+		macroData.command = `game.shadowrun6.itemCheck("${data.data.type}","${data.data.name}","${actorId}","${data.data.id}")`;
 
-      }
-    };
+	  }
+	};
 
-    if (macroData.command != "" && macroData.name != "") {
-      let macro = await Macro.create(macroData, { displaySheet: false });
+	if (macroData.command != "" && macroData.name != "") {
+	  let macro = await Macro.create(macroData, { displaySheet: false });
 
-      game.user.assignHotbarMacro(macro, slot);
-    }*/
+	  game.user.assignHotbarMacro(macro, slot);
+	}*/
 	});
 
 	Hooks.on("renderChatMessage", function (app: ChatMessage, html: JQuery, data: any) {
@@ -314,21 +314,21 @@ Hooks.once("init", async function () {
 		html.find(".rollable").click((event) => {
 			//      const type =  $(event.currentTarget).closestData("roll-type");
 			console.log("ENTER renderChatMessage.rollable.click -> event.currentTarget = ", event.currentTarget);
-			const dataset : DOMStringMap = event.currentTarget.dataset;
+			const dataset: DOMStringMap = event.currentTarget.dataset;
 
-			let actorId : string|undefined = dataset["actorid"];
-			let sceneId : string|undefined = dataset["sceneid"];
-			let tokenId : string|undefined = dataset["targetid"];
+			let actorId: string | undefined = dataset["actorid"];
+			let sceneId: string | undefined = dataset["sceneid"];
+			let tokenId: string | undefined = dataset["targetid"];
 
-			let actor : Actor | undefined ;
-			let token : Token | undefined;
+			let actor: Actor | undefined;
+			let token: Token | undefined;
 
 			// If scene and token ID is given, resolve token
 			if (sceneId && tokenId) {
-				let scene : Scene = (game as Game).scenes![sceneId];
+				let scene: Scene = (game as Game).scenes![sceneId];
 				if (scene) {
-					let t1 : TokenDocument|undefined = scene.tokens.get(tokenId);
-					console.log("Token ",t1);
+					let t1: TokenDocument | undefined = scene.tokens.get(tokenId);
+					console.log("Token ", t1);
 				}
 			}
 
@@ -337,18 +337,18 @@ Hooks.once("init", async function () {
 			if (actorId) {
 				actor = (game as Game).actors!.get(actorId);
 			}
-/*			var targetId = ($(event.currentTarget) as any).closestData("targetid");
-			/*
-			 * If no target was memorized in the button, try to find one from the
-			 * actor associated with the player
-			 */
+			/*			var targetId = ($(event.currentTarget) as any).closestData("targetid");
+						/*
+						 * If no target was memorized in the button, try to find one from the
+						 * actor associated with the player
+						 */
 			if (!actor) {
 				console.log("No target ID found - use characters actor if possible");
 				(game as Game).actors!.forEach((item) => {
 					if (item.hasPlayerOwner) actor = item;
 				});
 			}
-			console.log("Actor " , actor);
+			console.log("Actor ", actor);
 			if (actor) {
 				if (!actor.isOwner) {
 					console.log("Current user not owner of actor ", actor.data.name);
@@ -390,16 +390,16 @@ Hooks.once("init", async function () {
 					break;
 			}
 			/*
-      if (rollType === RollType.Defense) {
- 			const actor = (game as Game).actors!.get(targetId);
-      	console.log("Target actor ",actor);
+	  if (rollType === RollType.Defense) {
+				const actor = (game as Game).actors!.get(targetId);
+			console.log("Target actor ",actor);
 			console.log("TODO: call rollDefense with threshold "+threshold);
 			if (actor) {
 				let defendWith : Defense = (dataset.defendWith! as Defense);
 				let damage     : number  = (dataset.damage)?parseInt(dataset.damage):0;
 				(actor as Shadowrun6Actor).rollDefense(defendWith, threshold, damage);
 			}
-      }
+	  }
 		*/
 		});
 		html.on("click", ".chat-edge", (event) => {
@@ -452,7 +452,7 @@ Hooks.once("init", async function () {
 	});
 
 	Hooks.on("preUpdateCombat", (combat, createData, options, userId) => {
-		let realCombat : any = getData(combat);
+		let realCombat: any = getData(combat);
 		console.log("Combat with turn " + createData.turn + " in round " + realCombat.round);
 	});
 
@@ -464,9 +464,9 @@ Hooks.once("init", async function () {
 		class FictionalGameSystemSpeedProvider extends SpeedProvider {
 			get colors() {
 				return [
-					{ id: "walk", default: 0x00ff00, name: "shadowrun6-eden.speeds.walk" },
-					{ id: "dash", default: 0xffff00, name: "shadowrun6-eden.speeds.dash" },
-					{ id: "run", default: 0xff8000, name: "shadowrun6-eden.speeds.run" }
+					{ id: "walk", default: 0x00ff00, name: "shadowrun6-moxou.speeds.walk" },
+					{ id: "dash", default: 0xffff00, name: "shadowrun6-moxou.speeds.dash" },
+					{ id: "run", default: 0xff8000, name: "shadowrun6-moxou.speeds.run" }
 				];
 			}
 
@@ -489,7 +489,7 @@ Hooks.once("init", async function () {
 		}
 
 		// @ts-ignore
-		dragRuler.registerSystem("shadowrun6-eden", FictionalGameSystemSpeedProvider);
+		dragRuler.registerSystem("shadowrun6-moxou", FictionalGameSystemSpeedProvider);
 	});
 });
 

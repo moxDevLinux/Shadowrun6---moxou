@@ -18,7 +18,7 @@ function isSpell(obj: any): obj is Spell {
 }
 function getSystemData(obj: any): any {
 	if (!obj) return null;
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 
@@ -58,7 +58,10 @@ async function _showRollDialog(data: PreparedRoll): Promise<SR6Roll> {
 			data.edge = data.actor ? lifeform.edge.value : 0;
 		}
 		if (!data.calcPool || data.calcPool == 0) {
-			data.calcPool = data.pool - data.actor.getWoundModifier();
+			data.calcPool = data.pool;
+			if (data.actor) {
+				data.calcPool -= data.actor.getWoundModifier();
+			}
 		}
 
 		/*
@@ -76,11 +79,11 @@ async function _showRollDialog(data: PreparedRoll): Promise<SR6Roll> {
 		}
 
 		// Render modal dialog
-		let template: string = "systems/shadowrun6-eden/templates/chat/configurable-roll-dialog.html";
+		let template: string = "systems/shadowrun6-moxou/templates/chat/configurable-roll-dialog.html";
 		let dialogData = {
 			//checkText: data.extraText,
-			data     : data,
-			CONFIG   : CONFIG,
+			data: data,
+			CONFIG: CONFIG,
 			rollModes: CONFIG.Dice.rollModes
 		};
 		const html: string = await renderTemplate(template, dialogData);
@@ -99,21 +102,21 @@ async function _showRollDialog(data: PreparedRoll): Promise<SR6Roll> {
 			if (data.allowBuyHits) {
 				buttons = {
 					bought: {
-						icon    : '<i class="fas fa-dollar-sign"></i>',
-						label   : (game as Game).i18n.localize("shadowrun6.rollType.bought"),
+						icon: '<i class="fas fa-dollar-sign"></i>',
+						label: (game as Game).i18n.localize("shadowrun6.rollType.bought"),
 						callback: (html) => resolve(_dialogClosed(ReallyRoll.AUTOHITS, html[0].querySelector("form"), data, dia2, dialogResult))
 					},
 					normal: {
-						icon    : '<i class="fas fa-dice-six"></i>',
-						label   : (game as Game).i18n.localize("shadowrun6.rollType.normal"),
+						icon: '<i class="fas fa-dice-six"></i>',
+						label: (game as Game).i18n.localize("shadowrun6.rollType.normal"),
 						callback: (html) => resolve(_dialogClosed(ReallyRoll.ROLL, html[0].querySelector("form"), data, dia2, dialogResult))
 					}
 				};
 			} else {
 				buttons = {
 					normal: {
-						icon    : '<i class="fas fa-dice-six"></i>',
-						label   : (game as Game).i18n.localize("shadowrun6.rollType.normal"),
+						icon: '<i class="fas fa-dice-six"></i>',
+						label: (game as Game).i18n.localize("shadowrun6.rollType.normal"),
 						callback: (html) => {
 							console.log("doRoll: in callback");
 							resolve(_dialogClosed(ReallyRoll.ROLL, html[0].querySelector("form"), data, dia2, dialogResult));
@@ -123,9 +126,9 @@ async function _showRollDialog(data: PreparedRoll): Promise<SR6Roll> {
 				};
 			}
 			const diagData: Dialog.Data = {
-				title  : title,
+				title: title,
 				content: html,
-				render : (html) => {
+				render: (html) => {
 					console.log("Register interactivity in the rendered dialog", this);
 					// Set roll mode to default from chat window
 					let chatRollMode: string = $(".roll-type-select").val() as string;
@@ -136,11 +139,11 @@ async function _showRollDialog(data: PreparedRoll): Promise<SR6Roll> {
 			};
 
 			const myDialogOptions = {
-				width       : 520,
-				jQuery      : true,
-				resizeable  : true,
-				actor       : data.actor,
-				prepared    : data,
+				width: 520,
+				jQuery: true,
+				resizeable: true,
+				actor: data.actor,
+				prepared: data,
 				dialogResult: dialogResult
 			};
 			console.log("create RollDialog");
@@ -149,7 +152,7 @@ async function _showRollDialog(data: PreparedRoll): Promise<SR6Roll> {
 			console.log("showRollDialog after render()");
 		});
 
-		return new Promise((resolve) => {});
+		return new Promise((resolve) => { });
 	} finally {
 		console.log("LEAVE _showRollDialog");
 	}
@@ -178,7 +181,7 @@ function _dialogClosed(type: ReallyRoll, form: HTMLFormElement, prepared: Prepar
 
 	try {
 		if (!dialog.modifier) dialog.modifier = 0;
-		let system : any = getSystemData(prepared.actor);
+		let system: any = getSystemData(prepared.actor);
 		if (prepared.actor && isLifeform(system)) {
 			// Pay eventuallly selected edge boost
 			if (configured.edgeBoost && configured.edgeBoost != "none") {
@@ -208,7 +211,7 @@ function _dialogClosed(type: ReallyRoll, form: HTMLFormElement, prepared: Prepar
 
 		if (form) {
 			console.log("---prepared.targets = ", (prepared as any).targets);
-			console.log("---configured.targetIds = ",configured.targetIds);
+			console.log("---configured.targetIds = ", configured.targetIds);
 			configured.threshold = form.threshold ? parseInt(form.threshold.value) : 0;
 			configured.useWildDie = form.useWildDie.checked ? 1 : 0;
 			configured.explode = form.explode.checked;
@@ -221,13 +224,13 @@ function _dialogClosed(type: ReallyRoll, form: HTMLFormElement, prepared: Prepar
 
 			let base: number = configured.pool ? configured.pool : 0;
 			let mod: number = dialog.modifier ? dialog.modifier : 0;
-			let woundMod: number = form.useWoundModifier.checked ? prepared.actor.getWoundModifier() : 0;
+			let woundMod: number = (form.useWoundModifier.checked && prepared.actor) ? prepared.actor.getWoundModifier() : 0;
 
 			configured.pool = +base + +mod + -woundMod;
 			prepared.calcPool = configured.pool;
 
 			/* Check for a negative pool! Set to 0 if negative so the universe doesn't explode */
-			if(configured.pool < 0) configured.pool = 0;
+			if (configured.pool < 0) configured.pool = 0;
 
 			/* Build the roll formula */
 			formula = createFormula(configured, dialog);
@@ -251,6 +254,7 @@ function createFormula(roll: ConfiguredRoll, dialog: RollDialog): string {
 	console.log("createFormula-------------------------------");
 	console.log("--pool = " + roll.pool);
 	console.log("--modifier = " + dialog.modifier);
+	dialog.modifier = 0;
 
 	let regular: number = +(roll.pool ? roll.pool : 0) + (dialog.modifier ? dialog.modifier : 0);
 	let wild: number = 0;

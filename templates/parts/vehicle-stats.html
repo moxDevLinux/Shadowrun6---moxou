@@ -1,0 +1,42 @@
+<table class="vehicle-stats-table" style="width: 20em">
+	<thead>
+		<tr>
+			<th colspan="3" style="align: center">{{ localize
+				'shadowrun6.section.vehicles.column.handling' }}</th>
+			<th colspan="3">{{ localize 'shadowrun6.section.vehicles.column.acc' }}</th>
+			<th colspan="3">{{ localize 'shadowrun6.section.vehicles.column.spdi' }}</th>
+			<th>{{ localize 'shadowrun6.section.vehicles.column.tspd' }}</th>
+			<th>{{ localize 'shadowrun6.section.vehicles.column.bod' }}</th>
+			<th>{{ localize 'shadowrun6.section.vehicles.column.arm' }}</th>
+			<th>{{ localize 'shadowrun6.section.vehicles.column.pil' }}</th>
+			<th>{{ localize 'shadowrun6.section.vehicles.column.sen' }}</th>
+			<th>{{ localize 'shadowrun6.section.vehicles.column.sea' }}</th>
+			<th colspan="2">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align:center">
+			<td><input data-field="data.handlOn" type="text" value="{{system.handlOn}}" data-dtype="Number"
+					style="text-align:right" />
+			<td>/</td>
+			<td><input data-field="data.handlOff" type="text" value="{{system.handlOff}}" data-dtype="Number"
+					style="text-align:left" /></td>
+			<td><input data-field="data.accOn" type="text" value="{{system.accOn}}" data-dtype="Number"
+					style="text-align:right" /></td>
+			<td>/</td>
+			<td><input data-field="data.accOff" type="text" value="{{system.accOff}}" data-dtype="Number"
+					style="text-align:left" /></td>
+			<td><input data-field="data.spdiOn" type="text" value="{{system.spdiOn}}" data-dtype="Number"
+					style="text-align:right"></td>
+			<td>/</td>
+			<td><input data-field="data.spdiOff" type="text" value="{{system.spdiOff}}" data-dtype="Number"
+					style="text-align:left"></td>
+			<td><input data-field="data.tspd" type="text" value="{{system.tspd}}" data-dtype="Number"></td>
+			<td><input data-field="data.bod" type="text" value="{{system.bod}}" data-dtype="Number"></td>
+			<td><input data-field="data.arm" type="text" value="{{system.arm}}" data-dtype="Number"></td>
+			<td><input data-field="data.pil" type="text" value="{{system.pil}}" data-dtype="Number"></td>
+			<td><input data-field="data.sen" type="text" value="{{system.sen}}" data-dtype="Number"></td>
+			<td><input data-field="data.sea" type="text" value="{{system.sea}}" data-dtype="Number"></td>
+		</tr>
+	</tbody>
+</table>

@@ -17,7 +17,7 @@ import {
 	VehicleOpMode,
 	VehicleSkills,
 	VehicleSkill,
-   Spirit
+	Spirit
 } from "./ActorTypes.js";
 import { Defense, MonitorType, SR6, SR6Config } from "./config.js";
 import { MatrixAction, SkillDefinition } from "./DefinitionTypes.js";
@@ -35,8 +35,8 @@ import {
 	SoakType,
 	SoakRoll,
 	VehicleRoll,
-    ComplexFormRoll,
-    TokenData
+	ComplexFormRoll,
+	TokenData
 } from "./dice/RollTypes.js";
 import { ActorData, ItemData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs";
 import { systemDataField } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs.js";
@@ -80,15 +80,15 @@ declare global {
 	}
 }
 function getSystemData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 function getActorData(obj: any): Shadowrun6Actor {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 function getItemData(obj: any): ItemData {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 
@@ -100,7 +100,7 @@ export class Shadowrun6Actor extends Actor {
 		console.log("Shadowrun6Actor.prepareData() " + this);
 		super.prepareData();
 
-		const actorData : Shadowrun6Actor = getActorData(this);
+		const actorData: Shadowrun6Actor = getActorData(this);
 		const system: SR6Actor = getSystemData(this);
 		console.log("Shadowrun6Actor.prepareData() " + actorData.name + " = " + actorData.type);
 
@@ -151,72 +151,72 @@ export class Shadowrun6Actor extends Actor {
 			return;
 
 		switch (data.spiritType) {
-		case 'air':
-			data.attributes.bod.base=2;
-			data.attributes.agi.base=3;
-			data.attributes.rea.base=3;
-			data.attributes.str.base=0;
-			data.attributes.wil.base=0;
-			data.attributes.log.base=0;
-			data.attributes.int.base=0;
-			data.attributes.cha.base=0;
-			data.attributes.mag.base=0;
-			break;
-		case 'beasts':
-			data.attributes.bod.base=2;
-			data.attributes.agi.base=1;
-			data.attributes.rea.base=0;
-			data.attributes.str.base=2;
-			data.attributes.wil.base=0;
-			data.attributes.log.base=0;
-			data.attributes.int.base=0;
-			data.attributes.cha.base=0;
-			data.attributes.mag.base=0;
-			break;
-		case 'earth':
-			data.attributes.bod.base=4;
-			data.attributes.agi.base=2;
-			data.attributes.rea.base=-1;
-			data.attributes.str.base=4;
-			data.attributes.wil.base=0;
-			data.attributes.log.base=-1;
-			data.attributes.int.base=0;
-			data.attributes.cha.base=0;
-			data.attributes.mag.base=0;
-			break;
-		case 'fire':
-			data.attributes.bod.base=1;
-			data.attributes.agi.base=2;
-			data.attributes.rea.base=3;
-			data.attributes.str.base=2;
-			data.attributes.wil.base=0;
-			data.attributes.log.base=0;
-			data.attributes.int.base=1;
-			data.attributes.cha.base=0;
-			data.attributes.mag.base=0;
-			break;
-		case 'kin':
-			data.attributes.bod.base=1;
-			data.attributes.agi.base=0;
-			data.attributes.rea.base=2;
-			data.attributes.str.base=-2;
-			data.attributes.wil.base=0;
-			data.attributes.log.base=0;
-			data.attributes.int.base=1;
-			data.attributes.cha.base=0;
-			data.attributes.mag.base=0;
-			break;
-		case 'water':
-			data.attributes.bod.base=0;
-			data.attributes.agi.base=1;
-			data.attributes.rea.base=2;
-			data.attributes.str.base=0;
-			data.attributes.wil.base=0;
-			data.attributes.log.base=0;
-			data.attributes.int.base=1;
-			data.attributes.cha.base=0;
-			data.attributes.mag.base=0;
-			break;
+			case 'air':
+				data.attributes.bod.base = 2;
+				data.attributes.agi.base = 3;
+				data.attributes.rea.base = 3;
+				data.attributes.str.base = 0;
+				data.attributes.wil.base = 0;
+				data.attributes.log.base = 0;
+				data.attributes.int.base = 0;
+				data.attributes.cha.base = 0;
+				data.attributes.mag.base = 0;
+				break;
+			case 'beasts':
+				data.attributes.bod.base = 2;
+				data.attributes.agi.base = 1;
+				data.attributes.rea.base = 0;
+				data.attributes.str.base = 2;
+				data.attributes.wil.base = 0;
+				data.attributes.log.base = 0;
+				data.attributes.int.base = 0;
+				data.attributes.cha.base = 0;
+				data.attributes.mag.base = 0;
+				break;
+			case 'earth':
+				data.attributes.bod.base = 4;
+				data.attributes.agi.base = 2;
+				data.attributes.rea.base = -1;
+				data.attributes.str.base = 4;
+				data.attributes.wil.base = 0;
+				data.attributes.log.base = -1;
+				data.attributes.int.base = 0;
+				data.attributes.cha.base = 0;
+				data.attributes.mag.base = 0;
+				break;
+			case 'fire':
+				data.attributes.bod.base = 1;
+				data.attributes.agi.base = 2;
+				data.attributes.rea.base = 3;
+				data.attributes.str.base = 2;
+				data.attributes.wil.base = 0;
+				data.attributes.log.base = 0;
+				data.attributes.int.base = 1;
+				data.attributes.cha.base = 0;
+				data.attributes.mag.base = 0;
+				break;
+			case 'kin':
+				data.attributes.bod.base = 1;
+				data.attributes.agi.base = 0;
+				data.attributes.rea.base = 2;
+				data.attributes.str.base = -2;
+				data.attributes.wil.base = 0;
+				data.attributes.log.base = 0;
+				data.attributes.int.base = 1;
+				data.attributes.cha.base = 0;
+				data.attributes.mag.base = 0;
+				break;
+			case 'water':
+				data.attributes.bod.base = 0;
+				data.attributes.agi.base = 1;
+				data.attributes.rea.base = 2;
+				data.attributes.str.base = 0;
+				data.attributes.wil.base = 0;
+				data.attributes.log.base = 0;
+				data.attributes.int.base = 1;
+				data.attributes.cha.base = 0;
+				data.attributes.mag.base = 0;
+				break;
 		}
 	}
 
@@ -228,7 +228,7 @@ export class Shadowrun6Actor extends Actor {
 		const data = getSystemData(this);
 		// Only run on spirits
 		if (isSpiritOrSprite(data)) {
-			const force : number = parseInt(data.rating as any);
+			const force: number = parseInt(data.rating as any);
 			data.mortype = "mysticadept";
 
 			SR6.ATTRIBUTES.forEach((attr) => {
@@ -236,25 +236,25 @@ export class Shadowrun6Actor extends Actor {
 			});
 
 			SR6.ATTRIB_BY_SKILL.forEach(function (skillDef, id) {
-				let skill : Skill = (data.skills[id] as Skill);
-				skill.modifier=0;
-				if (skill.points>0) {
-					skill.points=force;
+				let skill: Skill = (data.skills[id] as Skill);
+				skill.modifier = 0;
+				if (skill.points > 0) {
+					skill.points = force;
 				}
-		   });
+			});
 
-		   // Magic rating
- 		   data.attributes.mag.base = 0;
- 		   data.essence = force;
- 		   data.defenserating.physical.base = force;
- 		   data.defenserating.astral.base = force;
+			// Magic rating
+			data.attributes.mag.base = 0;
+			data.essence = force;
+			data.defenserating.physical.base = force;
+			data.defenserating.astral.base = force;
 
- 		   data.initiative.physical.base = force*2;
+			data.initiative.physical.base = force * 2;
 			data.initiative.physical.pool = data.initiative.physical.base + data.initiative.physical.mod;
 			data.initiative.physical.dicePool = Math.min(5, data.initiative.physical.dice + data.initiative.physical.diceMod);
 			data.initiative.actions = data.initiative.physical.dicePool + 1;
 
- 		   data.initiative.astral.base = force*2;
+			data.initiative.astral.base = force * 2;
 			data.initiative.astral.pool = data.initiative.astral.base + data.initiative.astral.mod;
 			data.initiative.astral.dicePool = data.initiative.astral.dice + data.initiative.astral.diceMod;
 
@@ -262,11 +262,11 @@ export class Shadowrun6Actor extends Actor {
 			data.physical.value = data.physical.max - data.physical.dmg;
 			data.stun.max = 0;
 			data.stun.value = 0;
-			data.stun.dmg=0;
-			data.stun.mod=0;
+			data.stun.dmg = 0;
+			data.stun.mod = 0;
 
 
-		 }
+		}
 	}
 
 	//---------------------------------------------------------
@@ -279,8 +279,8 @@ export class Shadowrun6Actor extends Actor {
 		if (isLifeform(data)) {
 			SR6.ATTRIBUTES.forEach((attr) => {
 				data.attributes[attr].pool = data.attributes[attr].base + parseInt(data.attributes[attr].mod);
-				if (data.attributes[attr].pool<1)
-					data.attributes[attr].pool=1;
+				if (data.attributes[attr].pool < 1)
+					data.attributes[attr].pool = 1;
 			});
 		}
 	}
@@ -302,27 +302,27 @@ export class Shadowrun6Actor extends Actor {
 				data.physical.value = data.physical.max - data.physical.dmg;
 			}
 
-		if (data.stun) {
-			data.stun.max = 8 + Math.round(data.attributes["wil"].pool / 2) + data.stun.mod;
-			data.stun.value = data.stun.max - data.stun.dmg;
-		}
+			if (data.stun) {
+				data.stun.max = 8 + Math.round(data.attributes["wil"].pool / 2) + data.stun.mod;
+				data.stun.value = data.stun.max - data.stun.dmg;
+			}
 
-		if (data.initiative) {
-			data.initiative.physical.base = data.attributes["rea"].pool + data.attributes["int"].pool;
-			data.initiative.physical.pool = data.initiative.physical.base + data.initiative.physical.mod;
-			data.initiative.physical.dicePool = Math.min(5, data.initiative.physical.dice + data.initiative.physical.diceMod);
+			if (data.initiative) {
+				data.initiative.physical.base = data.attributes["rea"].pool + data.attributes["int"].pool;
+				data.initiative.physical.pool = data.initiative.physical.base + data.initiative.physical.mod;
+				data.initiative.physical.dicePool = Math.min(5, data.initiative.physical.dice + data.initiative.physical.diceMod);
 
-			data.initiative.actions = data.initiative.physical.dicePool + 1;
+				data.initiative.actions = data.initiative.physical.dicePool + 1;
 
-			data.initiative.astral.base = data.attributes["log"].pool + data.attributes["int"].pool;
-			data.initiative.astral.pool = data.initiative.astral.base + data.initiative.astral.mod;
-			data.initiative.astral.dicePool = data.initiative.astral.dice + data.initiative.astral.diceMod;
+				data.initiative.astral.base = data.attributes["log"].pool + data.attributes["int"].pool;
+				data.initiative.astral.pool = data.initiative.astral.base + data.initiative.astral.mod;
+				data.initiative.astral.dicePool = data.initiative.astral.dice + data.initiative.astral.diceMod;
 
-			if (!data.initiative.matrix) data.initiative.matrix = new Initiative;
-			data.initiative.matrix.base = data.attributes["rea"].pool + data.attributes["int"].pool;
-			data.initiative.matrix.pool = data.initiative.matrix.base + data.initiative.matrix.mod;
-			data.initiative.matrix.dicePool = data.initiative.matrix.dice + data.initiative.matrix.diceMod;
-		}
+				if (!data.initiative.matrix) data.initiative.matrix = new Initiative;
+				data.initiative.matrix.base = data.attributes["rea"].pool + data.attributes["int"].pool;
+				data.initiative.matrix.pool = data.initiative.matrix.base + data.initiative.matrix.mod;
+				data.initiative.matrix.dicePool = data.initiative.matrix.dice + data.initiative.matrix.diceMod;
+			}
 		}
 
 		if (!data.derived) {
@@ -418,18 +418,18 @@ export class Shadowrun6Actor extends Actor {
 				}
 
 				switch (system.matrixIni) {
-				case "ar":
-					system.initiative.matrix.base = system.attributes["rea"].pool + system.attributes["int"].pool;
-					system.initiative.matrix.dice = 1;
-					break;
-				case "vrcold":
-					system.initiative.matrix.base = system.attributes["int"].pool + (system.persona.used.d ?? system.persona.device.base.d);
-					system.initiative.matrix.dice = 2;
-					break;
-				case "vrhot":
-					system.initiative.matrix.base = system.attributes["int"].pool + (system.persona.used.d ?? system.persona.device.base.d);
-					system.initiative.matrix.dice = 3;
-					break;
+					case "ar":
+						system.initiative.matrix.base = system.attributes["rea"].pool + system.attributes["int"].pool;
+						system.initiative.matrix.dice = 1;
+						break;
+					case "vrcold":
+						system.initiative.matrix.base = system.attributes["int"].pool + (system.persona.used.d ?? system.persona.device.base.d);
+						system.initiative.matrix.dice = 2;
+						break;
+					case "vrhot":
+						system.initiative.matrix.base = system.attributes["int"].pool + (system.persona.used.d ?? system.persona.device.base.d);
+						system.initiative.matrix.dice = 3;
+						break;
 				}
 				system.initiative.matrix.pool = system.initiative.matrix.base + system.initiative.matrix.mod;
 				system.initiative.matrix.dicePool = system.initiative.matrix.dice + system.initiative.matrix.diceMod;
@@ -445,7 +445,7 @@ export class Shadowrun6Actor extends Actor {
 				system.attackrating.resonance.modString += "\n+" + system.attackrating.resonance.mod;
 			}
 		} else {
-			system.attackrating.matrix.base=0;
+			system.attackrating.matrix.base = 0;
 		}
 
 		// Vehicle combat attack rating (Pilot + Sensor)
@@ -508,7 +508,7 @@ export class Shadowrun6Actor extends Actor {
 		}
 
 		items.forEach((item) => {
-			let itemSystem : Gear = getSystemData(item);
+			let itemSystem: Gear = getSystemData(item);
 			if (item.type == "gear" && itemSystem.type == "ARMOR" && isArmor(itemSystem)) {
 				if (itemSystem.usedForPool) {
 					data.defenserating.physical.pool += itemSystem.defense;
@@ -751,8 +751,8 @@ export class Shadowrun6Actor extends Actor {
 		const itemUser: Lifeform = system;
 
 		actorData.items.forEach((tmpItem) => {
-			let item : ItemData = getItemData(tmpItem);
-			let system : any = getSystemData(tmpItem);
+			let item: ItemData = getItemData(tmpItem);
+			let system: any = getSystemData(tmpItem);
 			if (item.type == "gear" && system && isGear(system)) {
 				let gear: Gear = system as Gear;
 				if (gear.skill && gear.skill != "") {
@@ -794,7 +794,7 @@ export class Shadowrun6Actor extends Actor {
 	 * Calculate the pool when using items with assigned skills
 	 */
 	_prepareVehiclePools() {
-		const actorData : Shadowrun6Actor = getActorData(this);
+		const actorData: Shadowrun6Actor = getActorData(this);
 		const systemRaw: SR6Actor = getSystemData(this);
 		if (!isLifeform(systemRaw)) return;
 		const system: Lifeform = systemRaw;
@@ -995,7 +995,7 @@ export class Shadowrun6Actor extends Actor {
 	 *
 	 */
 	_preparePersona() {
-		const actorData : Shadowrun6Actor = getActorData(this);
+		const actorData: Shadowrun6Actor = getActorData(this);
 		const system: any = getSystemData(this);
 
 		if (!system.persona) system.persona = new Persona();
@@ -1009,7 +1009,7 @@ export class Shadowrun6Actor extends Actor {
 		if (!system.persona.initiative) system.persona.initiative = new Initiative();
 
 		actorData.items.forEach((tmpItem) => {
-			const systemItem : any = getSystemData(tmpItem);
+			const systemItem: any = getSystemData(tmpItem);
 			if (tmpItem.type == "gear" && isMatrixDevice(systemItem)) {
 				let item: MatrixDevice = getSystemData(tmpItem);
 				if (item.subtype == "COMMLINK" || item.subtype == "CYBERJACK") {
@@ -1077,14 +1077,14 @@ export class Shadowrun6Actor extends Actor {
 	 */
 	_calculateEssence() {
 		const data2: SR6Actor = getSystemData(this);
-		const actorData : any = getActorData(this);
+		const actorData: any = getActorData(this);
 		if (!isLifeform(data2)) return;
 		const system: Lifeform = data2;
 
 		let essence = 6.0;
 		actorData.items.forEach((tmpItem) => {
-			let item : ItemData = getItemData(tmpItem);
-			let itemSystem : any = getSystemData(tmpItem);
+			let item: ItemData = getItemData(tmpItem);
+			let itemSystem: any = getSystemData(tmpItem);
 			if (item.type == "gear" && itemSystem && itemSystem.essence) {
 				essence -= itemSystem.essence;
 			}
@@ -1093,17 +1093,17 @@ export class Shadowrun6Actor extends Actor {
 	}
 
 	//---------------------------------------------------------
-	_getWoundModifierPerMonitor(monitor : Monitor) : number {
+	_getWoundModifierPerMonitor(monitor: Monitor): number {
 		/* Get the penalties for physical and stun damage. Every 3 boxes = -1 penalty */
 		let remain = monitor.max - monitor.dmg;
 		let modifier: number = Math.floor(monitor.dmg / 3);
 		// In the last row, if the last box is full the modifier is increased by one
-		if (remain>0 && monitor.max%3==remain) modifier++;
+		if (remain > 0 && monitor.max % 3 == remain) modifier++;
 		return modifier;
 	}
 
 	//---------------------------------------------------------
-	getWoundModifier() : number {
+	getWoundModifier(): number {
 		console.log("Current Wound Penalties");
 		const data: Lifeform = getSystemData(this);
 
@@ -1159,9 +1159,9 @@ export class Shadowrun6Actor extends Actor {
 	 * @return Roll name
 	 */
 	_getSkillPool(skillId, spec, attrib: string | undefined = undefined) {
-		const system : SR6Actor = getSystemData(this);
+		const system: SR6Actor = getSystemData(this);
 		if (!skillId) throw "Skill ID may not be undefined";
-		const skl : Skill = (system as Lifeform).skills[skillId];
+		const skl: Skill = (system as Lifeform).skills[skillId];
 		if (!skillId) {
 			throw "Unknown skill '" + skillId + "'";
 		}
@@ -1172,7 +1172,7 @@ export class Shadowrun6Actor extends Actor {
 		}
 
 		// Calculate pool
-		let value : number = skl.points + skl.modifier;
+		let value: number = skl.points + skl.modifier;
 		if (skl.points == 0) {
 			if (skillDef.useUntrained) {
 				value -= 1;
@@ -1188,7 +1188,7 @@ export class Shadowrun6Actor extends Actor {
 		}
 
 		// Add attribute
-		value = parseInt(""+value);
+		value = parseInt("" + value);
 		value += parseInt((system as Lifeform).attributes[attrib].pool);
 
 		return value;
@@ -1200,7 +1200,7 @@ export class Shadowrun6Actor extends Actor {
 	 * @param {Object} spell      The spell to cast
 	 * @return Roll name
 	 */
-	_getComplexFormName(complex: ComplexForm, item:Item): string|null {
+	_getComplexFormName(complex: ComplexForm, item: Item): string | null {
 		if (complex.genesisID) {
 			const key = "shadowrun6.compendium.complexform." + complex.genesisID;
 			let name = (game as Game).i18n.localize(key);
@@ -1252,12 +1252,12 @@ export class Shadowrun6Actor extends Actor {
 	 */
 	_getHighestDefenseRating(map) {
 		let highest = 0;
-		for (var it = (game as Game).user!.targets.values(), val = null; (val = it.next().value); ) {
+		for (var it = (game as Game).user!.targets.values(), val = null; (val = it.next().value);) {
 			//console.log("_getHighestDefenseRating: Target Token: val = ", val);
 			let token: Token = val as Token;
 			let actor: Shadowrun6Actor = token.actor as Shadowrun6Actor;
 			let here: number = map(actor);
-			console.log("Defense Rating of ",token.data._id," is ",here)
+			console.log("Defense Rating of ", token.data._id, " is ", here)
 			if (here > highest) highest = here;
 		}
 		return highest;
@@ -1352,7 +1352,7 @@ export class Shadowrun6Actor extends Actor {
 		// Prepare check text
 		let checkText = this._getSkillCheckText(roll);
 
-		roll.targets = Array.from( (game as Game).user!.targets.values(), token => new TokenData(token) );
+		roll.targets = Array.from((game as Game).user!.targets.values(), token => new TokenData(token));
 		console.log("ääääääääääääääääää targets ", roll.targets);
 		let highestDefenseRating: number = this._getHighestDefenseRating((a) => {
 			console.log("Determine defense rating of ", a);
@@ -1626,7 +1626,7 @@ export class Shadowrun6Actor extends Actor {
 	 * @return {Promise<Roll>}      A Promise which resolves to the created Roll instance
 	 */
 	rollComplexForm(roll: ComplexFormRoll) {
-		console.log("rollComplexForm( roll=" + roll+ ")");
+		console.log("rollComplexForm( roll=" + roll + ")");
 
 		roll.threshold = 0;
 
@@ -1722,13 +1722,13 @@ export class Shadowrun6Actor extends Actor {
 	//-------------------------------------------------------------
 	async importFromJSON(json: string) {
 		console.log("importFromJSON");
-      const data = JSON.parse(json);
+		const data = JSON.parse(json);
 
-      // If Genesis-JSON-Export
-      if (data.jsonExporterVersion && data.system === "SHADOWRUN6") {
-      	let newData : any = this.toObject();
-            newData.data.sex = data.gender;
-      }
+		// If Genesis-JSON-Export
+		if (data.jsonExporterVersion && data.system === "SHADOWRUN6") {
+			let newData: any = this.toObject();
+			newData.data.sex = data.gender;
+		}
 		return super.importFromJSON(json)
 	}
 }

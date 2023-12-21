@@ -117,6 +117,7 @@ export class Weapon extends Gear {
 		SA: false;
 		SS: false;
 	};
+	strWeapon: boolean;
 }
 export class Armor extends Gear {
 	defense: number;

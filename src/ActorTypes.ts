@@ -141,7 +141,7 @@ export class Lifeform extends SR6Actor {
 	skills: Skills = new Skills();
 	essence: number = 6.0;
 	mortype: string;
-	matrixIni : string;
+	matrixIni: string;
 	morDef: MagicOrResonanceDefinition;
 	controlRig: number = 0;
 }
@@ -150,15 +150,15 @@ export interface ILifeform {
 	skills: Skills;
 }
 export class Spirit extends Lifeform {
-	rating : number;
-	spiritType : string;
+	rating: number;
+	spiritType: string;
 }
 
 export class MatrixUser extends Lifeform {
 	persona: Persona = new Persona();
 }
 
-export class Player extends MatrixUser {}
+export class Player extends MatrixUser { }
 
 export enum VehicleOpMode {
 	MANUAL = "manual",

@@ -1,6 +1,6 @@
 {
   "Shadowrun6ActorSheetNPC": "Bla",
-  "shadowrun6-eden.Shadowrun6ActorSheetNPC": "Blubb",
+  "shadowrun6-moxou.Shadowrun6ActorSheetNPC": "Blubb",
   "ACTOR": {
     "TypeCritter": "Critter",
     "TypeNpc": "Grunt/NPC",
@@ -162,6 +162,8 @@
       "rating": "Rating",
       "loyalty": "Loyalty",
       "loyalty_short": "Loy",
+      "favors": "Favors",
+      "favors_short": "Fav",
       "type": "Type"
     },
     "defense": {
@@ -414,6 +416,7 @@
     },
     "item": {
       "accessories": "Accessories",
+      "strWeapon": "Uses Strength",
       "ammunition": "Ammo",
       "attackvalues": "Attack rtg.",
       "availability": "Avail.",
@@ -475,8 +478,9 @@
       "DRONES": "Drones",
       "ELECTRONICS": "Electronics",
       "GENETICS": "GENETICS",
-      "MAGICAL": "MAGICAL",
-      "NANOWARE": "NANOWARE",
+      "MAGICAL": "Magical",
+      "NANOWARE": "Nanoware",
+      "SOFTWARE": "Software",
       "SURVIVAL": "Survival gear",
       "TOOLS": "TOOLS",
       "VEHICLES": "Vehicles",
@@ -647,7 +651,8 @@
       "survival": "Handy swiss army knife",
       "vehicles": "Awesome ride",
       "weapon": "Named weapons are much cooler",
-      "weaponclose": "Something heavy"
+      "weaponclose": "Something heavy",
+      "weaponspecial": "Weird weapon"
     },
     "npc": {
       "subtype": {
@@ -1216,6 +1221,8 @@
       "duration_special_short": "Spec",
       "duration_sustained": "Sustained",
       "duration_sustained_short": "S",
+      "duration_always": "Always",
+      "duration_always_short": "A",
       "isOpposed": "Is Opposed",
       "range": "Range",
       "range_line_of_sight": "Line of sight",

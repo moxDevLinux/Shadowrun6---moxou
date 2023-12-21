@@ -5,11 +5,11 @@ interface SR6ItemSheetData extends ItemSheet.Data {
 	config: SR6Config;
 }
 function getSystemData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 function getActorData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 
@@ -18,13 +18,13 @@ export class SR6ItemSheet extends ItemSheet {
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
 			classes: ["shadowrun6", "sheet", "item"],
-			width  : 550
+			width: 550
 		});
 	}
 
 	get template() {
 		console.log("in template()", getSystemData(this.item));
-		const path = "systems/shadowrun6-eden/templates/item/";
+		const path = "systems/shadowrun6-moxou/templates/item/";
 		console.log(`${path}shadowrun6-${getActorData(this.item).type}-sheet.html`);
 		if (this.isEditable) {
 			console.log("ReadWrite sheet ");
@@ -117,7 +117,7 @@ export class SR6ItemSheet extends ItemSheet {
 			let newValue: any[][] = [];
 
 			if (!(idx >= 0 && array !== "")) return;
-			
+
 			/* Duplicate the data from the object. Sets null & NaN to 0 */
 			if (field) {
 				newValue = duplicate(

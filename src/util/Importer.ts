@@ -19,7 +19,7 @@ export default class Importer {
                 path: "",
                 private: false,
                 package: "sr6",
-                system: "shadowrun6-eden",
+                system: "shadowrun6-moxou",
             })
         }
         await rawData.split(/\n\n/).forEach(async (rawData) => {

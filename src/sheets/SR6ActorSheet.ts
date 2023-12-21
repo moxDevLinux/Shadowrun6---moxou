@@ -21,11 +21,11 @@ function isSpell(obj: any): obj is Spell {
 	return obj.drain != undefined;
 }
 function getSystemData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 function getActorData(obj: any): Shadowrun6Actor {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 
@@ -38,19 +38,19 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 	getData() {
 		let data = super.getData();
 		(data as SR6ActorSheetData).config = CONFIG.SR6;
-		if ( (game as any).release.generation >= 10) {
+		if ((game as any).release.generation >= 10) {
 			(data as any).system = (data as any).data.system;
 		} else {
 			(data as any).system = (data as any).data.data.data;
 		}
-		console.log("getData1() " , data);
+		console.log("getData1() ", data);
 		return data;
 	}
 
 	get template() {
 		console.log("in template()", getSystemData(this.actor));
 		console.log("default: ", super.template);
-		const path = "systems/shadowrun6-eden/templates/actor/";
+		const path = "systems/shadowrun6-moxou/templates/actor/";
 		if (this.isEditable) {
 			console.log("ReadWrite sheet ");
 			return super.template;
@@ -59,7 +59,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 			let genItem: GenesisData = getSystemData(this.actor) as GenesisData;
 			(this.actor as any).descHtml = (game as Game).i18n.localize(getActorData(this.actor).type + "." + genItem.genesisID + ".desc");
 			(getActorData(this.actor) as any).descHtml2 = (game as Game).i18n.localize(getActorData(this.actor).type + "." + genItem.genesisID + ".desc");
-		console.log(`${path}shadowrun6-${getActorData(this.actor).type}-sheet-ro.html`);
+			console.log(`${path}shadowrun6-${getActorData(this.actor).type}-sheet-ro.html`);
 			return `${path}shadowrun6-${getActorData(this.actor).type}-sheet-ro.html`;
 		}
 	}
@@ -95,8 +95,8 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				console.log("data-field", event);
 				const element = event.currentTarget;
 				let value = element.value;
-				if (element.type=="number" || (element.dataset && element.dataset.dtype && element.dataset.dtype=="Number")) {
-					value = parseInt (element.value);
+				if (element.type == "number" || (element.dataset && element.dataset.dtype && element.dataset.dtype == "Number")) {
+					value = parseInt(element.value);
 				}
 				const itemId = this._getClosestData($(event.currentTarget), "item-id");
 				const field = element.dataset.field;
@@ -130,7 +130,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				const itemId = this._getClosestData($(event.currentTarget), "item-id");
 				const item = this.actor.items.get(itemId);
 				if (!item) return;
-				//				console.log("Collapsible: old styles are '"+element.classList+"'' and flag is "+item.getFlag("shadowrun6-eden","collapse-state"));
+				//				console.log("Collapsible: old styles are '"+element.classList+"'' and flag is "+item.getFlag("shadowrun6-moxou","collapse-state"));
 				element.classList.toggle("open");
 				let content = element.parentElement.parentElement.nextElementSibling.firstElementChild.firstElementChild;
 				if (content.style.maxHeight) {
@@ -142,8 +142,8 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				let value = element.classList.contains("open") ? "open" : "closed";
 				//				console.log("Update flag 'collapse-state' with "+value);
 
-				item.setFlag("shadowrun6-eden", "collapse-state", value);
-				//				console.log("Collapsible: new styles are '"+element.classList+"' and flag is "+item.getFlag("shadowrun6-eden","collapse-state"));
+				item.setFlag("shadowrun6-moxou", "collapse-state", value);
+				//				console.log("Collapsible: new styles are '"+element.classList+"' and flag is "+item.getFlag("shadowrun6-moxou","collapse-state"));
 			});
 			//Collapsible for lists
 			html.find(".collapsible-skill").click((event) => {
@@ -158,7 +158,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 					content.style.maxHeight = content.scrollHeight + "px";
 				}
 				let value = element.classList.contains("open") ? "open" : "closed";
-				this.actor.setFlag("shadowrun6-eden", "collapse-state-" + skillId, value);
+				this.actor.setFlag("shadowrun6-moxou", "collapse-state-" + skillId, value);
 			});
 			//Collapsible
 			html.find("select.contdrolled").change((event) => {
@@ -184,8 +184,8 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 						event.originalEvent!.dataTransfer!.setData(
 							"text/plain",
 							JSON.stringify({
-								type   : "Item",
-								data   : itemData,
+								type: "Item",
+								data: itemData,
 								actorId: this.actor.id
 							})
 						);
@@ -255,6 +255,16 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 			};
 			return this.actor.createEmbeddedDocuments("Item", [itemData]);
 		});
+		html.find(".weapon-special-create").click((ev) => {
+			const itemData = {
+				name: (game as Game).i18n.localize("shadowrun6.newitem.weaponspecial"),
+				type: "gear",
+				data: {
+					type: "WEAPON_SPECIAL"
+				}
+			};
+			return this.actor.createEmbeddedDocuments("Item", [itemData]);
+		});
 		html.find('.critterpower-create').click(ev => {
 			const itemData = {
 				name: (game as Game).i18n.localize("shadowrun6.newitem.critterpower"),
@@ -300,7 +310,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				type: "skill",
 				data: {
 					genesisID: "language",
-					points   : 1
+					points: 1
 				}
 			};
 			return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -311,8 +321,8 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				type: "gear",
 				data: {
 					genesisID: this._create_UUID(),
-					type     : "ELECTRONICS",
-					subtype  : "COMMLINK"
+					type: "ELECTRONICS",
+					subtype: "COMMLINK"
 				}
 			};
 			return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -323,8 +333,8 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				type: "gear",
 				data: {
 					genesisID: this._create_UUID(),
-					type     : "VEHICLES",
-					subtype  : "CARS"
+					type: "VEHICLES",
+					subtype: "CARS"
 				}
 			};
 			return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -335,8 +345,8 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				type: "gear",
 				data: {
 					genesisID: this._create_UUID(),
-					type     : "DRONES",
-					subtype  : "SMALL_DRONES"
+					type: "DRONES",
+					subtype: "SMALL_DRONES"
 				}
 			};
 			return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -381,6 +391,8 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 	//-----------------------------------------------------
 	_setDamage(html, i, monitorAttribute, id, event) {
 		if (!isLifeform(getSystemData(this.actor))) return;
+		if (!event.currentTarget.dataset.value)
+			event.currentTarget.dataset.value = 0;
 		switch (event.target.parentNode.getAttribute("id")) {
 			case "barPhyBoxes":
 				console.log("setDamage (physical health to " + event.currentTarget.dataset.value + ")");
@@ -405,7 +417,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 
 	//-----------------------------------------------------
 	_redrawBar(html, id, monitorAttribute: Monitor) {
-		if (!monitorAttribute || !monitorAttribute.value) return;
+		if (!monitorAttribute || monitorAttribute.value < 0) return;
 		//let vMax = parseInt(html.find("#data"+id+"Max")[0].value);
 		//let vCur = parseInt(html.find("#data"+id+"Cur")[0].value);
 		let perc = (monitorAttribute.value / monitorAttribute.max) * 100;
@@ -551,20 +563,20 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 		if (classList.contains("defense-roll")) {
 			roll.allowBuyHits = false;
 			dialogConfig = {
-				useModifier : true,
+				useModifier: true,
 				useThreshold: false
 			};
 		} else if (classList.contains("attributeonly-roll")) {
 			roll.allowBuyHits = true;
 			dialogConfig = {
-				useModifier : true,
+				useModifier: true,
 				useThreshold: true
 			};
 		} else {
 			roll.allowBuyHits = true;
 			roll.useWildDie = 1;
 			dialogConfig = {
-				useModifier : true,
+				useModifier: true,
 				useThreshold: true
 			};
 		}

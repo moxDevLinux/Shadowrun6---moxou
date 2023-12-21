@@ -6,7 +6,7 @@ import Shadowrun6Combatant from "./Shadowrun6Combatant";
 import { SYSTEM_NAME } from "./constants.js";
 
 function getActorData(obj: any): ActorData {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 
@@ -38,7 +38,7 @@ export default class Shadowrun6Combat extends Combat {
 			return max;
 		}
 
-		let actorData : ActorData = getActorData(actor);
+		let actorData: ActorData = getActorData(actor);
 		let comb: Shadowrun6Combatant = this.getCombatantByActor(actorData._id!) as Shadowrun6Combatant;
 		if (comb) {
 			max -= Math.max(0, comb.edgeGained);

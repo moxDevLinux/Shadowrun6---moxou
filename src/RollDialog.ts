@@ -38,11 +38,11 @@ function isSkillRoll(obj: any): obj is SkillRoll {
 	return obj.skillId != undefined;
 }
 function getSystemData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 function getActorData(obj: any): Shadowrun6Actor {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 
@@ -92,9 +92,9 @@ export class RollDialog extends Dialog {
 		html.find("select[name='bfType']").change(this._onBurstModeChange.bind(this));
 		html.find("select[name='fullAutoArea']").change(this._onAreaChange.bind(this));
 		/*
-    if (!this.data.target) {
-      html.find('.calc-edge').show(this._onNoTarget.bind(this));
-    }
+	if (!this.data.target) {
+	  html.find('.calc-edge').show(this._onNoTarget.bind(this));
+	}
 	*/
 		html.find(".calc-edge-edit").change(this._onCalcEdge.bind(this));
 		html.find(".calc-edge-edit").keyup(this._onCalcEdge.bind(this));
@@ -200,7 +200,7 @@ export class RollDialog extends Dialog {
 			}
 
 			// Set new edge value
-			let actor: Lifeform = getSystemData( configured.actor ) as Lifeform;
+			let actor: Lifeform = getSystemData(configured.actor) as Lifeform;
 
 			let capped: boolean = false;
 			// Limit the maximum edge
@@ -239,8 +239,8 @@ export class RollDialog extends Dialog {
 				if (capped) {
 					configured.edgePlayer = max;
 					innerText = (game as Game).i18n.format("shadowrun6.roll.edge.gain_player_capped", {
-						name  : speaker.alias,
-						value : configured.edgePlayer,
+						name: speaker.alias,
+						value: configured.edgePlayer,
 						capped: max
 					});
 				} else {
@@ -374,16 +374,19 @@ export class RollDialog extends Dialog {
 	//-------------------------------------------------------------
 	_updateDicePool(data: ConfiguredRoll) {
 		// Get the value of the user entered modifier ..
-		let userModifier : number = parseInt( (document.getElementById("modifier") as HTMLInputElement).value);
+		let userModifier: number = parseInt((document.getElementById("modifier") as HTMLInputElement).value);
 		// .. and update the roll
-		this.modifier = userModifier?userModifier:0;
+		this.modifier = userModifier ? userModifier : 0;
 		// Get the value of the checkbox if the calculated wound penality should be used
-		let useWoundModifier : boolean = (document.getElementById("useWoundModifier") as HTMLInputElement).checked;
+		let useWoundModifier: boolean = (document.getElementById("useWoundModifier") as HTMLInputElement).checked;
 
 		// Calculate new sum
-		console.log("updateDicePool: ",this);
-		console.log("updateDicePool2: ",this.prepared.pool, this.modifier , this.actor.getWoundModifier());
-		this.prepared.calcPool = this.prepared.pool + this.modifier - (useWoundModifier?this.actor.getWoundModifier():0);
+		console.log("updateDicePool: ", this);
+		let woundMod = (this.actor) ? this.actor.getWoundModifier() : 0;
+		if (this.actor) {
+			console.log("updateDicePool2: ", this.prepared.pool, this.modifier, woundMod);
+		}
+		//this.prepared.calcPool = this.prepared.pool + this.modifier - (useWoundModifier?woundMod:0);
 
 		$("label[name='dicePool']")[0].innerText = this.prepared.calcPool.toString();
 	}
@@ -419,7 +422,7 @@ export class RollDialog extends Dialog {
 
 		let prepared: SpellRoll = (this.options as any).prepared;
 		if (!isLifeform(getSystemData(prepared.actor))) return;
-		let lifeform : Lifeform = getSystemData(prepared.actor);
+		let lifeform: Lifeform = getSystemData(prepared.actor);
 
 		const baseMagic = lifeform.attributes.mag.pool;
 

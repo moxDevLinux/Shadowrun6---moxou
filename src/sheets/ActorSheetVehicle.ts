@@ -4,11 +4,11 @@ import { Shadowrun6Actor } from "../Shadowrun6Actor.js";
 import { Shadowrun6ActorSheet } from "./SR6ActorSheet.js";
 
 function getSystemData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 function getActorData(obj: any): Shadowrun6Actor {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 
@@ -20,13 +20,13 @@ export class Shadowrun6ActorSheetVehicle extends Shadowrun6ActorSheet {
 	/** @override */
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
-			classes       : ["shadowrun6", "sheet", "actor"],
-			template      : "systems/shadowrun6-eden/templates/actor/shadowrun6-Vehicle-sheet.html",
-			width         : 600,
-			height        : 800,
-			tabs          : [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "overview" }],
-			scrollY       : [".items", ".attributes"],
-			dragDrop      : [{ dragSelector: ".item-list .item", dropSelector: null }],
+			classes: ["shadowrun6", "sheet", "actor"],
+			template: "systems/shadowrun6-moxou/templates/actor/shadowrun6-Vehicle-sheet.html",
+			width: 600,
+			height: 800,
+			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "overview" }],
+			scrollY: [".items", ".attributes"],
+			dragDrop: [{ dragSelector: ".item-list .item", dropSelector: null }],
 			allVehicleUser: (game as Game).actors!.filter((actor) => actor.type == "Player" || actor.type == "NPC")
 		});
 	}

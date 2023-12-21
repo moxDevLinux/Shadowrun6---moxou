@@ -10,8 +10,8 @@ export default class SR6Roll extends Roll<ConfiguredRoll> {
 	prepared: PreparedRoll;
 	configured: ConfiguredRoll;
 
-	static CHAT_TEMPLATE = "systems/shadowrun6-eden/templates/chat/roll-sr6.html";
-	static TOOLTIP_TEMPLATE = "systems/shadowrun6-eden/templates/chat/tooltip.html";
+	static CHAT_TEMPLATE = "systems/shadowrun6-moxou/templates/chat/roll-sr6.html";
+	static TOOLTIP_TEMPLATE = "systems/shadowrun6-moxou/templates/chat/tooltip.html";
 
 	//_total: number;
 	results: DiceTerm.Result[];
