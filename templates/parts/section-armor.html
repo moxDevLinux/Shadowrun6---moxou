@@ -44,9 +44,9 @@
 						item.system.usedForPool}} type="checkbox" data-dtype="Boolean" />
 					<span class="shadowrun6-slider round"></span>
 				</label></td>
-			<td class="centered"><input type="text" data-item-id="{{this.id}}" data-field="data.defense"
+			<td class="centered"><input type="text" data-item-id="{{this.id}}" name="data.defense"
 					value="{{item.system.defense}}" data-dtype="Number" style="width: 1.5em" /></td>
-			<td class="centered"><input type="text" data-item-id="{{this.id}}" data-field="data.social"
+			<td class="centered"><input type="text" data-item-id="{{this.id}}" name="data.social"
 					value="{{item.system.social}}" data-dtype="Number" style="width: 1.5em" /></td>
 			<td class="item-controls">
 			<td class="centered"><a class="item-control item-edit" title='{{localize ' shadowrun6.label.edit' }}'><i
@@ -59,7 +59,7 @@
 				<div class="collapsible-content {{item.flags.shadowrun6-moxou.collapse-state}}"
 					style="vertical-align: top">
 					{{ localize 'shadowrun6.label.modifications' }} <textarea class="box" type="text"
-						data-item-id="{{this.id}}" data-field="data.accessories" type="text" data-dtype="Text" rows="3"
+						data-item-id="{{this.id}}" name="data.accessories" type="text" data-dtype="Text" rows="3"
 						style="width: 20em">{{item.system.accessories}}</textarea></div>
 </div>
 </td>

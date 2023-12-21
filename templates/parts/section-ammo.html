@@ -14,7 +14,8 @@
 		<tr class="draggable item" data-item-id="{{this.id}}" title="{{item.system.description}}">
 			<td style="margin-right: 1rem"><label class="item-name" data-skill="{{id}}">{{item.name}}</label></td>
 			<td>
-				<input class="centered box" type="text"     data-item-id="{{this.id}}" data-field="data.count" type="text"     value="{{item.system.count}}" data-dtype="Number" style="width: 1.5em" />
+				<input class="centered box" type="text" data-item-id="{{this.id}}" name="data.count" type="text"
+					value="{{item.system.count}}" data-dtype="Number" style="width: 1.5em" />
 			</td>
 			<td style="margin-right: 1rem">
 				<label class="item-name" data-skill="{{id}}">
@@ -31,18 +32,18 @@
 					</div>
 				</label>
 			</td>
-			<td style="width: 2em" class="centered" >
+			<td style="width: 2em" class="centered">
 				{{#if item.system.needsRating}}
 				{{ localize 'shadowrun6.label.column.rating' }}
 				{{else}}
-				
+
 				{{/if}}
 			</td>
-			<td style="width: 2em" class="centered" >
+			<td style="width: 2em" class="centered">
 				{{#if item.system.needsRating}}
-				<input type="text" value="{{item.system.rating}}" data-field="data.rating" title="{{item.system.rating}}"/>
+				<input type="text" value="{{item.system.rating}}" name="data.rating" title="{{item.system.rating}}" />
 				{{else}}
-				
+
 				{{/if}}
 			</td>
 			<td class="item-controls">

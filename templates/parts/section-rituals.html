@@ -22,7 +22,7 @@
 					data-item-id="{{this.id}}">+</button></td>
 			<td>
 				<div class="tooltip">
-					<input type="text" value="{{item.name}}" data-field="name" />
+					<input type="text" value="{{item.name}}" name="name" />
 					<div class="right">
 						<div class="text-content">
 							<h3>{{item.name}}</h3>
@@ -33,7 +33,7 @@
 				</div>
 			</td>
 			<td class="centered" style="width: 2em"> <input class="centered" type="text"
-					value="{{item.system.threshold}}" data-field="data.threshold" data-type="Number" /></td>
+					value="{{item.system.threshold}}" name="data.threshold" data-type="Number" /></td>
 			<td class="centered">
 				<a class="item-control ritual-roll" title="Roll" data-item-id="{{item.id}}"><i
 						class="fas fa-dice-six"></i></a>

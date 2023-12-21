@@ -6,16 +6,16 @@
 			<div class="attribute" augmented-ui="b-clip-x exe">
 				<p>{{localize "attrib.res" }}</p>
 				<span>{{system.attributes.res.pool}}</span>
-				<input type="hidden" data-dtype="Number" data-field="system.attributes.res.pool" value="8" />
+				<input type="hidden" data-dtype="Number" name="system.attributes.res.pool" value="8" />
 				<div class="field {{id}}Changed">
 					<label>{{localize 'shadowrun6.numerical.base'}}</label>
-					<input type="number" data-dtype="Number" data-field="system.attributes.res.base"
+					<input type="number" data-dtype="Number" name="system.attributes.res.base"
 						value="{{system.attributes.res.base}}" placeholder="base"
 						title="{{localize 'shadowrun6.numerical.baseString'}}" min="1" max="6" />
 				</div>
 				<div class="field {{id}}Changed">
 					<label>{{localize 'shadowrun6.numerical.mod'}}</label>
-					<input type="number" data-dtype="Number" data-field="system.attributes.res.mod"
+					<input type="number" data-dtype="Number" name="system.attributes.res.mod"
 						value="{{system.attributes.res.mod}}" placeholder="±adj" title="{{attribute.modString}}" />
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 		<div class="edge" style="width: 80px; height:80px">
 			<img src="systems/shadowrun6-moxou/images/all-seeing-eye.png"
 				style="border: 0px; height: auto; width: 80px; z-index: 0; position:absolute; filter: drop-shadow(0 0 4px #000000);" />
-			<input class="edge-value" type="text" data-dtype="Number" data-field="system.overwatch"
+			<input class="edge-value" type="text" data-dtype="Number" name="system.overwatch"
 				value="{{system.overwatch}}" />
 		</div>
 	</div>
@@ -49,28 +49,28 @@
 					{{#if system.morDef.resonance}}
 					<td class="centered">{{system.persona.living.devRating}} ==&gt;</td>
 					<td class="centered">{{system.persona.living.base.a}}+<input class="box"
-							data-field="system.persona.living.mod.a" type="text" value="{{system.persona.living.mod.a}}"
+							name="system.persona.living.mod.a" type="text" value="{{system.persona.living.mod.a}}"
 							data-dtype="Number" style="width: 1.5em"></td>
 					<td class="centered">{{system.persona.living.base.s}}+<input class="box"
-							data-field="system.persona.living.mod.s" type="text" value="{{system.persona.living.mod.s}}"
+							name="system.persona.living.mod.s" type="text" value="{{system.persona.living.mod.s}}"
 							data-dtype="Number" style="width: 1.5em"></td>
 					<td class="centered">{{system.persona.living.base.d}}+<input class="box"
-							data-field="system.persona.living.mod.d" type="text" value="{{system.persona.living.mod.d}}"
+							name="system.persona.living.mod.d" type="text" value="{{system.persona.living.mod.d}}"
 							data-dtype="Number" style="width: 1.5em"></td>
 					<td class="centered">{{system.persona.living.base.f}}+<input class="box"
-							data-field="system.persona.living.mod.f" type="text" value="{{system.persona.living.mod.f}}"
+							name="system.persona.living.mod.f" type="text" value="{{system.persona.living.mod.f}}"
 							data-dtype="Number" style="width: 1.5em"></td>
 					{{else}}
 					<td class="centered">
 						{{system.persona.device.base.a}},{{system.persona.device.base.s}},{{system.persona.device.base.d}},{{system.persona.device.base.f}}
 						==&gt;</td>
-					<td class="centered"><input class="box" data-field="system.persona.device.mod.a" type="text"
+					<td class="centered"><input class="box" name="system.persona.device.mod.a" type="text"
 							value="{{system.persona.device.mod.a}}" data-dtype="Number" style="width: 2em"></td>
-					<td class="centered"><input class="box" data-field="system.persona.device.mod.s" type="text"
+					<td class="centered"><input class="box" name="system.persona.device.mod.s" type="text"
 							value="{{system.persona.device.mod.s}}" data-dtype="Number" style="width: 2em"></td>
-					<td class="centered"><input class="box" data-field="system.persona.device.mod.d" type="text"
+					<td class="centered"><input class="box" name="system.persona.device.mod.d" type="text"
 							value="{{system.persona.device.mod.d}}" data-dtype="Number" style="width: 2em"></td>
-					<td class="centered"><input class="box" data-field="system.persona.device.mod.f" type="text"
+					<td class="centered"><input class="box" name="system.persona.device.mod.f" type="text"
 							value="{{system.persona.device.mod.f}}" data-dtype="Number" style="width: 2em"></td>
 					{{/if}}
 				</tr>
@@ -88,7 +88,7 @@
 			<tr>
 				<td><b>{{ localize 'shadowrun6.attack_rating.matrix' }}</b></td>
 				<td class="centered">{{system.attackrating.matrix.base}}</td>
-				<td><input class="centered" data-field="system.attackrating.matrix.mod" type="text"
+				<td><input class="centered" name="system.attackrating.matrix.mod" type="text"
 						value="{{system.attackrating.matrix.mod}}" data-dtype="Number" style="width: 2em"></td>
 				<td class="centered" title="{{system.attackrating.matrix.modString}}">
 					{{system.attackrating.matrix.pool}}</td>
@@ -96,7 +96,7 @@
 			<tr>
 				<td><b>{{ localize 'shadowrun6.defense_rating.matrix' }}</b></td>
 				<td class="centered">{{system.defenserating.matrix.base}}</td>
-				<td><input class="centered" data-field="system.defenserating.matrix.mod" type="text"
+				<td><input class="centered" name="system.defenserating.matrix.mod" type="text"
 						value="{{system.defenserating.matrix.mod}}" data-dtype="Number" style="width: 2em"></td>
 				<td class="centered" title="{{system.defenserating.matrix.modString}}">
 					{{system.defenserating.matrix.pool}}</td>
@@ -104,18 +104,18 @@
 			<tr>
 				<td><b>{{ localize 'shadowrun6.derived.matrix_perception' }}</b></td>
 				<td class="centered">{{system.derived.matrix_perception.base}}</td>
-				<td><input class="centered" data-field="system.derived.matrix_perception.mod" type="text"
+				<td><input class="centered" name="system.derived.matrix_perception.mod" type="text"
 						value="{{system.derived.matrix_perception.mod}}" data-dtype="Number" style="width: 2em"></td>
 				<td class="centered" title="{{system.derived.matrix_perception.modString}}">
 					{{system.derived.matrix_perception.pool}}</td>
 			</tr>
 			<tr>
 				<th>{{localize 'shadowrun6.label.device_mode' }}</th>
-				<td colspan="2"><select data-field="system.matrixIni" data-field="system.matrixIni"
+				<td colspan="2"><select name="system.matrixIni" name="system.matrixIni"
 						style="background: rgba(255,255,255,0.25); border: 0px">
 						{{#select system.matrixIni}}
 						{{#each config.MATRIX_INITIATIVE_TYPES as |type id|}}
-						<option value="{{@type}}" data-field=system.matrixIni>{{localize (concat "shadowrun6.matrixini."
+						<option value="{{@type}}" name=system.matrixIni>{{localize (concat "shadowrun6.matrixini."
 							type)}}</option>
 						{{/each}}
 						{{/select}}
@@ -126,7 +126,7 @@
 			<tr>
 				<td><b>{{ localize 'shadowrun6.defense.fading' }}</b></td>
 				<td class="centered">{{system.defensepool.fading.base}}</td>
-				<td><input class="centered" data-field="system.defensepool.fading.mod" type="text"
+				<td><input class="centered" name="system.defensepool.fading.mod" type="text"
 						value="{{system.defensepool.fading.mod}}" data-dtype="Number" style="width: 2em"></td>
 				<td class="centered" title="{{system.defensepool.fading.modString}}">{{system.defensepool.fading.pool}}
 				</td>

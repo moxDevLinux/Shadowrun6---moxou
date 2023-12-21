@@ -30,9 +30,9 @@
 				</div>
 			</td>
 			<td class="centered" style="width: 3em">
-				{{localize (concat "shadowrun6.spell.duration_" (concat  item.system.duration "_short"))}}</td>
+				{{localize (concat "shadowrun6.spell.duration_" (concat item.system.duration "_short"))}}</td>
 			<td class="centered" style="width: 3em"> <input type="text" value="{{item.system.fading}}"
-					data-field="system.fading" data-type="Number" /></td>
+					name="system.fading" data-type="Number" /></td>
 			<td class="centered">
 				{{#iff item.system.fading ">" 0}}
 				<a class="item-control complexform-roll" data-item-id="{{item.id}}" title="Roll"><i
