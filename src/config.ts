@@ -252,7 +252,6 @@ export class SR6Config {
 		sustained    : "shadowrun6.spell.duration_sustained",
 		permanent    : "shadowrun6.spell.duration_permanent",
 		limited      : "shadowrun6.spell.duration_limited",
-		always       : "shadowrun6.spell.duration_always",
 		special      : "shadowrun6.spell.duration_special"
 	};
 	spell_damage = {

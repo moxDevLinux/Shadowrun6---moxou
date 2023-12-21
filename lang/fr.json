@@ -1076,6 +1076,7 @@
       "duration_instantaneous": "Instantanée",
       "duration_instantaneous_short": "I",
       "duration_limited": "Limitée",
+      "duration_limited_short": "L",
       "duration_permanent": "Permanente",
       "duration_permanent_short": "P",
       "duration_short": "Dur.",

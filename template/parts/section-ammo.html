@@ -9,9 +9,40 @@
  		{{#each actor.items as |item id|}}
 		{{#iff item.type '==' 'gear'}}
 		{{#iff item.system.type '==' "AMMUNITION"}}
-       <tr class="draggable item" data-item-id="{{this.id}}"  title="{{item.system.description}}">
-       	<td style="margin-right: 1rem"><label class="item-name" data-skill="{{id}}">{{item.name}}</label></td>
-         <td><input class="centered box" type="text"     data-item-id="{{this.id}}" data-field="data.count" type="text"     value="{{item.system.count}}" data-dtype="Number" style="width: 1.5em" /></td>
+		<tr class="draggable item" data-item-id="{{this.id}}" title="{{item.system.description}}">
+			<td style="margin-right: 1rem"><label class="item-name" data-skill="{{id}}">{{item.name}}</label></td>
+			<td>
+				<input class="centered box" type="text"     data-item-id="{{this.id}}" data-field="data.count" type="text"     value="{{item.system.count}}" data-dtype="Number" style="width: 1.5em" />
+			</td>
+			<td style="margin-right: 1rem">
+				<label class="item-name" data-skill="{{id}}">
+					<div class="tooltip">
+						{{item.name}}
+						<div class="right">
+							<div class="text-content">
+								<h3>{{item.name}}</h3>
+								<p>{{{description item.system item.type}}}</p>
+								<p>{{{item.system.accessories}}}</p>
+							</div>
+							<i></i>
+						</div>
+					</div>
+				</label>
+			</td>
+			<td style="width: 2em" class="centered" >
+				{{#if item.system.needsRating}}
+				{{ localize 'shadowrun6.label.column.rating' }}
+				{{else}}
+				
+				{{/if}}
+			</td>
+			<td style="width: 2em" class="centered" >
+				{{#if item.system.needsRating}}
+				<input type="text" value="{{item.system.rating}}" data-field="data.rating" title="{{item.system.rating}}"/>
+				{{else}}
+				
+				{{/if}}
+			</td>
 			<td class="item-controls">
 				<td class="centered"><a class="item-control item-edit" title='{{localize 'shadowrun6.label.edit' }}'><i
 					class="fas fa-edit"></i></a> <a class="item-control item-delete"

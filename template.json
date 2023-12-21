@@ -382,6 +382,9 @@
 					"genesisID": "",
 					"name": "",
 					"attribute": "log"
+				},
+				"sustained_spell": {
+					"name" : ""
 				}
 			}
 		},
@@ -718,7 +721,8 @@
 			"multiSense": false,
 			"isOpposed": true,
 			"withEssence": false,
-			"wildDie": false
+			"wildDie": false,
+			"sustained": false
 		}
 	}
 }
