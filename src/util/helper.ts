@@ -84,12 +84,12 @@ export const defineHandlebarHelper = async function () {
 		}
 		return options.inverse(this);
 	});
-	Handlebars.registerHelper( 'getByKey', function ( map, key ) {
-   	return map.get(key);
-   });
-	Handlebars.registerHelper( 'getIniType', function ( map, key ) {
-   	return (map.get(key) as Shadowrun6Combatant).initiativeType;
-   });
+	Handlebars.registerHelper('getByKey', function (map, key) {
+		return map.get(key);
+	});
+	Handlebars.registerHelper('getIniType', function (map, key) {
+		return (map.get(key) as Shadowrun6Combatant).initiativeType;
+	});
 
 
 	Handlebars.registerHelper("skillAttr", getSkillAttribute);
@@ -154,24 +154,24 @@ export const defineHandlebarHelper = async function () {
 		}
 	});
 
-	Handlebars.registerHelper('switch', function(value, options) {
-  		this.switch_value = value;
-  		return options.fn(this);
+	Handlebars.registerHelper('switch', function (value, options) {
+		this.switch_value = value;
+		return options.fn(this);
 	});
 
-	Handlebars.registerHelper('case', function(value, options) {
-  		if (value == this.switch_value) {
-    		return options.fn(this);
-  		}
+	Handlebars.registerHelper('case', function (value, options) {
+		if (value == this.switch_value) {
+			return options.fn(this);
+		}
 	});
 };
 
 function getSystemData(obj: any): any {
-	if ( (game as any).release.generation >= 10) return obj.system;
+	if ((game as any).release.generation >= 10) return obj.system;
 	return obj.data.data;
 }
 function getActorData(obj: any): Shadowrun6Actor {
-	if ( (game as any).release.generation >= 10) return obj;
+	if ((game as any).release.generation >= 10) return obj;
 	return obj.data;
 }
 function itemsOfType(items, type) {
@@ -182,7 +182,7 @@ function itemsOfGeartype(items, geartype) {
 	return items.filter((elem) => getSystemData(elem).type == geartype);
 }
 
-function skillPointsNotZero(skills){
+function skillPointsNotZero(skills) {
 	return Object.keys(skills)
 		.filter((key) => skills[key].points > 0)
 		.reduce((res, key) => (res[key] = skills[key], res), {});
@@ -198,7 +198,7 @@ function itemNotInList(items, item) {
 	return bool;
 }
 
-function itemTypeInList(items, type){
+function itemTypeInList(items, type) {
 	var bool = false;
 	items.forEach((elem) => {
 		if (getActorData(elem).type == type) {

@@ -382,9 +382,6 @@
 					"genesisID": "",
 					"name": "",
 					"attribute": "log"
-				},
-				"sustained_spell": {
-					"name" : ""
 				}
 			}
 		},
@@ -428,7 +425,7 @@
 			],
 			"mortype": "mundane",
 			"matrixIni": "vrcold",
-			"rating": 1,
+			"rating" : 1,
 			"gruntmeta": "",
 			"editmode": false
 		},
@@ -452,7 +449,7 @@
 				"skill-template",
 				"knowledge-template"
 			],
-			"rating": 1,
+			"rating" : 1,
 			"spiritType": "",
 			"editmode": false
 		},
@@ -514,8 +511,8 @@
 			},
 			"dice-pool": {
 				"modifier": 0,
-				"wild": false,
-				"pool": 0
+				"wild"    : false,
+				"pool"    : 0
 			},
 			"quality-value": {
 				"value": 0,
@@ -576,7 +573,7 @@
 		"gear": {
 			"type": "WEAPON_FIREARMS",
 			"subtype": "",
-			"count": 0,
+			"count":  0,
 			"countable": false,
 			"availDef": "",
 			"avail": 0,
@@ -593,7 +590,7 @@
 			"dmg": 0,
 			"stun": false,
 			"dmgDef": "",
-			"attackRating": [0, 0, 0, 0, 0],
+			"attackRating": [0,0,0,0,0],
 			"modes": {
 				"BF": false,
 				"FA": false,
