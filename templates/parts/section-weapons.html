@@ -46,15 +46,15 @@
             <td colspan="6">
                 <div class="collapsible-content {{item.flags.shadowrun6-moxou.collapse-state}}">
                     {{ localize 'shadowrun6.label.modifications' }} <textarea class="box" type="text"
-                        data-item-id="{{this.id}}" name="data.accessories" type="text" data-dtype="Text"
+                        data-item-id="{{this.id}}" data-field="data.accessories" type="text" data-dtype="Text"
                         style="width: 25em">{{item.system.accessories}}</textarea>
                     <br />
                     {{ localize 'shadowrun6.label.wilddie' }} <input class="centered box" type="checkbox"
                         data-item-id="{{this.id}}" {{checked item.system.wild}} data-check="data.wild" type="checkbox"
                         data-dtype="Boolean" /><br />
                     {{ localize 'shadowrun6.label.poolmod' }} <input class="centered box" type="text"
-                        data-item-id="{{this.id}}" name="data.modifier" type="text" value="{{item.system.modifier}}"
-                        data-dtype="Number" style="width: 1.5em" />
+                        data-item-id="{{this.id}}" data-field="data.modifier" type="text"
+                        value="{{item.system.modifier}}" data-dtype="Number" style="width: 1.5em" />
                 </div>
             </td>
         </tr>
@@ -112,14 +112,14 @@
             <td colspan="6">
                 <div class="collapsible-content {{item.flags.shadowrun6-moxou.collapse-state}}">
                     {{ localize 'shadowrun6.label.modifications' }} <textarea class="box" type="text"
-                        data-item-id="{{this.id}}" name="data.accessories" type="text" data-dtype="Text"
+                        data-item-id="{{this.id}}" data-field="data.accessories" type="text" data-dtype="Text"
                         style="width: 20em" rows="2">{{item.system.accessories}}</textarea>
                     {{ localize 'shadowrun6.label.wilddie' }} <input class="centered box" type="checkbox" {{checked
                         item.system.wild}} data-item-id="{{this.id}}" data-check="data.wild" type="checkbox"
                         data-dtype="Boolean" /><br />
                     {{ localize 'shadowrun6.label.poolmod' }} <input class="centered box" type="text"
-                        data-item-id="{{this.id}}" name="data.modifier" type="text" value="{{item.system.modifier}}"
-                        data-dtype="Number" style="width: 1.5em" />
+                        data-item-id="{{this.id}}" data-field="data.modifier" type="text"
+                        value="{{item.system.modifier}}" data-dtype="Number" style="width: 1.5em" />
                 </div>
             </td>
         </tr>
@@ -177,14 +177,14 @@
             <td colspan="6">
                 <div class="collapsible-content {{item.flags.shadowrun6-moxou.collapse-state}}">
                     {{ localize 'shadowrun6.label.modifications' }} <textarea class="box" type="text"
-                        data-item-id="{{this.id}}" name="data.accessories" type="text" data-dtype="Text"
+                        data-item-id="{{this.id}}" data-field="data.accessories" type="text" data-dtype="Text"
                         style="width: 20em" rows="2">{{item.system.accessories}}</textarea>
                     {{ localize 'shadowrun6.label.wilddie' }} <input class="centered box" type="checkbox" {{checked
                         item.system.wild}} data-item-id="{{this.id}}" data-check="data.wild" type="checkbox"
                         data-dtype="Boolean" /><br />
                     {{ localize 'shadowrun6.label.poolmod' }} <input class="centered box" type="text"
-                        data-item-id="{{this.id}}" name="data.modifier" type="text" value="{{item.system.modifier}}"
-                        data-dtype="Number" style="width: 1.5em" />
+                        data-item-id="{{this.id}}" data-field="data.modifier" type="text"
+                        value="{{item.system.modifier}}" data-dtype="Number" style="width: 1.5em" />
                 </div>
             </td>
         </tr>

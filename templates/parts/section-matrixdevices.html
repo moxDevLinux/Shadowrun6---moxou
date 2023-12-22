@@ -68,7 +68,7 @@
 			<td colspan="9">
 				<div class="collapsible-content {{item.flags.shadowrun6-moxou.collapse-state}}">
 					{{ localize 'shadowrun6.label.accessories' }} <textarea class="box" type="text"
-						data-item-id="{{this.id}}" name="system.accessories" type="text" data-dtype="Text"
+						data-item-id="{{this.id}}" data-field="system.accessories" type="text" data-dtype="Text"
 						style="width: 25em">{{item.system.accessories}}</textarea>
 					{{# if (eq item.system.subtype "COMMLINK")}}
 					{{> "systems/shadowrun6-moxou/templates/parts/programs.html" config=../config item=this }}
@@ -104,7 +104,7 @@
 			<td colspan="9">
 				<div class="collapsible-content {{item.flags.shadowrun6-moxou.collapse-state}}">
 					{{ localize 'shadowrun6.label.accessories' }} <textarea class="box" type="text"
-						data-item-id="{{this.id}}" name="system.accessories" type="text" data-dtype="Text"
+						data-item-id="{{this.id}}" data-field="system.accessories" type="text" data-dtype="Text"
 						style="width: 25em">{{item.system.accessories}}</textarea>
 					{{> "systems/shadowrun6-moxou/templates/parts/programs.html" config=../config item=this }}
 				</div>

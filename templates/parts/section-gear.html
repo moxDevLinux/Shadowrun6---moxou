@@ -28,9 +28,9 @@
 					data-item-id="{{this.id}}">+</button>
 				{{/if}}
 			</td>
-			<td> <input type="text" value="{{item.name}}" name="name" title="{{item.system.description}}" /></td>
+			<td> <input type="text" value="{{item.name}}" data-field="name" title="{{item.system.description}}" /></td>
 			<td style="width: 2em" class="centered">
-				<input type="text" value="{{item.system.count}}" name="data.count" />
+				<input type="text" value="{{item.system.count}}" data-field="data.count" />
 			</td>
 			<td>
 				<div class="tooltip">
@@ -46,17 +46,19 @@
 					</div>
 				</div>
 			</td>
-			<td> <input type="text" value="{{item.name}}" name="name" title="{{item.system.description}}" /></td>
+			<td> <input type="text" value="{{item.name}}" data-field="name" title="{{item.system.description}}" /></td>
 			<td style="width: 2em" class="centered">
 				{{#if item.system.needsRating}}
-				<input type="text" value="{{item.system.rating}}" name="data.rating" title="{{item.system.rating}}" />
+				<input type="text" value="{{item.system.rating}}" data-field="data.rating"
+					title="{{item.system.rating}}" />
 				{{else}}
 				-
 				{{/if}}
 			</td>
 			<td style="width: 2em" class="centered">
 				{{#if item.system.countable}}
-				<input type="text" value="{{item.system.count}}" name="data.count" title="{{item.system.count}}" />
+				<input type="text" value="{{item.system.count}}" data-field="data.count"
+					title="{{item.system.count}}" />
 				{{else}}
 				-
 				{{/if}}
@@ -69,7 +71,7 @@
 			<td colspan="5">
 				<div class="collapsible-content {{item.flags.shadowrun6-moxou.collapse-state}}">
 					{{ localize 'shadowrun6.label.accessories' }} <textarea class="box" type="text"
-						data-item-id="{{this.id}}" name="accessories" type="text" data-dtype="Text"
+						data-item-id="{{this.id}}" data-field="accessories" type="text" data-dtype="Text"
 						style="width: 25em">{{item.system.accessories}}</textarea>
 				</div>
 			</td>
