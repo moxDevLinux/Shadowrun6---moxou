@@ -22,7 +22,7 @@
 					style="background: rgba(255,255,255,0.25); border: 0px">
 					{{#select system.mortype}}
 					{{#each config.MOR_TYPES as |type id|}}
-					<option value="{{@type}}" name=data.mortype>{{localize (concat "shadowrun6.mortype." type)}}
+					<option value="{{@type}}" data-field=data.mortype>{{localize (concat "shadowrun6.mortype." type)}}
 					</option>
 					{{/each}}
 					{{/select}}

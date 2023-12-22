@@ -42,12 +42,12 @@
         <div class="edge-roll" style="flex: 0.48; margin-right: 10px">
           <img src="systems/shadowrun6-moxou/images/BlankDice.png"
             style="border: 0px; height: auto; width: 48px; z-index: 0; position:absolute; filter: drop-shadow(0 0 4px #000000);" />
-          <label class="edge-value" data-field="dicePool">{{data.calcPool}}</label>
+          <label class="edge-value" name="dicePool">{{data.calcPool}}</label>
         </div>
       </td>
       {{#if data.threshold}}
       <td>{{localize "shadowrun6.roll.threshold"}}</td>
-      <td><input type="text" data-field="threshold" value="{{data.threshold}}" style="width: 3em" /></td>
+      <td><input type="text" name="threshold" value="{{data.threshold}}" style="width: 3em" /></td>
       {{/if}}
     </tr>
     <tr>
@@ -59,11 +59,11 @@
       <td>{{localize "shadowrun6.roll.modifier"}}</td>
       <td colspan="3"><input type="text" id="modifier" value="{{data.modifier}}" style="width: 3em" /></td>
       <td style="text-align:right">{{localize "shadowrun6.roll.wilddie"}}</td>
-      <td><input type="checkbox" data-field="useWildDie" {{checked data.useWildDie}} /></td>
+      <td><input type="checkbox" name="useWildDie" {{checked data.useWildDie}} /></td>
     </tr>
     <tr>
       <td>{{localize "shadowrun6.roll.mode"}}</td>
-      <td colspan="3"><select data-field="rollMode">
+      <td colspan="3"><select name="rollMode">
           {{#select rollMode}}
           {{#each rollModes as |label mode|}}
           <option value="{{mode}}">{{localize label}}</option>
@@ -71,12 +71,12 @@
           {{/select}}
         </select></td>
       <td style="text-align:right">{{localize "shadowrun6.roll.explode"}}</td>
-      <td><input type="checkbox" data-field="explode" value="{{data.explode}}" /></td>
+      <td><input type="checkbox" name="explode" value="{{data.explode}}" /></td>
     </tr>
     <tr>
       {{#if data.threshold}}
       <!--td style="text-align:right">{{localize "shadowrun6.roll.extended"}}</td>
-            <td><input type="checkbox" data-field="extended" {{checked data.extended}} /></td-->
+            <td><input type="checkbox" name="extended" {{checked data.extended}} /></td-->
       {{/if}}
     </tr>
   </table>
