@@ -117,7 +117,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="data.type" name="data.type" class="typeselect">
+                        <select name="data.type" data-field="data.type" class="typeselect">
                             {{#select item.system.type}}
                             {{#each config.GEAR_TYPES as |type id|}}
                             <option value="{{@type}}" name=data.type>{{localize (concat "shadowrun6.itemtype." type)}}
@@ -126,7 +126,7 @@
                             {{/select}}
                         </select>
                     </td>
-                    <td><select name="data.subtype" name="data.subtype" class="subtypeselect">
+                    <td><select name="data.subtype" data-field="data.subtype" class="subtypeselect">
                             {{#select item.system.subtype}}
                             <option value=""></option>
                             {{#each (gearSubtype system.type) as |subtype id|}}>
@@ -242,7 +242,7 @@
                             style="width:2em" /></td>
                     <td class="box centered"> <input type="number" value="{{item.system.tspd}}" name="data.tspd"
                             class="box centered" style="width:2em" /></td>
-                    <td colspan="2"> <select name="data.vtype" name="data.vtype" class="typeselect">
+                    <td colspan="2"> <select name="data.vtype" data-field="data.vtype" class="typeselect">
                             {{selectOptions config.VEHICLE_TYPE selected=item.system.vtype localize=true}}
                         </select>
                     </td>

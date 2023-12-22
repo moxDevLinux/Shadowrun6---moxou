@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select data-field="data.type" data-field="data.type" class="typeselect">
+                        <select name="data.type" data-field="data.type" class="typeselect">
                             {{#select item.system.type}}
                             {{#each config.GEAR_TYPES as |type id|}}
                             <option value="{{@type}}" name=data.type>{{localize (concat "shadowrun6.itemtype."
@@ -27,7 +27,7 @@
                             {{/select}}
                         </select>
                     </td>
-                    <td><select data-field="data.subtype" data-field="data.subtype" class="subtypeselect">
+                    <td><select name="data.subtype" data-field="data.subtype" class="subtypeselect">
                             {{#select item.system.subtype}}
                             <option value=""></option>
                             {{#each (gearSubtype data.system.type) as |subtype id|}}>
@@ -108,7 +108,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select data-field="system.skill" data-field="system.skill">
+                        <select name="system.skill" data-field="system.skill">
                             <option value="">-</option>
                             {{#select item.system.skill}}
                             {{#each config.SKILLS_WEAPON as |skill id|}}
@@ -118,7 +118,7 @@
                         </select>
                     </td>
                     <td>
-                        <select data-field="system.skillSpec" data-field="system.skillSpec">
+                        <select name="system.skillSpec" data-field="system.skillSpec">
                             {{#if item.system.skill}}
                             {{selectOptions (lookup config.skill_special item.system.skill)
                             selected=item.system.skillSpec localize=true}}
@@ -240,7 +240,7 @@
                 </tr>
                 <tr>
                     <td class="box centered" colspan="2"> <input type="number" value="{{item.system.handlOn}}"
-                            data-field="data.handlOn" class="box centered" style="width:2em" /> / <input type="number"
+                            name="data.handlOn" class="box centered" style="width:2em" /> / <input type="number"
                             value="{{item.system.handlOff}}" data-field="data.handlOff" class="box centered"
                             style="width:2em" /></td>
                     <td class="box centered"> <input type="number" value="{{item.system.accOn}}" data-field="data.accOn"
@@ -248,13 +248,13 @@
                             value="{{item.system.accOff}}" data-field="data.accOff" class="box centered"
                             style="width:2em" />
                     </td>
-                    <td class="box centered"> <input type="number" value="{{item.system.spdiOn}}"
-                            data-field="data.spdiOn" class="box centered" style="width:2em" /> / <input type="number"
+                    <td class="box centered"> <input type="number" value="{{item.system.spdiOn}}" name="data.spdiOn"
+                            class="box centered" style="width:2em" /> / <input type="number"
                             value="{{item.system.spdiOff}}" data-field="data.spdiOff" class="box centered"
                             style="width:2em" /></td>
                     <td class="box centered"> <input type="number" value="{{item.system.tspd}}" data-field="data.tspd"
                             class="box centered" style="width:2em" /></td>
-                    <td colspan="2"> <select data-field="data.vtype" data-field="data.vtype" class="typeselect">
+                    <td colspan="2"> <select name="data.vtype" data-field="data.vtype" class="typeselect">
                             {{selectOptions config.VEHICLE_TYPE selected=item.system.vtype localize=true}}
                         </select>
                     </td>
