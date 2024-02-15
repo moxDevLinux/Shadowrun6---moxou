@@ -20,7 +20,12 @@
     }
   ],
   "url": "https://bitbucket.org/rpgframework-cloud/shadowrun6-moxou/",
-  "flags": {},
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "html", "hbs", "json"],
+      "paths": ["system/templates", "css", "lang/en.json"]
+    }
+  },
   "version": "0.0.1",
   "compatibility": {
     "minimum": 10,

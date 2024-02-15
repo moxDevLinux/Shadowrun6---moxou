@@ -107,6 +107,9 @@
 					},
 					"matrix_perception": {
 						"mod": 0
+					},
+					"surprise": {
+						"mod": 0
 					}
 				}
 			},

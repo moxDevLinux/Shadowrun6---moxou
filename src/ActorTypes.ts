@@ -67,6 +67,7 @@ export class Derived {
 	composure: Attribute = new Attribute();
 	judge_intentions: Attribute = new Attribute();
 	memory: Attribute = new Attribute();
+	surprise: Attribute = new Attribute();
 	lift_carry: Attribute = new Attribute();
 	matrix_perception: Attribute = new Attribute();
 	resist_damage: Attribute = new Attribute();

@@ -344,6 +344,11 @@ export class Shadowrun6Actor extends Actor {
 			data.derived.memory.base = data.attributes["log"].pool + data.attributes["int"].pool;
 			data.derived.memory.pool = data.derived.memory.base + data.derived.memory.mod;
 		}
+		// Surprise
+		if (data.derived.surprise) {
+			data.derived.surprise.base = data.attributes["rea"].pool + data.attributes["int"].pool;
+			data.derived.surprise.pool = data.derived.surprise.base + data.derived.surprise.mod;
+		}
 		// Lift/Carry
 		if (data.derived.lift_carry) {
 			data.derived.lift_carry.base = data.attributes["bod"].pool + data.attributes["wil"].pool;

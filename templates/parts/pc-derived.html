@@ -71,6 +71,17 @@
 			<td><a class="item-control attributeonly-roll skill-pool" data-pool="{{system.derived.memory.pool}}"
 					data-item-id="memory"><i class="fas fa-dice-six"></i></a></td>
 		</tr>
+		<!-- Surprise -->
+		<tr>
+			<td><b>{{ localize 'shadowrun6.derived.surprise' }}</b></td>
+			<td class="centered"><label>{{system.derived.surprise.base}}</label></td>
+			<td><input class="centered box" data-field="data.derived.surprise.mod" type="text"
+					value="{{system.derived.surprise.mod}}" data-dtype="Number" id="derived1" style="width: 2em"
+					title="{{system.derived.surprise.modString}}"></td>
+			<td class="centered">{{system.derived.surprise.pool}}</td>
+			<td><a class="item-control attributeonly-roll skill-pool" data-pool="{{system.derived.surprise.pool}}"
+					data-item-id="surprise"><i class="fas fa-dice-six"></i></a></td>
+		</tr>
 		<!-- Lift/Carry -->
 		<tr>
 			<td><b>{{ localize 'shadowrun6.derived.lift_carry' }}</b></td>
