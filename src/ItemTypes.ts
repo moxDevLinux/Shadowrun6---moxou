@@ -99,7 +99,7 @@ export class Spell extends Gear {
 	withEssence: boolean;
 	wildDie: boolean;
 	threshold: number = 0;
-	sustained: boolean = false;
+	isSustained: boolean = false;
 }
 
 export class Weapon extends Gear {
