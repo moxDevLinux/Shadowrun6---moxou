@@ -9,7 +9,7 @@
 		],
 		"moduleResolution": "node",
 		"strictNullChecks": true,
-		"outDir": "module",
+		"outDir": "C:/Users/moxou/AppData/Local/FoundryVTT/Data/systems/shadowrun6-moxou/module",
 		"allowSyntheticDefaultImports": true,
 		"sourceMap": true
 	},

@@ -43,7 +43,7 @@
       "lang": "fr",
       "name": "Français",
       "path": "lang/fr.json"
-    },
+    }
   ],
   "socket": false,
   "initiative": "1d6",

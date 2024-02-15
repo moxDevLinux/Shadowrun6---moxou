@@ -713,6 +713,8 @@
       "attack": "Attaque",
       "attackRating": "Score Off.:",
       "configure": "Configurer votre lancer",
+      "wound-modifier": "Utiliser mod. dommages",
+      "sustained-spell-modifier": "Utiliser mod. sort maintenue",
       "criticalglitch": "Échec Critique",
       "damage": "Dégâts: ",
       "defRating": "Défense: ",
