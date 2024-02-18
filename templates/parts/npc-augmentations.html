@@ -3,12 +3,34 @@
 <dd>
 	<!-- Bioware -->
 	{{#each (itemsOfGeartype actor.items 'BIOWARE') as |item id|}}
-	<label class="" data-gear="{{id}}">{{item.name}}</label>{{#unless @last}},&nbsp;{{/unless}}
+	<label class="" data-gear="{{id}}">
+		<div class="tooltip">
+			{{item.name}}
+			<div class="right">
+				<div class="text-content">
+					<h3>{{item.name}}</h3>
+					<p>{{{item_description item.system item.type}}}</p>
+				</div>
+				<i></i>
+			</div>
+		</div>
+	</label>{{#unless @last}},&nbsp;{{/unless}}
 	{{/each}}
 
 	<!-- Cyberware -->
 	{{#each (itemsOfGeartype actor.items 'CYBERWARE') as |item id|}}
-	<label class="" data-gear="{{id}}">{{item.name}}</label>{{#unless @last}},&nbsp;{{/unless}}
+	<label class="" data-gear="{{id}}">
+		<div class="tooltip">
+			{{item.name}}
+			<div class="right">
+				<div class="text-content">
+					<h3>{{item.name}}</h3>
+					<p>{{{item_description item.system item.type}}}</p>
+				</div>
+				<i></i>
+			</div>
+		</div>
+	</label>{{#unless @last}},&nbsp;{{/unless}}
 	{{/each}}
 </dd>
 {{/if}}

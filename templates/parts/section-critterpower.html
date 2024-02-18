@@ -11,7 +11,9 @@
                 <th>{{ localize 'shadowrun6.label.column.name' }}</th>
                 <th>{{ localize 'shadowrun6.section.critterpowers.column.type' }}</th>
                 <th>{{ localize 'shadowrun6.section.critterpowers.column.action' }}</th>
+                <th>{{ localize 'shadowrun6.section.critterpowers.column.range' }}</th>
                 <th>{{ localize 'shadowrun6.section.critterpowers.column.duration' }}</th>
+                <th></th>
             </tr>
         </thead>
         {{#each actor.items as |item id|}}
@@ -29,11 +31,14 @@
                     </div>
                 </div>
             </td>
-            <td class="centered" style="width: 2em"> {{item.system.type}}</td>
-            <td class="centered" style="width: 2em"> {{item.system.action}}</td>
+            <td class="centered" style="width: 2em"> {{localize (concat (concat "shadowrun6.spell.type_"
+                item.system.type) "_short")}}</td>
+            <td class="centered" style="width: 2em"> {{localize (concat (concat "shadowrun6.actor.actions_"
+                item.system.action) "_short")}}</td>
             <td class="centered" style="width: 3em"> {{localize (concat (concat "shadowrun6.spell.range_"
                 item.system.range) "_short")}}</td>
-            <td class="centered" style="width: 2em"> {{item.system.duration}}</td>
+            <td class="centered" style="width: 2em"> {{localize (concat (concat "shadowrun6.spell.duration_"
+                item.system.duration) "_short")}}</td>
             <td class="centered">
                 <a class="item-control item-edit" title='{{localize ' shadowrun6.label.edit' }}'>
                     <i class="fas fa-edit"></i>

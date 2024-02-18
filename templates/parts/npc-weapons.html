@@ -8,7 +8,18 @@
 	@last}},&nbsp;{{/unless}}
 	{{/each}}
 	{{#each (itemsOfGeartype actor.items 'WEAPON_CLOSE_COMBAT') as |item id|}}
-	<label class="">{{item.name}} </label>
+	<label class="">
+		<div class="tooltip">
+			{{item.name}}
+			<div class="right">
+				<div class="text-content">
+					<h3>{{item.name}}</h3>
+					<p>{{{item_description item.system item.type}}}</p>
+				</div>
+				<i></i>
+			</div>
+		</div>
+	</label>
 	<a class="item-control item-roll" data-item-id="{{this.id}}" data-skill="{{item.system.skill}}"
 		data-skillSpec="{{item.system.skillSpec}}" title="Roll"><i class="fas fa-dice-six"></i></a>{{#unless
 	@last}},&nbsp;{{/unless}}
