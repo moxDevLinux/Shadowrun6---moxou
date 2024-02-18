@@ -508,7 +508,8 @@
 		"templates": {
 			"genesis": {
 				"genesisID": "",
-				"description": ""
+				"description": "",
+				"indetail": ""
 			},
 			"skill-value": {
 				"points": 0,

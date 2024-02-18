@@ -122,6 +122,15 @@
       "loyalty_short": "Loy",
       "type": "Type"
     },
+    "critterpower": {
+      "actiontitle": "Action",
+      "action": {
+        "auto": "Auto",
+        "major": "Majeur",
+        "minor": "Mineur"
+      }
+    },
+
     "defense": {
       "astral": "Défense : Astrale",
       "drain": "Résistance au drain",
@@ -1097,7 +1106,7 @@
       "duration_permanent_short": "P",
       "duration_short": "Dur.",
       "duration_special": "Spécial",
-      "duration_special_short": "Spé.",
+      "duration_special_short": "S",
       "duration_sustained": "Maintenue",
       "duration_sustained_short": "M",
       "isOpposed": "Est opposé",
@@ -1106,12 +1115,14 @@
       "range_line_of_sight_area": "Ligne de vue (zone)",
       "range_line_of_sight_area_short": "LdV(Z)",
       "range_line_of_sight_short": "LdV",
-      "range_self": "Soi-même",
-      "range_self_area": "Soi-même (Zone)",
-      "range_self_area_short": "S(Z)",
-      "range_self_short": "Soi",
+      "range_self": "Personnel",
+      "range_self_area": "Personnel (Zone)",
+      "range_self_area_short": "P (Z)",
+      "range_self_short": "P",
       "range_touch": "Contact",
       "range_touch_short": "C",
+      "range_special": "Special",
+      "range_special_short": "S",
       "type": "Type",
       "type_mana": "Mana",
       "type_mana_short": "M",

@@ -234,6 +234,7 @@ export class SR6Config {
 		line_of_sight_area: "shadowrun6.spell.range_line_of_sight_area",
 		touch: "shadowrun6.spell.range_touch",
 		self: "shadowrun6.spell.range_self",
+		special: "shadowrun6.spell.range_special",
 		self_area: "shadowrun6.spell.range_self_area"
 	};
 	spell_category = {
