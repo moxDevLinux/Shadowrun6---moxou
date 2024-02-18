@@ -42,9 +42,11 @@ import { ActorData, ItemData } from "@league-of-foundry-developers/foundry-vtt-t
 import { systemDataField } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs.js";
 
 function isLifeform(obj: any): obj is Lifeform {
+	console.log("function isLifeform(obj: any): obj is Lifeform");
 	return obj.attributes != undefined;
 }
 function isSpiritOrSprite(obj: any): obj is Spirit {
+	console.log("function isSpiritOrSprite(obj: any): obj is Spirit");
 	return obj.rating != undefined;
 }
 function isMatrixUser(obj: any): obj is MatrixUser {
@@ -106,6 +108,7 @@ export class Shadowrun6Actor extends Actor {
 
 		try {
 			if (actorData.type === "Spirit") {
+				console.log("actorData.type === 'Spirit'");
 				this._applySpiritPreset();
 				this._applyForce();
 			}
@@ -150,6 +153,7 @@ export class Shadowrun6Actor extends Actor {
 		if (!isSpiritOrSprite(data))
 			return;
 
+		console.log("_applySpiritPreset()");
 		switch (data.spiritType) {
 			case 'air':
 				data.attributes.bod.base = 2;
@@ -217,6 +221,17 @@ export class Shadowrun6Actor extends Actor {
 				data.attributes.cha.base = 0;
 				data.attributes.mag.base = 0;
 				break;
+			default:
+				data.attributes.bod.base = 0;
+				data.attributes.agi.base = 0;
+				data.attributes.rea.base = 0;
+				data.attributes.str.base = 0;
+				data.attributes.wil.base = 0;
+				data.attributes.log.base = 0;
+				data.attributes.int.base = 0;
+				data.attributes.cha.base = 0;
+				data.attributes.mag.base = 0;
+				break;
 		}
 	}
 
@@ -226,9 +241,13 @@ export class Shadowrun6Actor extends Actor {
 	 */
 	_applyForce() {
 		const data = getSystemData(this);
+		console.log("_applyForce()");
+
 		// Only run on spirits
 		if (isSpiritOrSprite(data)) {
+			console.log("isSpiritOrSprite");
 			const force: number = parseInt(data.rating as any);
+			console.log("force = %i", force);
 			data.mortype = "mysticadept";
 
 			SR6.ATTRIBUTES.forEach((attr) => {
@@ -275,8 +294,12 @@ export class Shadowrun6Actor extends Actor {
 	 */
 	_prepareAttributes() {
 		const data: SR6Actor = getSystemData(this);
+		console.log("_prepareAttributes() if liveforms");
+
 		// Only run on lifeforms
 		if (isLifeform(data)) {
+			console.log("data is liveforms");
+
 			SR6.ATTRIBUTES.forEach((attr) => {
 				data.attributes[attr].pool = data.attributes[attr].base + parseInt(data.attributes[attr].mod);
 				if (data.attributes[attr].pool < 1)

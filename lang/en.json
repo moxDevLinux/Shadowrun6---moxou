@@ -1,6 +1,7 @@
 {
   "Shadowrun6ActorSheetNPC": "Bla",
-  "shadowrun6-moxou.Shadowrun6ActorSheetNPC": "Blubb",
+  "shadowrun6-moxou.Shadowrun6ActorSheetNPC": "ActorSheetNPC",
+  "shadowrun6-moxou.Shadowrun6ActorSheetSpirit": "ActorSheetSpirit",
   "ACTOR": {
     "TypeCritter": "Critter",
     "TypeNpc": "Grunt/NPC",
@@ -504,6 +505,8 @@
       "base": "Base",
       "column": {
         "action": "Action",
+        "type": "Type",
+        "range": "Range",
         "count": "Nb",
         "name": "Name",
         "rating": "Rtg."
@@ -553,6 +556,7 @@
       "soaked": "Soaked {soaked} of {threshold} damage",
       "slower": "Decelerate",
       "specialization": "Specialization",
+      "type": "Type",
       "threshold": "Threshold",
       "value": "Value",
       "wilddie": "Wild Die"
@@ -918,6 +922,10 @@
       },
       "critterpowers": {
         "add": "Add critter power",
+        "column.type": "Type",
+        "column.action": "Action",
+        "column.range": "Rng",
+        "column.duration": "Dur",
         "title": "Powers"
       },
       "defense": "Defenses & Resistances",
@@ -1216,20 +1224,20 @@
       "drain_short": "DV",
       "duration": "Duration",
       "duration_instantaneous": "Instantaneous",
-      "duration_instantaneous_short": "I",
+      "duration_instantaneous_short": "Ist",
       "duration_immediate": "Immediate",
-      "duration_immediate_short": "I",
+      "duration_immediate_short": "Imm",
       "duration_limited": "Limited",
-      "duration_limited_short": "L",
+      "duration_limited_short": "Lim",
       "duration_permanent": "Permanent",
-      "duration_permanent_short": "P",
+      "duration_permanent_short": "Per",
       "duration_short": "Dur.",
       "duration_special": "Special",
       "duration_special_short": "Spec",
       "duration_sustained": "Sustained",
-      "duration_sustained_short": "S",
+      "duration_sustained_short": "Sus",
       "duration_always": "Always",
-      "duration_always_short": "A",
+      "duration_always_short": "All",
       "isOpposed": "Is Opposed",
       "range": "Range",
       "range_line_of_sight": "Line of sight",

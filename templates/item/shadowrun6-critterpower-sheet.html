@@ -6,7 +6,7 @@
             <table>
                 <tr>
                     <th>{{localize 'shadowrun6.spell.type'}}</th>
-                    <th>{{localize 'shadowrun6.adeptpower.activation'}}</th>
+                    <th>{{localize 'shadowrun6.critterpower.actiontitle'}}</th>
                     <th>{{localize 'shadowrun6.spell.range'}}</th>
                     <th>{{localize 'shadowrun6.spell.duration'}}</th>
                 </tr>
@@ -18,8 +18,7 @@
                     </td>
                     <td>
                         <select data-field="data.action">
-                            {{selectOptions config.adeptpower_activation selected=item.system.action
-                            localize=true}}
+                            {{selectOptions config.critterpower_action selected=item.system.action localize=true}}
                         </select>
                     </td>
                     <td>
@@ -36,6 +35,10 @@
             <h3>{{localize 'shadowrun6.item.description'}}</h3>
             <textarea class="box" type="text" data-field="system.description" cols="20"
                 rows="8">{{item.system.description}}</textarea>
+            <h3>{{localize 'shadowrun6.item.indetail'}}</h3>
+            <textarea class="box" type="text" data-field="system.indetail" cols="20"
+                rows="8">{{item.system.indetail}}</textarea>
+
         </div>
     </section>
 </form>

@@ -9,6 +9,8 @@ import { Shadowrun6Actor } from "./Shadowrun6Actor.js";
 import { Defense, MonitorType, SR6Config } from "./config.js";
 import { Shadowrun6ActorSheetPC } from "./sheets/ActorSheetPC.js";
 import { Shadowrun6ActorSheetNPC } from "./sheets/ActorSheetNPC.js";
+import { Shadowrun6ActorSheetCritter } from "./sheets/ActorSheetCritter.js";
+import { Shadowrun6ActorSheetSpirit } from "./sheets/ActorSheetSpirit.js";
 import { Shadowrun6ActorSheetVehicle } from "./sheets/ActorSheetVehicle.js";
 //import { Shadowrun6ActorSheetVehicleCompendium } from "./sheets/ActorSheetVehicleCompendium.js";
 import { SR6ItemSheet } from "./sheets/SR6ItemSheet.js";
@@ -66,7 +68,9 @@ Hooks.once("init", async function () {
 	// Register sheet application classes
 	Actors.unregisterSheet("core", ActorSheet);
 	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetPC, { types: ["Player"], makeDefault: true });
-	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetNPC, { types: ["NPC", "Critter", "Spirit"], makeDefault: true });
+	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetNPC, { types: ["NPC"], makeDefault: true });
+	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetCritter, { types: ["Critter"], makeDefault: true });
+	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetSpirit, { types: ["Spirit"], makeDefault: true });
 	Actors.registerSheet("shadowrun6-moxou", Shadowrun6ActorSheetVehicle, { types: ["Vehicle"], makeDefault: true });
 
 	Items.registerSheet("shadowrun6-moxou", SR6ItemSheet, {

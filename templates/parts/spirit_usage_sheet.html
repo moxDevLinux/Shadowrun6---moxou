@@ -7,6 +7,9 @@
     <div class="header-fields" style="flex:3">
         <h1><input data-field="name" type="text" value="{{actor.name}}" placeholder="{{localize 'shadowrun6.name' }}" />
         </h1>
+        <div class="npc-settings" style="display:flex">
+            {{localize "shadowrun6.label.force"}} {{system.rating}}
+        </div>
         <div style="display:flex; flex-direction:row; align-items:center;">
             {{> "systems/shadowrun6-moxou/templates/parts/monitors.html" attributes=system.attributes}}
             {{> "systems/shadowrun6-moxou/templates/parts/edge-token.html"}}
@@ -29,12 +32,7 @@
                 'shadowrun6.actor.actions_minor'}}</dd>
             {{> "systems/shadowrun6-moxou/templates/parts/npc-skills.html" skills=system.skills}}
             {{> "systems/shadowrun6-moxou/templates/parts/npc-spells.html" }}
-            {{> "systems/shadowrun6-moxou/templates/parts/npc-powers.html" }}
             {{> "systems/shadowrun6-moxou/templates/parts/npc-metamagics.html" }}
-            {{> "systems/shadowrun6-moxou/templates/parts/npc-complex-forms.html" }}
-            {{> "systems/shadowrun6-moxou/templates/parts/npc-echoes.html" }}
-            {{> "systems/shadowrun6-moxou/templates/parts/npc-augmentations.html" }}
-            {{> "systems/shadowrun6-moxou/templates/parts/npc-gear.html" }}
             {{> "systems/shadowrun6-moxou/templates/parts/npc-critterpowers.html" }}
             {{> "systems/shadowrun6-moxou/templates/parts/npc-weapons.html" }}
         </dl>

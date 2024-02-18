@@ -1,13 +1,16 @@
 {
   "ACTOR": {
     "TypeCritter": "Créature",
+    "TypeSpirit": "Esprit",
     "TypeNpc": "PNJ",
-    "TypePlayer": "Personnage Joueur"
+    "TypePlayer": "PJ",
+    "TypeVehicle": "Vehicle/Drone"
   },
   "ITEM": {
     "TypeAdeptpower": "Pouvoir d'adepte",
     "TypeComplexform": "Forme complexe",
     "TypeContact": "Contact",
+    "TypeCritterpower": "Pouvoir de créature",
     "TypeEcho": "Écho",
     "TypeGear": "Équipement",
     "TypeLifestyle": "Style de vie",
@@ -443,8 +446,8 @@
       "adepts": "Adeptes",
       "action": "Action",
       "actionduration": {
-        "minor.short": "Mi",
-        "major.short": "Ma"
+        "minor.short": "Min",
+        "major.short": "Mag"
       },
       "attack_rating": "Score Offensif",
       "attack_rating_short": "SO",
@@ -454,7 +457,7 @@
         "action": "Action",
         "count": "Qté.",
         "name": "Nom",
-        "rating": "Ind."
+        "rating": "Indice"
       },
       "attack.short": "A",
       "sleaze.short": "C",
@@ -496,6 +499,7 @@
       "rating3": "Indice 3",
       "specialization": "Spécialisation",
       "threshold": "Seuil",
+      "type": "Type",
       "value": "Score",
       "wilddie": "Dé Libre"
     },
@@ -805,6 +809,15 @@
         "add": "Ajouter un contact",
         "title": "Contacts"
       },
+      "critterpowers": {
+        "add": "Ajouter un pouvoir",
+        "column.type": "Type",
+        "column.action": "Action",
+        "column.range": "Portée",
+        "column.duration": "Dur",
+        "title": "Powers"
+      },
+
       "defense": "Défenses & résistances",
       "derived": "Valeurs dérivées",
       "drones": {
@@ -1113,6 +1126,16 @@
       "sense_multi": "Plurisensoriel",
       "sense_single": "Unisensoriel"
     },
+    "spirittype": {
+      "air": "Air",
+      "beasts": "Bête",
+      "earth": "Terre",
+      "fire": "Feu",
+      "kin": "Âmes soeurs",
+      "plant": "Plant",
+      "water": "Eau"
+    },
+
     "tradition": {
       "attribute": "Attribut de tradition"
     },

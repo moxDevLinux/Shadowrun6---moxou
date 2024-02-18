@@ -1,14 +1,22 @@
 <div class="section" style="display: inline-block; width:100%">
     <div class="section-head">
-        <h2 class="section-title">{{ localize 'shadowrun6.section.critterpower' }}</h2>
-        <a class="item-control quality-create" title="{{localize 'shadowrun6.section.critterpower_add' }}">
+        <h2 class="section-title">{{ localize 'shadowrun6.section.critterpowers.title' }}</h2>
+        <a class="item-control quality-create" title="{{localize 'shadowrun6.section.critterpowers.add' }}">
             <h2 class="fas fa-plus"></h2>
         </a>
     </div>
     <table>
+        <thead>
+            <tr>
+                <th>{{ localize 'shadowrun6.label.column.name' }}</th>
+                <th>{{ localize 'shadowrun6.section.critterpowers.column.type' }}</th>
+                <th>{{ localize 'shadowrun6.section.critterpowers.column.action' }}</th>
+                <th>{{ localize 'shadowrun6.section.critterpowers.column.duration' }}</th>
+            </tr>
+        </thead>
         {{#each actor.items as |item id|}}
         {{#iff item.type '==' 'critterpower'}}
-        <tr class="item list-item" data-item-id="{{item.id}}">
+        <tr class="draggable item list-item" data-item-id="{{item.id}}">
             <td>
                 <div class="tooltip">
                     {{item.name}}
@@ -21,11 +29,20 @@
                     </div>
                 </div>
             </td>
-            <td> <input type="text" value="{{item.system.explain}}" data-field="data.explain" class="secondary"
-                    placeholder="Details" /></td>
-            <td><a class="item-control item-edit" title='{{localize ' shadowrun6.label.edit' }}'><i
-                        class="fas fa-edit"></i></a> <a class="item-control item-delete" title='{{localize '
-                    shadowrun6.label.delete' }}'><i class="fas fa-trash"></i></a></td>
+            <td class="centered" style="width: 2em"> {{item.system.type}}</td>
+            <td class="centered" style="width: 2em"> {{item.system.action}}</td>
+            <td class="centered" style="width: 3em"> {{localize (concat (concat "shadowrun6.spell.range_"
+                item.system.range) "_short")}}</td>
+            <td class="centered" style="width: 2em"> {{item.system.duration}}</td>
+            <td class="centered">
+                <a class="item-control item-edit" title='{{localize ' shadowrun6.label.edit' }}'>
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a class="item-control item-delete" title='{{localize ' shadowrun6.label.delete' }}'>
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
         </tr>
         {{/iff}}
         {{/each}}

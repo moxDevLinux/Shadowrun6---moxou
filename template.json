@@ -99,7 +99,7 @@
 					"judge_intentions": {
 						"mod": 0
 					},
-					"memory": {
+					"surprise": {
 						"mod": 0
 					},
 					"lift_carry": {
@@ -108,7 +108,7 @@
 					"matrix_perception": {
 						"mod": 0
 					},
-					"surprise": {
+					"memory": {
 						"mod": 0
 					}
 				}
@@ -437,6 +437,7 @@
 			"templates": [
 				"attribute-template",
 				"monitor-template",
+				"defenserating-template",
 				"initiative-template",
 				"skill-template",
 				"knowledge-template"
@@ -449,11 +450,12 @@
 				"attribute-template",
 				"monitor-template",
 				"initiative-template",
+				"defenserating-template",
 				"skill-template",
 				"knowledge-template"
 			],
 			"rating": 1,
-			"spiritType": "",
+			"spiritType": "air",
 			"editmode": false
 		},
 		"Vehicle": {
