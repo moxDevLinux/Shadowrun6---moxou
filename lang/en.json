@@ -2,6 +2,7 @@
   "Shadowrun6ActorSheetNPC": "Bla",
   "shadowrun6-moxou.Shadowrun6ActorSheetNPC": "ActorSheetNPC",
   "shadowrun6-moxou.Shadowrun6ActorSheetSpirit": "ActorSheetSpirit",
+  "shadowrun6-moxou.Shadowrun6ActorSheetCritter": "ActorSheetCritter",
   "ACTOR": {
     "TypeCritter": "Critter",
     "TypeNpc": "Grunt/NPC",
@@ -536,6 +537,7 @@
       "firemode_current": "Current Firemode",
       "firemodes": "Firemodes",
       "force": "Force",
+      "crittertype": "Critter Type",
       "gender": "Gender",
       "legality.illegal.short": "I",
       "legality.legal.short": "L",
@@ -1278,6 +1280,11 @@
       "kin": "Kin",
       "plant": "Plant",
       "water": "Water"
+    },
+    "crittertype": {
+      "mundane": "Mundane",
+      "awakened": "Awakened",
+      "dracoform": "Dracoform"
     },
     "tradition": {
       "attribute": "Tradition Attribute"

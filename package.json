@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "shadowrun6-moxou",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "sideEffects": [
     "src/Shadowrun6.ts"

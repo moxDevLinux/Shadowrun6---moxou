@@ -439,9 +439,12 @@
 				"monitor-template",
 				"defenserating-template",
 				"initiative-template",
+				"movement-template",
 				"skill-template",
-				"knowledge-template"
+				"knowledge-template",
+				"magic-template"
 			],
+			"critterType": "mundane",
 			"editmode": false
 		},
 		"Spirit": {
@@ -451,6 +454,7 @@
 				"monitor-template",
 				"initiative-template",
 				"defenserating-template",
+				"movement-template",
 				"skill-template",
 				"knowledge-template"
 			],

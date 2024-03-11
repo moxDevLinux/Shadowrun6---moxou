@@ -154,6 +154,9 @@ export class Spirit extends Lifeform {
 	rating: number;
 	spiritType: string;
 }
+export class Critter extends Lifeform {
+	critterType: string;
+}
 
 export class MatrixUser extends Lifeform {
 	persona: Persona = new Persona();

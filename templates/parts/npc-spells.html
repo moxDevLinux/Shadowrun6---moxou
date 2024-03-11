@@ -1,11 +1,13 @@
+{{ log "rendering template>parts>npc-spells.html" this }}
 {{#if (itemTypeInList actor.items 'spell')}}
+
 <dt>{{ localize 'shadowrun6.actor.spells' }}</dt>
 <dd>
       <!-- Spells skills -->
       {{#each (itemsOfType actor.items 'spell') as |item id|}}
       <label class="skill-key rollable spell-roll" data-skill="{{id}}">
             <div class="tooltip">
-                  {{item.name}}
+                 {{item.name}}
                   <div class="right">
                         <div class="text-content">
                               <h3>{{item.name}}</h3>
@@ -20,3 +22,4 @@
       {{/each}}
 </dd>
 {{/if}}
+{{ log "end of rendering template>parts>npc-spells.html" }}

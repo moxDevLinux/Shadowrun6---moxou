@@ -17,7 +17,8 @@ import {
 	VehicleOpMode,
 	VehicleSkills,
 	VehicleSkill,
-	Spirit
+	Spirit,
+	Critter
 } from "./ActorTypes.js";
 import { Defense, MonitorType, SR6, SR6Config } from "./config.js";
 import { MatrixAction, SkillDefinition } from "./DefinitionTypes.js";
@@ -48,6 +49,10 @@ function isLifeform(obj: any): obj is Lifeform {
 function isSpiritOrSprite(obj: any): obj is Spirit {
 	console.log("function isSpiritOrSprite(obj: any): obj is Spirit");
 	return obj.rating != undefined;
+}
+function isCritter(obj: any): obj is Critter {
+	console.log("function isCritter(obj: any): obj is Critter");
+	return obj.critterType != undefined;
 }
 function isMatrixUser(obj: any): obj is MatrixUser {
 	return obj.persona != undefined;
@@ -132,6 +137,9 @@ export class Shadowrun6Actor extends Actor {
 				this._prepareDefenseRatings();
 				this._prepareSkills();
 				this._prepareDefensePools();
+				if (isCritter(system) && system.critterType) {
+					system.morDef = SR6.MOR_DEFINITIONS[system.critterType];
+				}
 				//     this._prepareItemPools();
 			}
 			if (actorData.type === "Vehicle") {

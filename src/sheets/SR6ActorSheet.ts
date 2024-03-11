@@ -52,7 +52,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 		console.log("default: ", super.template);
 		const path = "systems/shadowrun6-moxou/templates/actor/";
 		if (this.isEditable) {
-			console.log("ReadWrite sheet ");
+			console.log("ReadWrite sheet");
 			return super.template;
 		} else {
 			console.log("ReadOnly sheet", this);

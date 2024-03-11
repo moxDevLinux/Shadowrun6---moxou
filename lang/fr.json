@@ -485,6 +485,8 @@
       "features": "Fonctionnalités",
       "firemode_current": "Mode actuel",
       "firemodes": "Modes de tir",
+      "force": "Force",
+      "crittertype": "Type de monstre",
       "gender": "Genre",
       "legality.illegal.short": "I",
       "legality.legal.short": "L",
@@ -1142,11 +1144,15 @@
       "beasts": "Bête",
       "earth": "Terre",
       "fire": "Feu",
-      "kin": "Âmes soeurs",
+      "kin": "aîné",
       "plant": "Plant",
       "water": "Eau"
     },
-
+    "crittertype": {
+      "mundane": "Ordinaire",
+      "awakened": "Éveillée",
+      "dracoform": "Dracomorphe"
+    },
     "tradition": {
       "attribute": "Attribut de tradition"
     },

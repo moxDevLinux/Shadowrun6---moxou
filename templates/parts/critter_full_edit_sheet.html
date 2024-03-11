@@ -7,7 +7,7 @@
         <h1><input data-field="name" type="text" value="{{actor.name}}" placeholder="{{localize 'shadowrun6.name' }}" />
         </h1>
         <div class="npc-settings" style="display:flex">
-            {{> "systems/shadowrun6-moxou/templates/parts/npc_edit_spirit.html" }}
+            {{> "systems/shadowrun6-moxou/templates/parts/npc_edit_critter.html" }}
         </div>
     </div>
 </header>
@@ -17,7 +17,13 @@
     <a class="item" data-tab="basics">{{ localize 'shadowrun6.actor.nav.basics' }}</a>
     <a class="item" data-tab="skills">{{ localize 'shadowrun6.actor.nav.skills' }}</a>
     <a class="item" data-tab="combat">{{ localize 'shadowrun6.actor.nav.combat' }}</a>
+
+    {{#if system.morDef.magic}}
     <a class="item" data-tab="magic">{{ localize 'shadowrun6.actor.nav.magic' }}</a>
+    {{/if}}
+
+    <a class="item" data-tab="biography">{{ localize 'shadowrun6.actor.nav.biography' }}</a>
+
 </nav>
 
 {{!-- Sheet Body --}}

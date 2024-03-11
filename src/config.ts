@@ -140,16 +140,19 @@ export class SR6Config {
 	SKILLS_WEAPON = ["firearms", "close_combat", "exotic_weapons", "athletics"];
 	MATRIX_INITIATIVE_TYPES = ["ar", "vrcold", "vrhot"];
 	MOR_TYPES = ["mundane", "magician", "mysticadept", "technomancer", "adept", "aspectedmagician"];
-	MOR_DEFINITIONS = {
+	MOR_DEFINITIONS = {  // magie, resonnance, spell, power
 		mundane: new MagicOrResonanceDefinition(),
 		magician: new MagicOrResonanceDefinition(true, false, true, false),
 		mysticadept: new MagicOrResonanceDefinition(true, false, true, true),
 		technomancer: new MagicOrResonanceDefinition(false, true, false, false),
 		adept: new MagicOrResonanceDefinition(true, false, false, true),
-		aspectedmagician: new MagicOrResonanceDefinition(true, false, true, false)
+		aspectedmagician: new MagicOrResonanceDefinition(true, false, true, false),
+		awakened: new MagicOrResonanceDefinition(true, false, true, false),
+		dracoform: new MagicOrResonanceDefinition(true, false, true, true)
 	};
 	NPC_SUBTYPES = ["npc", "critter", "spirit", "sprite"];
-	SPIRIT_TYPES = ["air", "beasts", "earth", "fire", "kin", "plant", "water"]
+	SPIRIT_TYPES = ["air", "beasts", "earth", "fire", "kin", "plant", "water"];
+	CRITTER_TYPES = ["mundane", "awakened", "dracoform"];
 
 	ATTRIB_BY_SKILL = new Map([
 		["astral", new SkillDefinition("int", false)],

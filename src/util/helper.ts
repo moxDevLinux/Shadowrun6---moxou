@@ -1,4 +1,4 @@
-import { Lifeform, Skill } from "../ActorTypes";
+import { Lifeform, Critter, Skill } from "../ActorTypes";
 import { SkillDefinition } from "../DefinitionTypes";
 import { GenesisData } from "../ItemTypes";
 import { Shadowrun6Actor } from "../Shadowrun6Actor";
@@ -6,6 +6,15 @@ import Shadowrun6Combatant from "../Shadowrun6Combatant";
 
 function isLifeform(obj: any): obj is Lifeform {
 	return obj.attributes != undefined;
+}
+
+function doesCritterUseMagic(obj: any): obj is Critter {
+	console.log("doesCritterUseMagic(obj: any): obj is Critter");
+
+	if (obj.critterType == "mundane")
+		return false;
+	else
+		return true;
 }
 
 function deHTML(html: string): string {
@@ -91,7 +100,7 @@ export const defineHandlebarHelper = async function () {
 		return (map.get(key) as Shadowrun6Combatant).initiativeType;
 	});
 
-
+	Handlebars.registerHelper("critterUseMagic", doesCritterUseMagic);
 	Handlebars.registerHelper("skillAttr", getSkillAttribute);
 	Handlebars.registerHelper("skillPool", getSkillPool);
 	Handlebars.registerHelper("gearSubtype", getSubtypes);

@@ -1,0 +1,11 @@
+{{ log "rendering template>parts>npc_edit_critter.html" }}
+
+<label for="critter_type">Type</label>
+<select name="critter_type" name="data.critterType" data-field="data.critterType"
+    style="background: rgba(255,255,255,0.25); border: 0px">
+    {{#select system.critterType}}
+    {{#each config.CRITTER_TYPES as |type id|}}
+    <option value="{{@type}}" name=data.critterType>{{localize (concat "shadowrun6.crittertype." type)}}</option>
+    {{/each}}
+    {{/select}}
+</select>
