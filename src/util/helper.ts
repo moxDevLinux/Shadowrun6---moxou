@@ -8,15 +8,6 @@ function isLifeform(obj: any): obj is Lifeform {
 	return obj.attributes != undefined;
 }
 
-function doesCritterUseMagic(obj: any): obj is Critter {
-	console.log("doesCritterUseMagic(obj: any): obj is Critter");
-
-	if (obj.critterType == "mundane")
-		return false;
-	else
-		return true;
-}
-
 function deHTML(html: string): string {
 	html = html.replace(/<br\/>/gi, "\n");
 	html = html.replace(/<b>(.*?)<\/b>/gi, " $1");
@@ -100,7 +91,6 @@ export const defineHandlebarHelper = async function () {
 		return (map.get(key) as Shadowrun6Combatant).initiativeType;
 	});
 
-	Handlebars.registerHelper("critterUseMagic", doesCritterUseMagic);
 	Handlebars.registerHelper("skillAttr", getSkillAttribute);
 	Handlebars.registerHelper("skillPool", getSkillPool);
 	Handlebars.registerHelper("gearSubtype", getSubtypes);

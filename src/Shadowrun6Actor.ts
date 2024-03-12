@@ -43,15 +43,15 @@ import { ActorData, ItemData } from "@league-of-foundry-developers/foundry-vtt-t
 import { systemDataField } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/fields.mjs.js";
 
 function isLifeform(obj: any): obj is Lifeform {
-	console.log("function isLifeform(obj: any): obj is Lifeform");
+//	console.log("function isLifeform(obj: any): obj is Lifeform");
 	return obj.attributes != undefined;
 }
 function isSpiritOrSprite(obj: any): obj is Spirit {
-	console.log("function isSpiritOrSprite(obj: any): obj is Spirit");
+//	console.log("function isSpiritOrSprite(obj: any): obj is Spirit");
 	return obj.rating != undefined;
 }
 function isCritter(obj: any): obj is Critter {
-	console.log("function isCritter(obj: any): obj is Critter");
+//	console.log("function isCritter(obj: any): obj is Critter");
 	return obj.critterType != undefined;
 }
 function isMatrixUser(obj: any): obj is MatrixUser {
