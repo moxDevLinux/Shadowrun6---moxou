@@ -6,6 +6,35 @@
 			<div class="section">
 				<h2><input data-field="name" type="text" value="{{actor.name}}"
 						placeholder="{{localize 'shadowrun6.name' }}" /></h2>
+				<label>is a: </label> 
+				<select class="vehicleUser" data-field="data.vehicle.model">
+					{{#select system.vehicle.model}}
+							<option value="">-</option>
+						{{#each this.options.allVehicleModel as |item id|}}
+							{{#iff item.system.type '==' "VEHICLES" }}
+								<option value="{{item.id}}" data-item-model="{{item.id}}">{{item.name}}</option>
+							{{/iff}}
+							{{#iff item.system.type '==' "DRONES" }}
+								<option value="{{item.id}}" data-item-model="{{item.id}}">{{item.name}}</option>
+							{{/iff}}
+						{{/each}}
+					{{/select}}
+				</select>
+
+				<label>Belongs To: </label> 
+				<select class="vehicleUser" data-field="data.vehicle.belongs">
+					{{#select system.vehicle.belongs}}
+							<option value="">-</option>
+						{{#each this.options.allVehicleUser as |owner id|}}
+							<option value="{{owner.id}}" data-item-owner="{{owner.id}}">{{owner.name}}</option>
+						{{/each}}
+					{{/select}}
+				</select>
+				<br />
+<label>Mode of Operation</label> <select data-field="system.vehicle.opMode" data-field="data.vehicle.opMode"
+	data-item-id="{{this.id}}">
+	{{selectOptions config.VEHICLE_MODE selected=system.vehicle.opMode localize=true}}
+</select>
 				{{> "systems/shadowrun6-moxou/templates/parts/vehicle-stats.html"}}
 				{{> "systems/shadowrun6-moxou/templates/parts/vehicle-monitor.html"}}
 				{{> "systems/shadowrun6-moxou/templates/parts/vehicle-speed.html"}}

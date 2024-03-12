@@ -1,4 +1,4 @@
-import { CurrentVehicle, Initiative, Monitor, Pool } from "./ActorTypes.js";
+import { Initiative, Monitor, Pool } from "./ActorTypes.js";
 
 /**
  * Items
@@ -69,10 +69,10 @@ export class Gear extends GenesisData {
 	/** Amount of dice to use. Calculated when preparing actor */
 	pool: number = 0;
 }
-export class Vehicle extends Gear {
+export class VehicleItem extends Gear {
 	handlOn: number;
 	handlOff: number;
-	accO: number;
+	accOn: number;
 	accOff: number;
 	spdiOn: number;
 	spdiOff: number;
@@ -83,7 +83,6 @@ export class Vehicle extends Gear {
 	sen: number;
 	sea: number;
 	vtype: string;
-	vehicle: CurrentVehicle = new CurrentVehicle();
 }
 
 export class Spell extends Gear {

@@ -1,7 +1,8 @@
-import { VehicleActor, VehicleSkill } from "../ActorTypes.js";
+import { VehicleActor, VehicleSkill, VehicleState} from "../ActorTypes.js";
 import { SkillRoll, VehicleRoll } from "../dice/RollTypes.js";
 import { Shadowrun6Actor } from "../Shadowrun6Actor.js";
 import { Shadowrun6ActorSheet } from "./SR6ActorSheet.js";
+import { Gear,VehicleItem} from "../ItemTypes.js"
 
 function getSystemData(obj: any): any {
 	if ((game as any).release.generation >= 10) return obj.system;
@@ -27,9 +28,12 @@ export class Shadowrun6ActorSheetVehicle extends Shadowrun6ActorSheet {
 			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "overview" }],
 			scrollY: [".items", ".attributes"],
 			dragDrop: [{ dragSelector: ".item-list .item", dropSelector: null }],
-			allVehicleUser: (game as Game).actors!.filter((actor) => actor.type == "Player" || actor.type == "NPC")
+			allVehicleUser: (game as Game).actors!.filter((actor) => actor.type == "Player" || actor.type == "NPC"),
+			allVehicleModel: (game as Game).items!.filter((Item) => Item.type == "gear")
 		});
 	}
+
+	
 
 	activateListeners(html) {
 		super.activateListeners(html);
@@ -46,8 +50,8 @@ export class Shadowrun6ActorSheetVehicle extends Shadowrun6ActorSheet {
 	_onDecelerate(event, html) {
 		console.log("_onDecelerate");
 		let system: VehicleActor = getSystemData(this.actor) as VehicleActor;
-		let currentSpeed = system.vehicle.speed;
-		let newSpeed = currentSpeed - (system.vehicle.offRoad ? system.accOff : system.accOn);
+		let currentSpeed = system.vehicleState.speed;
+		let newSpeed = currentSpeed - (system.vehicleState.offRoad ? system.vehicleItem.accOff : system.vehicleItem.accOn);
 		if (newSpeed < 0) newSpeed = 0;
 		const field = "data.vehicle.speed";
 		(this.actor as any).updateSource({ [field]: newSpeed });
@@ -56,9 +60,9 @@ export class Shadowrun6ActorSheetVehicle extends Shadowrun6ActorSheet {
 	_onAccelerate(event, html) {
 		console.log("_onAccelerate");
 		let system: VehicleActor = getSystemData(this.actor) as VehicleActor;
-		let currentSpeed = system.vehicle.speed;
-		let newSpeed = currentSpeed + (system.vehicle.offRoad ? system.accOff : system.accOn);
-		if (newSpeed > system.tspd) newSpeed = system.tspd;
+		let currentSpeed = system.vehicleState.speed;
+		let newSpeed = currentSpeed + (system.vehicleState.offRoad ? system.vehicleItem.accOff : system.vehicleItem.accOn);
+		if (newSpeed > system.vehicleItem.tspd) newSpeed = system.vehicleItem.tspd;
 		const field = "vehicle.speed";
 		(this.actor as any).updateSource({ [field]: newSpeed });
 	}
@@ -80,9 +84,9 @@ export class Shadowrun6ActorSheetVehicle extends Shadowrun6ActorSheet {
 		let actorData: VehicleActor = getSystemData(this.actor) as VehicleActor;
 		let vSkill: VehicleSkill = actorData.skills[skillId];
 
-		console.log("Roll skill " + skillId + " with pool " + vSkill.pool + " and a threshold " + actorData.vehicle.modifier);
+		console.log("Roll skill " + skillId + " with pool " + vSkill.pool + " and a threshold " + actorData.vehicleState.modifier);
 		let roll: VehicleRoll = new VehicleRoll(actorData, skillId);
-		roll.threshold = actorData.vehicle.modifier;
+		roll.threshold = actorData.vehicleState.modifier;
 
 		console.log("onRollSkillCheck before ", roll);
 		(this.actor as Shadowrun6Actor).rollVehicle(roll);

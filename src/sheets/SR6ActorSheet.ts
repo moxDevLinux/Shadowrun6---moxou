@@ -328,6 +328,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 			return this.actor.createEmbeddedDocuments("Item", [itemData]);
 		});
 		html.find(".vehicle-create").click((ev) => {
+			console.log("SR6ActorSheet - activateCreationLastener - vehicle-create");
 			const itemData = {
 				name: (game as Game).i18n.localize("shadowrun6.newitem.vehicles"),
 				type: "gear",

@@ -10,7 +10,7 @@ import {
 	Ratings,
 	Monitor,
 	Skill,
-	CurrentVehicle,
+	VehicleState,
 	VehicleActor,
 	MatrixUser,
 	Initiative,
@@ -22,7 +22,7 @@ import {
 } from "./ActorTypes.js";
 import { Defense, MonitorType, SR6, SR6Config } from "./config.js";
 import { MatrixAction, SkillDefinition } from "./DefinitionTypes.js";
-import { Armor, ComplexForm, DevicePersona, Gear, LivingPersona, MatrixDevice, Persona, Spell, Vehicle, Weapon } from "./ItemTypes.js";
+import { Armor, ComplexForm, DevicePersona, Gear, LivingPersona, MatrixDevice, Persona, Spell, VehicleItem, Weapon } from "./ItemTypes.js";
 //import { doRoll } from "./dice/CommonRoll.js";
 import { doRoll } from "./Rolls.js";
 import {
@@ -60,7 +60,7 @@ function isMatrixUser(obj: any): obj is MatrixUser {
 function isGear(obj: any): obj is Gear {
 	return obj.skill != undefined;
 }
-function isVehicle(obj: any): obj is Vehicle {
+function isVehicle(obj: any): obj is VehicleItem {
 	return obj.skill != undefined && (obj.type === "VEHICLES" || obj.type === "DRONES");
 }
 function isSpell(obj: any): obj is Spell {
@@ -126,6 +126,7 @@ export class Shadowrun6Actor extends Actor {
 				this._prepareSkills();
 				this._prepareDefensePools();
 				this._prepareItemPools();
+// 				this._prepareVehicle();
 				this._prepareVehiclePools();
 				this._calculateEssence();
 				if (isLifeform(system) && system.mortype) {
@@ -143,6 +144,7 @@ export class Shadowrun6Actor extends Actor {
 				//     this._prepareItemPools();
 			}
 			if (actorData.type === "Vehicle") {
+				this._applyVehiclePreset();
 				this._prepareDerivedVehicleAttributes();
 				this._prepareVehicleActorSkills();
 			}
@@ -153,6 +155,18 @@ export class Shadowrun6Actor extends Actor {
 
 	//---------------------------------------------------------
 	/**
+	 * Apply the atribute of selected vehicleItem
+	 */
+	_applyVehiclePreset() {
+		const data = getSystemData(this);
+		// only do on vehicle and drone
+		if (!isVehicle(data))
+			return;
+		console.log("Shadowrun6Actor._applyVehiclePreset with ", data);
+
+	}
+	//---------------------------------------------------------
+	/**
 	 * Apply the force rating as a attribute and skill modifier
 	 */
 	_applySpiritPreset() {
@@ -161,7 +175,7 @@ export class Shadowrun6Actor extends Actor {
 		if (!isSpiritOrSprite(data))
 			return;
 
-		console.log("_applySpiritPreset()");
+		console.log("Shadowrun6Actor._applySpiritPreset() with", data);
 		switch (data.spiritType) {
 			case 'air':
 				data.attributes.bod.base = 2;
@@ -443,7 +457,7 @@ export class Shadowrun6Actor extends Actor {
 		}
 
 		if (isMatrixUser(system)) {
-			console.log("prepareAttackRatings:", system.persona.used);
+			console.log("Shadowrun6Actor.prepareAttackRatings:", system.persona.used);
 			if (system.persona && system.persona.used) {
 				// Matrix attack rating (Angriff + Schleicher)
 				system.attackrating.matrix.base = system.persona.used.a + system.persona.used.s;
@@ -517,6 +531,8 @@ export class Shadowrun6Actor extends Actor {
 	 * Calculate the attributes like Initiative
 	 */
 	_prepareDefenseRatings() {
+		console.log("Shadowrun6Actor._prepareDefenseRatings");
+		
 		const actorData = getActorData(this);
 		const system: SR6Actor = getSystemData(this);
 		if (!isLifeform(system)) return;
@@ -564,7 +580,7 @@ export class Shadowrun6Actor extends Actor {
 
 		// Matrix defense
 		if (isMatrixUser(data)) {
-			console.log("prepareDefenseRatings:", data.persona.used);
+			console.log("Shadowrun6Actor prepare Matrix defense", data.persona.used);
 			data.defenserating.matrix.base = data.persona.used.d + data.persona.used.f;
 			data.defenserating.matrix.modString = ""; //(game as Game).i18n.localize("attrib.int_short") + " " + data.attributes["int"].pool;
 			data.defenserating.matrix.pool = data.defenserating.matrix.base;
@@ -824,12 +840,35 @@ export class Shadowrun6Actor extends Actor {
 			}
 		});
 	}
+	//---------------------------------------------------------
+	/*
+	 * creating the vehicle sheet for each possessed vehicle
+	 
+	_prepareVehicle() {
+		console.log("Shadowrun6Actor._prepareVehicle");
+		const actorData: Shadowrun6Actor = getActorData(this);
+		const systemRaw: SR6Actor = getSystemData(this);
+		if (!isLifeform(systemRaw)) return;
+		actorData.items.forEach((tmpItem) => {
+			// Any kind of gear
+			if (tmpItem.type == "gear" && isVehicle(getSystemData(tmpItem))) {
+				let vehicleData: VehicleItem = getSystemData(tmpItem);
+				// remove vehicle from Items
+				let newPossessedVehicle: VehicleActor = new VehicleActor();
+				newPossessedVehicle.vehicleItem = vehicleData;
+				newPossessedVehicle.vehicleState.belongs = SR6Actor.name;
+			}
+		});
+	}
+*/
 
 	//---------------------------------------------------------
 	/*
 	 * Calculate the pool when using items with assigned skills
 	 */
 	_prepareVehiclePools() {
+		console.log("Shadowrun6Actor._prepareVehiclePools");
+		
 		const actorData: Shadowrun6Actor = getActorData(this);
 		const systemRaw: SR6Actor = getSystemData(this);
 		if (!isLifeform(systemRaw)) return;
@@ -842,15 +881,15 @@ export class Shadowrun6Actor extends Actor {
 		actorData.items.forEach((tmpItem) => {
 			// Any kind of gear
 			if (tmpItem.type == "gear" && isVehicle(getSystemData(tmpItem))) {
-				let vehicleData: Vehicle = getSystemData(tmpItem);
-				if (!vehicleData.vehicle) {
-					vehicleData.vehicle = new CurrentVehicle();
+				let vehicleData: VehicleItem = getSystemData(tmpItem);
+/*				if (!vehicleData.currentvehicleState) {
+					vehicleData.currentvehicleState = new vehicleState();
 				}
-				let current: CurrentVehicle = vehicleData.vehicle;
+				let current: vehicleState = vehicleData.currentvehicleState;
 				//if (!current.attrib)  current.attrib="rea";
 				if (!current.ar) current.ar = new Pool();
 				if (!current.dr) current.dr = new Pool();
-				if (!current.handling) current.handling = new Pool();
+				if (!current.handling) current.handling = new Pool();*/
 
 				let specialization = vehicleData.vtype;
 				if ("GROUND" === specialization) {
@@ -866,7 +905,7 @@ export class Shadowrun6Actor extends Actor {
 				if (!vehicleData.skillSpec && specialization) {
 					vehicleData.skillSpec = specialization;
 				}
-				let opMode = current.opMode;
+/*				let opMode = current.opMode;
 				let rigRating: number = system.controlRig;
 				let modRig = "";
 				if (rigRating > 0) {
@@ -948,7 +987,7 @@ export class Shadowrun6Actor extends Actor {
 							modRig;
 						break;
 					default:
-				}
+				}*/
 			}
 		});
 	}
@@ -958,13 +997,15 @@ export class Shadowrun6Actor extends Actor {
 	 * Calculate the attributes like Initiative
 	 */
 	_prepareDerivedVehicleAttributes() {
+		console.log("Shadowrun6Actor._prepareDerivedVehicleAttributes");
+		
 		const system: VehicleActor = getSystemData(this) as VehicleActor;
 
 		// Monitors
 		if (system.physical) {
 			if (!system.physical.mod) system.physical.mod = 0;
 
-			let base: number = 8 + Math.round(system.bod / 2);
+			let base: number = 8 + Math.round(system.vehicleItem.bod / 2);
 			system.physical.max = +base + system.physical.mod;
 			system.physical.value = system.physical.max - system.physical.dmg;
 		}
@@ -972,29 +1013,31 @@ export class Shadowrun6Actor extends Actor {
 		if (system.stun) {
 			if (!system.stun.mod) system.stun.mod = 0;
 			// 8 + (Device Rating / 2) where Dev.Rat. is Sensor
-			let base: number = 8 + Math.round(system.sen / 2);
+			let base: number = 8 + Math.round(system.vehicleItem.sen / 2);
 			system.stun.max = +base + system.stun.mod;
 			system.stun.value = system.stun.max - system.stun.dmg;
 		}
 
 		// Test modifier depending on speed
-		let interval = system.vehicle.offRoad ? system.spdiOff : system.spdiOn;
+		let interval = system.vehicleState.offRoad ? system.vehicleItem.spdiOff : system.vehicleItem.spdiOn;
 		if (interval <= 1) interval = 1;
-		let modifier = Math.floor(system.vehicle.speed / interval);
+		let modifier = Math.floor(system.vehicleState.speed / interval);
 		// Modify with physical monitor
 		modifier += Math.floor(system.physical.dmg / 3);
-		system.vehicle.modifier = modifier;
-		system.vehicle.kmh = system.vehicle.speed * 1.2;
+		system.vehicleItem.modifier = modifier;
+		system.vehicleState.kmh = system.vehicleState.speed * 1.2;
 	}
 
 	//---------------------------------------------------------
 	_prepareVehicleActorSkills() {
+		console.log("Shadowrun6Actor._prepareVehicleActorSkills");
+
 		const system: VehicleActor = getSystemData(this) as VehicleActor;
 		if (!system.skills) system.skills = new VehicleSkills();
 		if (!system.skills.piloting) system.skills.piloting = new VehicleSkill();
 		if (!system.skills.evasion) system.skills.evasion = new VehicleSkill();
 
-		let controllerActorId: string = system.vehicle.belongs;
+		let controllerActorId: string = system.vehicleState.belongs;
 		if (!controllerActorId) {
 			console.log("No actor is controlling this vehicle");
 			return;
@@ -1007,8 +1050,8 @@ export class Shadowrun6Actor extends Actor {
 
 		let person: Lifeform = getSystemData(actor) as Lifeform;
 
-		console.log("_prepareVehicleActorSkills", system.vehicle.opMode);
-		switch (system.vehicle.opMode) {
+		console.log("_prepareVehicleActorSkills", system.vehicleState.opMode);
+		switch (system.vehicleState.opMode) {
 			case VehicleOpMode.MANUAL:
 				console.log("  Get MANUAL skills from ", person);
 				system.skills.piloting.points = person.skills.piloting.pool;

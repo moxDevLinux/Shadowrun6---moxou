@@ -1,5 +1,5 @@
 import { MagicOrResonanceDefinition } from "./DefinitionTypes.js";
-import { ComplexForm, Gear, MatrixDevice, Persona, Spell, Weapon } from "./ItemTypes.js";
+import { ComplexForm, Gear, MatrixDevice, Persona, Spell, VehicleItem, Weapon } from "./ItemTypes.js";
 
 export class Attribute {
 	base: number = 0;
@@ -172,7 +172,7 @@ export enum VehicleOpMode {
 	AUTONOMOUS = "autonomous"
 }
 
-export class CurrentVehicle {
+export class VehicleState {
 	belongs: string;
 	opMode: VehicleOpMode = VehicleOpMode.MANUAL;
 	offRoad: false;
@@ -201,19 +201,7 @@ export class VehicleActor {
 	stun: Monitor = new Monitor();
 	edge: Monitor = new Monitor();
 	skills: VehicleSkills = new VehicleSkills();
-	handleOn: number;
-	handleOff: number;
-	accOn: number;
-	accOff: number;
-	spdiOn: number;
-	spdiOff: number;
-	tspd: number;
-	bod: number;
-	arm: number;
-	pil: number;
-	sen: number;
-	sea: number;
-	vtype: string;
-	vehicle: CurrentVehicle = new CurrentVehicle();
+	vehicleItem: VehicleItem = new VehicleItem();
+	vehicleState: VehicleState = new VehicleState();
 	notes: string;
 }
