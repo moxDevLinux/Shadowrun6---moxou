@@ -91,6 +91,13 @@
 				"type": "mundane",
 				"gender": ""
 			},
+			"move-template": {
+				"move": {
+					"walk": 10,
+					"sprint": 15,
+					"perhit_increase": 1
+				}
+			},
 			"derived-template": {
 				"derived": {
 					"composure": {
@@ -228,11 +235,6 @@
 					},
 					"actions": 0
 				}
-			},
-			"movement-template": {
-				"walk": 5,
-				"sprint": 10,
-				"perHit": 1
 			},
 			"vehicleskill-template": {
 				"skills": {
@@ -400,8 +402,7 @@
 				"movement-template",
 				"skill-template",
 				"knowledge-template",
-				"magic-template",
-				"movement-template"
+				"magic-template"
 			],
 			"metatype": "",
 			"mortype": "mundane",

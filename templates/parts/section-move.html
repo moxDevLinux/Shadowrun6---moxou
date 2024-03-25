@@ -1,0 +1,15 @@
+<div class="section" style="display: inline-block; width:100%">
+	<h2 class="section-title">{{ localize 'shadowrun6.section.move' }}</h2>
+    <span> {{ localize 'shadowrun6.move.walk' }} : </span>
+    <input class="centered box calcIni"	data-field="data.move.walk" type="text" value="{{system.move.walk}}" data-dtype="Number" id="dataMovWalk" style="width: 1.2em">
+    <span> {{ localize 'shadowrun6.move.unit' }} </span>
+    <span> {{ localize 'shadowrun6.move.sprint' }} : </span>
+    <input class="centered box calcIni"	data-field="data.move.sprint" type="text" value="{{system.move.sprint}}" data-dtype="Number" id="dataMovSprint" style="width: 1.2em">
+    <span> {{ localize 'shadowrun6.move.unit' }} </span>
+    <br>
+    <span> {{ localize 'shadowrun6.move.perhit_increase' }} : </span>
+    <input class="centered box calcIni"	data-field="data.move.perhit_increase" type="text" value="{{system.move.perhit_increase}}" data-dtype="Number" id="dataMovInc" style="width: 1.2em">
+    <span> {{ localize 'shadowrun6.move.unit' }} </span>
+    <a class="item-control attributeonly-roll sprint-roll skill-pool" data-pool="{{system.move.pool}}" data-item-id="sprint"><i class="fas fa-dice-six"></i></a>
+
+</div>

@@ -64,6 +64,7 @@ export const preloadHandlebarsTemplates = async function () {
 		"systems/shadowrun6-moxou/templates/parts/section-matrixbase.html",
 		"systems/shadowrun6-moxou/templates/parts/section-matrixdevices.html",
 		"systems/shadowrun6-moxou/templates/parts/section-metamagics.html",
+		"systems/shadowrun6-moxou/templates/parts/section-move.html",
 		"systems/shadowrun6-moxou/templates/parts/section-notes.html",
 		"systems/shadowrun6-moxou/templates/parts/section-rituals.html",
 		"systems/shadowrun6-moxou/templates/parts/section-focus.html",

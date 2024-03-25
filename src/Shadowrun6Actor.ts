@@ -18,7 +18,8 @@ import {
 	VehicleSkills,
 	VehicleSkill,
 	Spirit,
-	Critter
+	Critter,
+	Move
 } from "./ActorTypes.js";
 import { Defense, MonitorType, SR6, SR6Config } from "./config.js";
 import { MatrixAction, SkillDefinition } from "./DefinitionTypes.js";
@@ -339,6 +340,16 @@ export class Shadowrun6Actor extends Actor {
 		const system: SR6Actor = getSystemData(this);
 		if (!isLifeform(system)) return;
 		const data: Lifeform = system;
+		// Mouvement
+		if (!data.move) {
+			data.move = new Move();
+			data.move.walk = 10;
+			data.move.sprint = 15;
+			data.move.perhit_increase = 1;
+		}
+		data.move.pool = data.skills["athletics"].points + data.skills["athletics"].modifier + data.attributes["agi"].pool;
+		if (data.skills["athletics"].specialization == "sprinting") data.move.pool += 2;
+		if (data.skills["athletics"].expertise == "sprinting") data.move.pool += 3;
 
 		// Don't calculate monitors and initiative for spirits
 		if (actorData.type != "Spirit") {

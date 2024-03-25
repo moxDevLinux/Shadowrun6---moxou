@@ -1,6 +1,13 @@
 import { MagicOrResonanceDefinition } from "./DefinitionTypes.js";
 import { ComplexForm, Gear, MatrixDevice, Persona, Spell, VehicleItem, Weapon } from "./ItemTypes.js";
 
+export class Move {
+	walk: number;
+	sprint: number;
+	perhit_increase: number;
+	pool: number;
+}
+
 export class Attribute {
 	base: number = 0;
 	mod: number = 0;
@@ -133,6 +140,7 @@ export class Lifeform extends SR6Actor {
 		astral: Initiative;
 		matrix: Initiative;
 	};
+	move: Move = new Move();
 	physical: Monitor = new Monitor();
 	stun: Monitor = new Monitor();
 	overflow: Monitor = new Monitor();
@@ -203,5 +211,6 @@ export class VehicleActor {
 	skills: VehicleSkills = new VehicleSkills();
 	vehicleItem: VehicleItem = new VehicleItem();
 	vehicleState: VehicleState = new VehicleState();
+	modelID: string;
 	notes: string;
 }

@@ -7,8 +7,8 @@
 				<h2><input data-field="name" type="text" value="{{actor.name}}"
 						placeholder="{{localize 'shadowrun6.name' }}" /></h2>
 				<label>is a: </label> 
-				<select class="vehicleUser" data-field="data.vehicle.model">
-					{{#select system.vehicle.model}}
+				<select class="vehicle-Model" data-field="data.modelID">
+					{{#select system.modelID}}
 							<option value="">-</option>
 						{{#each this.options.allVehicleModel as |item id|}}
 							{{#iff item.system.type '==' "VEHICLES" }}
@@ -22,8 +22,8 @@
 				</select>
 
 				<label>Belongs To: </label> 
-				<select class="vehicleUser" data-field="data.vehicle.belongs">
-					{{#select system.vehicle.belongs}}
+				<select class="vehicle-User" data-field="data.vehicleState.belongs">
+					{{#select system.vehicleState.belongs}}
 							<option value="">-</option>
 						{{#each this.options.allVehicleUser as |owner id|}}
 							<option value="{{owner.id}}" data-item-owner="{{owner.id}}">{{owner.name}}</option>

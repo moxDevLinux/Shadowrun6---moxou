@@ -93,6 +93,7 @@ enum SectionType {
     Persona,
     Power,
     Age,
+    Move,
     Influence,
     Programs,
     Description

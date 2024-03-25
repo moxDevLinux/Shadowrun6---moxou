@@ -92,7 +92,7 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 				this.actor.deleteEmbeddedDocuments("Item", [itemId]);
 			});
 			html.find("[data-field]").change((event) => {
-				console.log("data-field", event);
+				console.log("data-field change with event", event);
 				const element = event.currentTarget;
 				let value = element.value;
 				if (element.type == "number" || (element.dataset && element.dataset.dtype && element.dataset.dtype == "Number")) {
@@ -556,7 +556,11 @@ export class Shadowrun6ActorSheet extends ActorSheet {
 		if (classList.contains("defense-roll")) {
 			roll.actionText = (game as Game).i18n.localize("shadowrun6.defense." + event.currentTarget.dataset.itemId);
 		} else if (classList.contains("attributeonly-roll")) {
-			roll.actionText = (game as Game).i18n.localize("shadowrun6.derived." + event.currentTarget.dataset.itemId);
+			if (classList.contains("sprint-roll")) {
+				roll.actionText = (game as Game).i18n.localize("shadowrun6.special.athletics.sprinting");
+			} else {
+				roll.actionText = (game as Game).i18n.localize("shadowrun6.derived." + event.currentTarget.dataset.itemId);
+			}
 		} else {
 			roll.actionText = (game as Game).i18n.localize("shadowrun6.rolltext." + event.currentTarget.dataset.itemId);
 		}

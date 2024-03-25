@@ -26,7 +26,7 @@
       "paths": ["system/templates", "css", "lang/en.json"]
     }
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "compatibility": {
     "minimum": 10,
     "verified": "11",

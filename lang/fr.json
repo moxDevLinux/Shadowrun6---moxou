@@ -159,6 +159,13 @@
       "surprise": "Surprise",
       "matrix_perception": "Percéption matricielle"
     },
+    "move": {
+      "walk": "Se déplacer",
+      "sprint": "Sprinter",
+      "perhit_increase": "Majoration par succès",
+      "unit": "m/rnd"
+    },
+
     "edge_action": {
       "anticipation": "Placement parfait",
       "big_speech": "Encouragement",
@@ -561,9 +568,9 @@
       "trace_icon": "Traquer une icône"
     },
     "monitor": {
-      "matrix": "Matrice",
-      "physical": "Physique",
-      "stun": "Étourdissant"
+      "matrix": "Moniteur Matriciel",
+      "physical": "Moniteur Physique",
+      "stun": "Moniteur Étourdissant"
     },
     "mortype": {
       "adept": "Adepte",
@@ -841,6 +848,7 @@
         "title": "Échos"
       },
       "initiative": "Initiative",
+      "move": "Mouvement",
       "martialarts": {
         "add": "Ajouter un style",
         "tech_add": "Ajouter une technique",

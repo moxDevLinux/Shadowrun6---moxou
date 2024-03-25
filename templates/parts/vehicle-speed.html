@@ -4,10 +4,10 @@
 	<tr>
 		<td><img src="systems/shadowrun6-moxou/images/road.svg" style="border: 0px; height: auto; width: 48px" /></td>
 		<td style="text-align:center; width: 5em"><label class="switch" title="Huh">
-				<input type="checkbox" data-check="data.vehicle.offRoad" {{checked system.vehicle.offRoad}}
+				<input type="checkbox" data-check="data.vehicleState.offRoad" {{checked system.vehicleState.offRoad}}
 					type="checkbox" data-dtype="Boolean" />
 				<span class="shadowrun6-slider round"></span>
-			</label><br />{{#if system.vehicle.offRoad}}
+			</label><br />{{#if system.vehicleState.offRoad}}
 			{{localize 'shadowrun6.label.offroad'}}
 			{{else}}
 			{{localize 'shadowrun6.label.onroad'}}
@@ -17,8 +17,8 @@
 		<td><img src="systems/shadowrun6-moxou/images/speedometer.svg" style="border: 0px; height: auto; width: 64px" />
 		</td>
 		<td> <button type="button" class="vehicle-slower">{{localize 'shadowrun6.label.slower'}}</button> </td>
-		<td><input class="centered box" type="text" style="width: 4em" value="{{system.vehicle.speed}}"
-				data-dtype="Number" data-field="data.vehicle.speed" /></td>
+		<td><input class="centered box" type="text" style="width: 4em" value="{{system.vehicleState.speed}}"
+				data-dtype="Number" data-field="data.vehicleState.speed" /></td>
 		<td> <button type="button" class="vehicle-faster">{{localize 'shadowrun6.label.faster'}}</button> </td>
 	</tr>
 </table>

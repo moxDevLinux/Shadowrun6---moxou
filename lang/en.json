@@ -205,6 +205,12 @@
         "stun": "Mental Healing"
       }
     },
+    "move": {
+      "walk": "Walk",
+      "sprint": "Sprint",
+      "perhit_increase": "Per-hit Increase",
+      "unit": "ft/rnd"
+    },
     "edge_action": {
       "anticipation": "Anticipation",
       "big_speech": "Big Speech",
@@ -946,6 +952,7 @@
         "title": "Echoes"
       },
       "initiative": "Initiative",
+      "move": "Movement",
       "martialarts": {
         "add": "Add new style",
         "tech_add": "Add new technique",

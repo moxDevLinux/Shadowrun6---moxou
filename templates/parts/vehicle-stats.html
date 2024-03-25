@@ -1,8 +1,7 @@
 <table class="vehicle-stats-table" style="width: 20em">
 	<thead>
 		<tr>
-			<th colspan="3" style="align: center">{{ localize
-				'shadowrun6.section.vehicles.column.handling' }}</th>
+			<th colspan="3" style="align: center">{{ localize 'shadowrun6.section.vehicles.column.handling' }}</th>
 			<th colspan="3">{{ localize 'shadowrun6.section.vehicles.column.acc' }}</th>
 			<th colspan="3">{{ localize 'shadowrun6.section.vehicles.column.spdi' }}</th>
 			<th>{{ localize 'shadowrun6.section.vehicles.column.tspd' }}</th>
@@ -16,27 +15,27 @@
 	</thead>
 	<tbody>
 		<tr style="text-align:center">
-			<td><input data-field="data.handlOn" type="text" value="{{system.handlOn}}" data-dtype="Number"
+			<td><input data-field="data.handlOn" type="text" value="{{system.vehicleItem.handlOn}}" data-dtype="Number"
 					style="text-align:right" />
 			<td>/</td>
-			<td><input data-field="data.handlOff" type="text" value="{{system.handlOff}}" data-dtype="Number"
+			<td><input data-field="data.handlOff" type="text" value="{{system.vehicleItem.handlOff}}" data-dtype="Number"
 					style="text-align:left" /></td>
-			<td><input data-field="data.accOn" type="text" value="{{system.accOn}}" data-dtype="Number"
+			<td><input data-field="data.accOn" type="text" value="{{system.vehicleItem.accOn}}" data-dtype="Number"
 					style="text-align:right" /></td>
 			<td>/</td>
-			<td><input data-field="data.accOff" type="text" value="{{system.accOff}}" data-dtype="Number"
+			<td><input data-field="data.accOff" type="text" value="{{system.vehicleItem.accOff}}" data-dtype="Number"
 					style="text-align:left" /></td>
-			<td><input data-field="data.spdiOn" type="text" value="{{system.spdiOn}}" data-dtype="Number"
+			<td><input data-field="data.spdiOn" type="text" value="{{system.vehicleItem.spdiOn}}" data-dtype="Number"
 					style="text-align:right"></td>
 			<td>/</td>
-			<td><input data-field="data.spdiOff" type="text" value="{{system.spdiOff}}" data-dtype="Number"
+			<td><input data-field="data.spdiOff" type="text" value="{{system.vehicleItem.spdiOff}}" data-dtype="Number"
 					style="text-align:left"></td>
-			<td><input data-field="data.tspd" type="text" value="{{system.tspd}}" data-dtype="Number"></td>
-			<td><input data-field="data.bod" type="text" value="{{system.bod}}" data-dtype="Number"></td>
-			<td><input data-field="data.arm" type="text" value="{{system.arm}}" data-dtype="Number"></td>
-			<td><input data-field="data.pil" type="text" value="{{system.pil}}" data-dtype="Number"></td>
-			<td><input data-field="data.sen" type="text" value="{{system.sen}}" data-dtype="Number"></td>
-			<td><input data-field="data.sea" type="text" value="{{system.sea}}" data-dtype="Number"></td>
+			<td><input data-field="data.tspd" type="text" value="{{system.vehicleItem.tspd}}" data-dtype="Number"></td>
+			<td><input data-field="data.bod" type="text" value="{{system.vehicleItem.bod}}" data-dtype="Number"></td>
+			<td><input data-field="data.arm" type="text" value="{{system.vehicleItem.arm}}" data-dtype="Number"></td>
+			<td><input data-field="data.pil" type="text" value="{{system.vehicleItem.pil}}" data-dtype="Number"></td>
+			<td><input data-field="data.sen" type="text" value="{{system.vehicleItem.sen}}" data-dtype="Number"></td>
+			<td><input data-field="data.sea" type="text" value="{{system.vehicleItem.sea}}" data-dtype="Number"></td>
 		</tr>
 	</tbody>
 </table>
