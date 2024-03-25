@@ -68,6 +68,7 @@ export const preloadHandlebarsTemplates = async function () {
 		"systems/shadowrun6-moxou/templates/parts/section-notes.html",
 		"systems/shadowrun6-moxou/templates/parts/section-rituals.html",
 		"systems/shadowrun6-moxou/templates/parts/section-focus.html",
+		"systems/shadowrun6-moxou/templates/parts/section-karma_rep.html",
 		"systems/shadowrun6-moxou/templates/parts/section-qualities.html",
 		"systems/shadowrun6-moxou/templates/parts/section-riggingbase.html",
 		"systems/shadowrun6-moxou/templates/parts/section-skills-action.html",

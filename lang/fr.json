@@ -863,6 +863,12 @@
         "add": "Ajouter un style de vie",
         "title": "Styles de vie"
       },
+      "karma": {
+        "title": "Karma, Heat, Reputation",
+        "karma": "Karma",
+        "heat": "Heat",
+        "reputation": "Reputation"
+      },
       "matrix_base": {
         "overwatch": "Score de Surveillance"
       },

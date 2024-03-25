@@ -967,6 +967,12 @@
         "add": "Add new lifestyle",
         "title": "Lifestyles"
       },
+      "karma": {
+        "title": "Karma, Heat, Reputation",
+        "karma": "Karma",
+        "heat": "Heat",
+        "reputation": "Reputation"
+      },
       "gear": {
         "title": "Gear"
       },
